@@ -1,0 +1,546 @@
+VERSION 5.00
+Begin VB.Form frmLearn 
+   Caption         =   "Learn"
+   ClientHeight    =   2625
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   9480
+   ScaleHeight     =   2625
+   ScaleWidth      =   9480
+   Begin VBCE.Frame Frame3 
+      Height          =   1335
+      Left            =   5400
+      TabIndex        =   0
+      Top             =   120
+      Width           =   3975
+      _cx             =   7011
+      _cy             =   2355
+      Appearance      =   1
+      BackColor       =   -2147483633
+      BorderStyle     =   1
+      Caption         =   "Statistics"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      ClipControls    =   -1  'True
+      Begin VBCE.Label Label2 
+         Height          =   240
+         Left            =   120
+         TabIndex        =   14
+         Top             =   1080
+         Width           =   1695
+         _cx             =   2990
+         _cy             =   423
+         Appearance      =   1
+         AutoSize        =   0   'False
+         BackColor       =   -2147483633
+         BackStyle       =   0
+         BorderStyle     =   0
+         Caption         =   "Easiness Factor:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Label1 
+         Height          =   240
+         Left            =   120
+         TabIndex        =   13
+         Top             =   840
+         Width           =   1455
+         _cx             =   2566
+         _cy             =   423
+         Appearance      =   1
+         AutoSize        =   0   'False
+         BackColor       =   -2147483633
+         BackStyle       =   0
+         BorderStyle     =   0
+         Caption         =   "Repetition:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Category 
+         Height          =   244
+         Left            =   120
+         TabIndex        =   2
+         Top             =   240
+         Width           =   3735
+         _cx             =   6588
+         _cy             =   430
+         Appearance      =   1
+         AutoSize        =   0   'False
+         BackColor       =   -2147483633
+         BackStyle       =   0
+         BorderStyle     =   0
+         Caption         =   "Category:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Item 
+         Height          =   255
+         Left            =   120
+         TabIndex        =   1
+         Top             =   480
+         Width           =   2655
+         _cx             =   4683
+         _cy             =   450
+         Appearance      =   1
+         AutoSize        =   0   'False
+         BackColor       =   -2147483633
+         BackStyle       =   0
+         BorderStyle     =   0
+         Caption         =   "Item:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+   End
+   Begin VBCE.Frame Frame1 
+      Height          =   1215
+      Left            =   0
+      TabIndex        =   3
+      Top             =   120
+      Width           =   5295
+      _cx             =   9340
+      _cy             =   2143
+      Appearance      =   1
+      BackColor       =   -2147483633
+      BorderStyle     =   1
+      Caption         =   "Question"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      ClipControls    =   -1  'True
+      Begin VBCE.TextBox Question 
+         Height          =   855
+         Left            =   120
+         TabIndex        =   4
+         Top             =   240
+         Width           =   5055
+         _cx             =   8916
+         _cy             =   1508
+         Appearance      =   1
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   0
+         MultiLine       =   -1  'True
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+   End
+   Begin VBCE.Frame Frame2 
+      Height          =   1215
+      Left            =   0
+      TabIndex        =   5
+      Top             =   1320
+      Width           =   5295
+      _cx             =   9340
+      _cy             =   2143
+      Appearance      =   1
+      BackColor       =   -2147483633
+      BorderStyle     =   1
+      Caption         =   "Answer"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      ClipControls    =   -1  'True
+      Begin VBCE.TextBox Answer 
+         Height          =   855
+         Left            =   120
+         TabIndex        =   6
+         Top             =   240
+         Width           =   5055
+         _cx             =   8916
+         _cy             =   1508
+         Appearance      =   1
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   ""
+         Alignment       =   0
+         HideSelection   =   -1  'True
+         Locked          =   0   'False
+         MaxLength       =   0
+         MultiLine       =   -1  'True
+         PasswordChar    =   ""
+         ScrollBars      =   0
+      End
+   End
+   Begin VBCE.CommandButton Command8 
+      Height          =   495
+      Left            =   8760
+      TabIndex        =   16
+      Top             =   1560
+      Width           =   615
+      _cx             =   1085
+      _cy             =   873
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "Back"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command7 
+      Height          =   495
+      Left            =   8760
+      TabIndex        =   15
+      Top             =   2040
+      Width           =   615
+      _cx             =   1085
+      _cy             =   873
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "RESET"
+      Enabled         =   0   'False
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command1 
+      Height          =   495
+      Left            =   6240
+      TabIndex        =   12
+      Top             =   2040
+      Width           =   495
+      _cx             =   873
+      _cy             =   873
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "1"
+      Enabled         =   0   'False
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command2 
+      Height          =   495
+      Left            =   6720
+      TabIndex        =   11
+      Top             =   2040
+      Width           =   495
+      _cx             =   873
+      _cy             =   873
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "2"
+      Enabled         =   0   'False
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command3 
+      Height          =   495
+      Left            =   7200
+      TabIndex        =   10
+      Top             =   2040
+      Width           =   495
+      _cx             =   873
+      _cy             =   873
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "3"
+      Enabled         =   0   'False
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command4 
+      Height          =   495
+      Left            =   7680
+      TabIndex        =   9
+      Top             =   2040
+      Width           =   495
+      _cx             =   873
+      _cy             =   873
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "4"
+      Enabled         =   0   'False
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command5 
+      Height          =   495
+      Left            =   8160
+      TabIndex        =   8
+      Top             =   2040
+      Width           =   495
+      _cx             =   873
+      _cy             =   873
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "5"
+      Enabled         =   0   'False
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command6 
+      Height          =   495
+      Left            =   5400
+      TabIndex        =   7
+      Top             =   2040
+      Width           =   735
+      _cx             =   1296
+      _cy             =   873
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "Show answer"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+End
+Attribute VB_Name = "frmLearn"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub Command1_Click()
+q = 1
+EF_berechnen
+
+End Sub
+
+Private Sub Command2_Click()
+q = 2
+ EF_berechnen
+End Sub
+
+Private Sub Command3_Click()
+q = 3
+ EF_berechnen
+End Sub
+
+Private Sub Command4_Click()
+q = 4
+ EF_berechnen
+End Sub
+
+Private Sub Command5_Click()
+q = 5
+EF_berechnen
+End Sub
+
+Private Sub Command6_Click()
+For XX = Index_Learn To Zaehler
+If DBdaten(0, XX) = KategorieIndex And DBdaten(1, XX) <> Empty Then
+
+
+frmLearn.Answer.Text = DBdaten(3, XX)
+Exit For
+End If
+Next XX
+Command6.Enabled = False
+Command1.Enabled = True
+Command2.Enabled = True
+Command3.Enabled = True
+Command4.Enabled = True
+Command5.Enabled = True
+End Sub
+
+
+
+
+
+Private Sub Command7_Click()
+If MsgBox("A reset will erase the last learning paramaters. Are you sure?", vbYesNo, "Info") = vbYes Then
+    For XX = 0 To Zaehler
+    If DBdaten(0, XX) = KategorieIndex And DBdaten(1, XX) <> Empty Then
+        DBdaten(4, XX) = 0
+        DBdaten(5, XX) = 2.5
+        DBdaten(6, XX) = 0
+        DBdaten(7, XX) = Date
+        
+    End If
+Next XX
+Command7.Enabled = False
+End If
+
+
+
+
+
+
+End Sub
+
+Private Sub Command8_Click()
+Me.Hide
+End Sub
+
+Private Sub Form_Activate()
+Center Me
+Index_Learn = 0
+
+If Interval = "DAY" Then EinlesenEintraege_Day
+If Interval = "HOUR" Then EinlesenEintraege_Hour
+If Interval = "OFF" Then EinlesenEintraege_Off
+
+If Question.Text = "" Then
+    Command6.Enabled = False
+    Command7.Enabled = True
+    
+    Category.Caption = "Category: " & Kategorie
+Item.Caption = "Item: " & Index_Learn + 1 & " of " & frmMain.ListView1.ListItems.Count
+End If
+End Sub
+
+Private Sub Label1_Click()
+
+End Sub

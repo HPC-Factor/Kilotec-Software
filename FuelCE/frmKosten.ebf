@@ -1,0 +1,90 @@
+VERSION 5.00
+Begin VB.Form frmStatistik 
+   Caption         =   "Reisekosten"
+   ClientHeight    =   4740
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   9225
+   ScaleHeight     =   4740
+   ScaleWidth      =   9225
+   Begin VB.Line Line1 
+      X1              =   120
+      X2              =   4920
+      Y1              =   480
+      Y2              =   480
+   End
+   Begin VBCE.CommandButton Command1 
+      Default         =   -1  'True
+      Height          =   375
+      Left            =   6720
+      TabIndex        =   0
+      Top             =   3120
+      Width           =   975
+      _cx             =   1720
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "&OK"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+End
+Attribute VB_Name = "frmStatistik"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+
+
+
+
+
+Private Sub Command3_Click()
+If Reisekosten.Text = Empty Then Reisekosten.Text = 0
+If Uebernachtung.Text = Empty Then Uebernachtung.Text = 0
+If Verpflegung.Text = Empty Then Verpflegung.Text = 0
+If Freizeit.Text = Empty Then Freizeit.Text = 0
+If Sonstiges.Text = Empty Then Sonstiges.Text = 0
+
+On Error Resume Next
+GK = GK + CDbl(Reisekosten.Text) + CDbl(Uebernachtung.Text) + CDbl(Verpflegung.Text) + CDbl(Freizeit.Text) + CDbl(Sonstiges.Text)
+GESAMTKOSTEN.Text = GK
+End Sub
+
+Private Sub Command1_Click()
+Me.Hide
+End Sub
+
+Private Sub Form_Activate()
+
+
+If SPRACHE = 0 Then
+    Me.Caption = "Statistics"
+
+End If
+If SPRACHE = 1 Then
+    Me.Caption = "Statistik"
+       
+End If
+End Sub
+
+Private Sub Form_Load()
+Center Me
+
+End Sub
+
+Private Sub Text2_Change()
+
+End Sub
+

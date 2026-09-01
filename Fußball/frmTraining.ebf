@@ -1,0 +1,909 @@
+VERSION 5.00
+Begin VB.Form frmTraining 
+   BackColor       =   &H00C0FFC0&
+   BorderStyle     =   1  'Fixed Single
+   Caption         =   "TRAININGSLAGER"
+   ClientHeight    =   3120
+   ClientLeft      =   45
+   ClientTop       =   390
+   ClientWidth     =   7680
+   ScaleHeight     =   3120
+   ScaleWidth      =   7680
+   Begin VB.Shape Shape6 
+      BorderColor     =   &H00000000&
+      Height          =   1335
+      Left            =   4440
+      Top             =   1680
+      Width           =   1935
+   End
+   Begin VB.Shape Shape5 
+      BorderColor     =   &H00000000&
+      Height          =   1335
+      Left            =   2280
+      Top             =   1680
+      Width           =   1935
+   End
+   Begin VB.Shape Shape4 
+      BorderColor     =   &H00000000&
+      Height          =   1335
+      Left            =   120
+      Top             =   1680
+      Width           =   1935
+   End
+   Begin VB.Shape Shape3 
+      BorderColor     =   &H00000000&
+      Height          =   1335
+      Left            =   4440
+      Top             =   120
+      Width           =   1935
+   End
+   Begin VB.Shape Shape2 
+      BorderColor     =   &H00000000&
+      Height          =   1335
+      Left            =   2280
+      Top             =   120
+      Width           =   1935
+   End
+   Begin VB.Shape Shape1 
+      BorderColor     =   &H00000000&
+      Height          =   1335
+      Left            =   120
+      Top             =   120
+      Width           =   1935
+   End
+   Begin VBCE.CommandButton Command7 
+      Height          =   375
+      Left            =   4560
+      TabIndex        =   24
+      Top             =   2520
+      Width           =   1695
+      _cx             =   2990
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "Auswählen"
+      Enabled         =   0   'False
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.Label Label18 
+      Height          =   255
+      Left            =   4560
+      TabIndex        =   23
+      Top             =   2280
+      Width           =   1695
+      _cx             =   2990
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   12648384
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "S: 4-10, M: 5-9, A: 5-9"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label17 
+      Height          =   255
+      Left            =   4560
+      TabIndex        =   22
+      Top             =   2040
+      Width           =   1695
+      _cx             =   2990
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   12648384
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "500.000 €"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label16 
+      Height          =   255
+      Left            =   4560
+      TabIndex        =   21
+      Top             =   1800
+      Width           =   1695
+      _cx             =   2990
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   12648384
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Quellenhof Hotel"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   -1  'True
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.CommandButton Command6 
+      Height          =   375
+      Left            =   2400
+      TabIndex        =   20
+      Top             =   2520
+      Width           =   1695
+      _cx             =   2990
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "Auswählen"
+      Enabled         =   0   'False
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.Label Label15 
+      Height          =   255
+      Left            =   2400
+      TabIndex        =   19
+      Top             =   2280
+      Width           =   1695
+      _cx             =   2990
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   12648384
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "S: 2-6, M: 2-5, A: 2-6"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label14 
+      Height          =   255
+      Left            =   2400
+      TabIndex        =   18
+      Top             =   2040
+      Width           =   1695
+      _cx             =   2990
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   12648384
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "250.000 €"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label13 
+      Height          =   255
+      Left            =   2400
+      TabIndex        =   17
+      Top             =   1800
+      Width           =   1695
+      _cx             =   2990
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   12648384
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Sportschule"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   -1  'True
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.CommandButton Command5 
+      Height          =   375
+      Left            =   240
+      TabIndex        =   16
+      Top             =   2520
+      Width           =   1695
+      _cx             =   2990
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "Auswählen"
+      Enabled         =   0   'False
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.Label Label12 
+      Height          =   255
+      Left            =   240
+      TabIndex        =   15
+      Top             =   2280
+      Width           =   1695
+      _cx             =   2990
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   12648384
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "S: 2-4, M: 2-5, A: 2-4"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label11 
+      Height          =   255
+      Left            =   240
+      TabIndex        =   14
+      Top             =   2040
+      Width           =   1695
+      _cx             =   2990
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   12648384
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "150.000 €"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label10 
+      Height          =   255
+      Left            =   240
+      TabIndex        =   13
+      Top             =   1800
+      Width           =   1695
+      _cx             =   2990
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   12648384
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Trainingslager"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   -1  'True
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.CommandButton Command4 
+      Height          =   375
+      Left            =   4560
+      TabIndex        =   12
+      Top             =   960
+      Width           =   1695
+      _cx             =   2990
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "Auswählen"
+      Enabled         =   0   'False
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.Label Label9 
+      Height          =   255
+      Left            =   4560
+      TabIndex        =   11
+      Top             =   720
+      Width           =   1695
+      _cx             =   2990
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   12648384
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "S: 1-2, M: 1-3, A: 1-3"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label8 
+      Height          =   255
+      Left            =   4560
+      TabIndex        =   10
+      Top             =   480
+      Width           =   1695
+      _cx             =   2990
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   12648384
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "100.000 €"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label7 
+      Height          =   255
+      Left            =   4560
+      TabIndex        =   9
+      Top             =   240
+      Width           =   1695
+      _cx             =   2990
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   12648384
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Hotel Meridan"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   -1  'True
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.CommandButton Command3 
+      Height          =   375
+      Left            =   2400
+      TabIndex        =   8
+      Top             =   960
+      Width           =   1695
+      _cx             =   2990
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "Auswählen"
+      Enabled         =   0   'False
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.Label Label6 
+      Height          =   255
+      Left            =   2400
+      TabIndex        =   7
+      Top             =   720
+      Width           =   1695
+      _cx             =   2990
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   12648384
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "S: 1-2, M: 0-3, A: 0-3"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label5 
+      Height          =   255
+      Left            =   2400
+      TabIndex        =   6
+      Top             =   480
+      Width           =   1695
+      _cx             =   2990
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   12648384
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "75.000 €"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label4 
+      Height          =   255
+      Left            =   2400
+      TabIndex        =   5
+      Top             =   240
+      Width           =   1695
+      _cx             =   2990
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   12648384
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Sporthof Willbach"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   -1  'True
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.CommandButton Command2 
+      Height          =   375
+      Left            =   240
+      TabIndex        =   4
+      Top             =   960
+      Width           =   1695
+      _cx             =   2990
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "Auswählen"
+      Enabled         =   0   'False
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.Label Label3 
+      Height          =   255
+      Left            =   240
+      TabIndex        =   3
+      Top             =   720
+      Width           =   1695
+      _cx             =   2990
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   12648384
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "S: 0-2, M: 0-1, A: 0-2"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label2 
+      Height          =   255
+      Left            =   240
+      TabIndex        =   2
+      Top             =   480
+      Width           =   1695
+      _cx             =   2990
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   12648384
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "50.000 €"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label1 
+      Height          =   255
+      Left            =   240
+      TabIndex        =   1
+      Top             =   240
+      Width           =   1695
+      _cx             =   2990
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   12648384
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Waldhotel zur Linde"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   -1  'True
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.CommandButton Command1 
+      Height          =   375
+      Left            =   6480
+      TabIndex        =   0
+      Top             =   2640
+      Width           =   1095
+      _cx             =   1931
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "Zurück"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+End
+Attribute VB_Name = "frmTraining"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub Command1_Click()
+Me.Hide
+End Sub
+
+Private Sub Command2_Click()
+Dim altS As Integer
+Dim altM As Integer
+Dim altA As Integer
+
+altS = Angriff(TeamIndex)
+altM = Mittelfeld(TeamIndex)
+altA = Abwehr(TeamIndex)
+
+Geld = Geld - 50000
+Angriff(TeamIndex) = Angriff(TeamIndex) + GetRandomNumber(0, 2)
+Mittelfeld(TeamIndex) = Mittelfeld(TeamIndex) + GetRandomNumber(0, 1)
+Abwehr(TeamIndex) = Abwehr(TeamIndex) + GetRandomNumber(0, 2)
+
+MsgBox "Der Ausflug in das Trainingslager brachte folgende Ergebnisse:" & _
+    vbCrLf & vbCrLf & "ALTE WERTE" & _
+    vbCrLf & "Sturm: " & altS & ", Mittelfeld: " & altM & ", Abwehr: " & altA & _
+    vbCrLf & vbCrLf & "NEUE WERTE" & _
+    vbCrLf & "Sturm: " & Angriff(TeamIndex) & ", Mittelfeld: " & Mittelfeld(TeamIndex) & ", Abwehr: " & Abwehr(TeamIndex), vbOKOnly, "ERGEBNISSE"
+
+
+Aktualisieren
+Me.Hide
+End Sub
+
+Private Sub Command3_Click()
+Dim altS As Integer
+Dim altM As Integer
+Dim altA As Integer
+
+altS = Angriff(TeamIndex)
+altM = Mittelfeld(TeamIndex)
+altA = Abwehr(TeamIndex)
+
+Geld = Geld - 75000
+Angriff(TeamIndex) = Angriff(TeamIndex) + GetRandomNumber(1, 2)
+Mittelfeld(TeamIndex) = Mittelfeld(TeamIndex) + GetRandomNumber(0, 3)
+Abwehr(TeamIndex) = Abwehr(TeamIndex) + GetRandomNumber(0, 3)
+
+MsgBox "Der Ausflug in das Trainingslager brachte folgende Ergebnisse:" & _
+    vbCrLf & vbCrLf & "ALTE WERTE" & _
+    vbCrLf & "Sturm: " & altS & ", Mittelfeld: " & altM & ", Abwehr: " & altA & _
+    vbCrLf & vbCrLf & "NEUE WERTE" & _
+    vbCrLf & "Sturm: " & Angriff(TeamIndex) & ", Mittelfeld: " & Mittelfeld(TeamIndex) & ", Abwehr: " & Abwehr(TeamIndex), vbOKOnly, "ERGEBNISSE"
+    
+Aktualisieren
+Me.Hide
+End Sub
+
+Private Sub Command4_Click()
+Dim altS As Integer
+Dim altM As Integer
+Dim altA As Integer
+
+altS = Angriff(TeamIndex)
+altM = Mittelfeld(TeamIndex)
+altA = Abwehr(TeamIndex)
+
+Geld = Geld - 100000
+Angriff(TeamIndex) = Angriff(TeamIndex) + GetRandomNumber(1, 2)
+Mittelfeld(TeamIndex) = Mittelfeld(TeamIndex) + GetRandomNumber(1, 3)
+Abwehr(TeamIndex) = Abwehr(TeamIndex) + GetRandomNumber(1, 3)
+MsgBox "Der Ausflug in das Trainingslager brachte folgende Ergebnisse:" & _
+    vbCrLf & vbCrLf & "ALTE WERTE" & _
+    vbCrLf & "Sturm: " & altS & ", Mittelfeld: " & altM & ", Abwehr: " & altA & _
+    vbCrLf & vbCrLf & "NEUE WERTE" & _
+    vbCrLf & "Sturm: " & Angriff(TeamIndex) & ", Mittelfeld: " & Mittelfeld(TeamIndex) & ", Abwehr: " & Abwehr(TeamIndex), vbOKOnly, "ERGEBNISSE"
+    
+Aktualisieren
+Me.Hide
+End Sub
+
+Private Sub Command5_Click()
+Dim altS As Integer
+Dim altM As Integer
+Dim altA As Integer
+
+altS = Angriff(TeamIndex)
+altM = Mittelfeld(TeamIndex)
+altA = Abwehr(TeamIndex)
+
+Geld = Geld - 150000
+Angriff(TeamIndex) = Angriff(TeamIndex) + GetRandomNumber(2, 4)
+Mittelfeld(TeamIndex) = Mittelfeld(TeamIndex) + GetRandomNumber(2, 5)
+Abwehr(TeamIndex) = Abwehr(TeamIndex) + GetRandomNumber(2, 4)
+
+MsgBox "Der Ausflug in das Trainingslager brachte folgende Ergebnisse:" & _
+    vbCrLf & vbCrLf & "ALTE WERTE" & _
+    vbCrLf & "Sturm: " & altS & ", Mittelfeld: " & altM & ", Abwehr: " & altA & _
+    vbCrLf & vbCrLf & "NEUE WERTE" & _
+    vbCrLf & "Sturm: " & Angriff(TeamIndex) & ", Mittelfeld: " & Mittelfeld(TeamIndex) & ", Abwehr: " & Abwehr(TeamIndex), vbOKOnly, "ERGEBNISSE"
+    
+Aktualisieren
+Me.Hide
+End Sub
+
+Private Sub Command6_Click()
+Dim altS As Integer
+Dim altM As Integer
+Dim altA As Integer
+
+altS = Angriff(TeamIndex)
+altM = Mittelfeld(TeamIndex)
+altA = Abwehr(TeamIndex)
+
+Geld = Geld - 250000
+Angriff(TeamIndex) = Angriff(TeamIndex) + GetRandomNumber(2, 6)
+Mittelfeld(TeamIndex) = Mittelfeld(TeamIndex) + GetRandomNumber(2, 5)
+Abwehr(TeamIndex) = Abwehr(TeamIndex) + GetRandomNumber(2, 6)
+
+MsgBox "Der Ausflug in das Trainingslager brachte folgende Ergebnisse:" & _
+    vbCrLf & vbCrLf & "ALTE WERTE" & _
+    vbCrLf & "Sturm: " & altS & ", Mittelfeld: " & altM & ", Abwehr: " & altA & _
+    vbCrLf & vbCrLf & "NEUE WERTE" & _
+    vbCrLf & "Sturm: " & Angriff(TeamIndex) & ", Mittelfeld: " & Mittelfeld(TeamIndex) & ", Abwehr: " & Abwehr(TeamIndex), vbOKOnly, "ERGEBNISSE"
+    
+Aktualisieren
+Me.Hide
+End Sub
+
+Private Sub Command7_Click()
+Dim altS As Integer
+Dim altM As Integer
+Dim altA As Integer
+
+altS = Angriff(TeamIndex)
+altM = Mittelfeld(TeamIndex)
+altA = Abwehr(TeamIndex)
+
+Geld = Geld - 500000
+Angriff(TeamIndex) = Angriff(TeamIndex) + GetRandomNumber(4, 10)
+Mittelfeld(TeamIndex) = Mittelfeld(TeamIndex) + GetRandomNumber(5, 9)
+Abwehr(TeamIndex) = Abwehr(TeamIndex) + GetRandomNumber(5, 9)
+
+MsgBox "Der Ausflug in das Trainingslager brachte folgende Ergebnisse:" & _
+    vbCrLf & vbCrLf & "ALTE WERTE" & _
+    vbCrLf & "Sturm: " & altS & ", Mittelfeld: " & altM & ", Abwehr: " & altA & _
+    vbCrLf & vbCrLf & "NEUE WERTE" & _
+    vbCrLf & "Sturm: " & Angriff(TeamIndex) & ", Mittelfeld: " & Mittelfeld(TeamIndex) & ", Abwehr: " & Abwehr(TeamIndex), vbOKOnly, "ERGEBNISSE"
+    
+Aktualisieren
+Me.Hide
+End Sub
+
+Private Sub Form_Activate()
+Center Me
+
+If Geld >= 500000 Then Command7.Enabled = True
+If Geld >= 250000 Then Command6.Enabled = True
+If Geld >= 150000 Then Command5.Enabled = True
+If Geld >= 100000 Then Command4.Enabled = True
+If Geld >= 75000 Then Command3.Enabled = True
+If Geld >= 50000 Then Command2.Enabled = True
+
+
+
+End Sub
+
+Private Sub Form_Load()
+
+End Sub

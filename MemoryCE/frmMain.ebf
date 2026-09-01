@@ -1,0 +1,396 @@
+VERSION 5.00
+Object = "{BE67ABF5-0137-11D2-9B8A-00C04FAD5AEC}#1.0#0"; "mscecommandbar.dll"
+Object = "{E491F001-98EC-11D1-9B3D-00C04FAD5AEC}#1.0#0"; "msceimagelist.dll"
+Object = "{25C953A7-5464-11D1-A714-00AA0044064C}#1.0#0"; "MSCEFILE.DLL"
+Object = "{6556ED95-9838-11D1-80AE-00C04FAD5EFB}#1.0#0"; "mscelistview.dll"
+Begin VB.Form frmMain 
+   Caption         =   "MemoryCE 1.0"
+   ClientHeight    =   2790
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   7530
+   ScaleHeight     =   2790
+   ScaleWidth      =   7530
+   Begin FILECTLCtl.File File 
+      Left            =   4920
+      Top             =   0
+      _cx             =   1000
+      _cy             =   1000
+   End
+   Begin CEImageListCtl.ImageList ImageList1 
+      Left            =   5640
+      Top             =   0
+      _cx             =   990
+      _cy             =   990
+      ImageWidth      =   16
+      ImageHeight     =   16
+   End
+   Begin CommandbarLib.CommandBar CommandBar1 
+      Height          =   345
+      Left            =   0
+      TabIndex        =   0
+      Top             =   0
+      Width           =   9735
+      _cx             =   17171
+      _cy             =   600
+      Enabled         =   -1  'True
+      OKButton        =   0   'False
+      HelpButton      =   0   'False
+      CloseButton     =   0   'False
+   End
+   Begin MSCELISTVIEWLibCtl.ListViewCtrl ListView1 
+      Height          =   1935
+      Left            =   0
+      TabIndex        =   1
+      Top             =   840
+      Width           =   7455
+      _cx             =   13150
+      _cy             =   3413
+      FontBold        =   0   'False
+      FontItalic      =   0   'False
+      FontName        =   "Arial"
+      FontSize        =   8
+      FontStrikethrough=   0   'False
+      FontUnderline   =   0   'False
+      HideColumnHeaders=   0   'False
+      HideSelection   =   -1  'True
+      LabelEdit       =   0
+      LabelWrap       =   0   'False
+      MultiSelect     =   0   'False
+      Sorted          =   0   'False
+      SortKey         =   0
+      SortOrder       =   0
+      View            =   3
+      Enabled         =   -1  'True
+   End
+   Begin VBCE.CheckBox Check1 
+      Height          =   255
+      Left            =   2400
+      TabIndex        =   6
+      Top             =   480
+      Width           =   975
+      _cx             =   1720
+      _cy             =   450
+      Appearance      =   1
+      BackColor       =   -2147483633
+      Caption         =   "Show list"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      Value           =   0
+   End
+   Begin VBCE.ComboBox Combo1 
+      Height          =   360
+      Left            =   4440
+      TabIndex        =   5
+      Top             =   480
+      Width           =   3015
+      List            =   "frmMain.frx":0000
+      ItemData        =   "frmMain.frx":0028
+      _cx             =   5318
+      _cy             =   635
+      Appearance      =   1
+      BackColor       =   -2147483643
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   ""
+      IntegralHeight  =   -1  'True
+      Locked          =   0   'False
+      Sorted          =   0   'False
+      Style           =   0
+   End
+   Begin VBCE.Label Label3 
+      Height          =   255
+      Left            =   3600
+      TabIndex        =   4
+      Top             =   480
+      Width           =   855
+      _cx             =   1508
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Category:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label1 
+      Height          =   240
+      Left            =   120
+      TabIndex        =   3
+      Top             =   360
+      Width           =   2535
+      _cx             =   4471
+      _cy             =   423
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Label1"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label2 
+      Height          =   240
+      Left            =   120
+      TabIndex        =   2
+      Top             =   600
+      Width           =   3255
+      _cx             =   5741
+      _cy             =   423
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Label1"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+End
+Attribute VB_Name = "frmMain"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+
+Private Sub Command10_Click()
+If IndexX > 0 Then
+IndexX = IndexX - 1
+EinlesenEintraege2
+End If
+End Sub
+
+Private Sub Command7_Click()
+If IndexX < Zaehler - 1 Then
+IndexX = IndexX + 1
+EinlesenEintraege2
+End If
+End Sub
+
+
+Private Sub Check1_Click()
+Spoiler = Check1.Value
+KategorieIndex = Mid(Combo1.Text, 1, 2)
+Kategorie = Mid(Combo1.List(Combo1.ListIndex), 3, 24)
+EinlesenEintraege
+
+End Sub
+
+Private Sub Combo1_Click()
+KategorieIndex = Mid(Combo1.List(Combo1.ListIndex), 1, 2)
+Kategorie = Mid(Combo1.List(Combo1.ListIndex), 3, 24)
+'IndexX = 0
+EinlesenEintraege
+End Sub
+
+Private Sub CommandBar1_ButtonClick(ByVal Button As CommandbarLib.CommandBarButton)
+    InvokeAction CInt(Button.Tag), True
+End Sub
+Private Sub CommandBar1_MenuClick(ByVal Item As CommandbarLib.Item)
+    InvokeAction (Item.Index + (100 * Item.Parent.Index)), False
+   
+End Sub
+
+Private Sub Form_Load()
+Center Me
+
+Dim mnuMain As CommandbarLib.CommandBarMenuBar
+Dim mnuFile As CommandbarLib.Item
+Dim mnuLearn As CommandbarLib.Item
+Dim mnuOptions As CommandbarLib.Item
+Dim mnuInfo As CommandbarLib.Item
+
+CommandBar1.Width = Me.Width - 50
+
+Set mnuMain = CommandBar1.Controls.Add(cbrMenuBar, "MainMenu")
+    'add File menu items
+    ' add the file menu to the command bar
+    Set mnuFile = mnuMain.Items.Add(1, , "&File")
+    mnuFile.SubItems.Add 1, , "&New entry"
+    mnuFile.SubItems.Add 2, , "&Edit entry"
+    mnuFile.SubItems.Add 3, , "&Save"
+    mnuFile.SubItems.Add 4, , "&Category"
+    mnuFile.SubItems.Add 5, "", "", cbrMenuSeparator
+    mnuFile.SubItems.Add 6, , "E&xit"
+    
+    Set mnuLearn = mnuMain.Items.Add(2, , "&Learn")
+    mnuLearn.SubItems.Add 1, , "Start learning"
+    
+    Set mnuOptions = mnuMain.Items.Add(3, , "&Options")
+    mnuOptions.SubItems.Add 1, , "Options"
+    
+    Set mnuInfo = mnuMain.Items.Add(4, , "&Info")
+    mnuInfo.SubItems.Add 1, , "&Help"
+    mnuInfo.SubItems.Add 2, , "Info"
+    
+    
+' set up the imagelist for the toolbar buttons
+ImageList1.Add App.Path & "\Bar.bmp"
+' tell the commandbar where to pick the button images up
+    CommandBar1.ImageList = ImageList1.hImageList
+    
+    
+If Me.Width >= SIZE_SUPPORTSBUTTONS Then
+    
+        Dim Button As CommandbarLib.CommandBarButton
+        
+        Set Button = CommandBar1.Controls.Add(cbrButton, "sep0")
+        Button.Style = cbrSeparator
+        Set Button = CommandBar1.Controls.Add(cbrButton, "new")
+        Button.Image = 0
+        Button.Tag = ID_NEW
+        Set Button = CommandBar1.Controls.Add(cbrButton, "edit")
+        Button.Image = 1
+        Button.Tag = ID_EDIT
+        Set Button = CommandBar1.Controls.Add(cbrButton, "save")
+        Button.Image = 2
+        Button.Tag = ID_SAVE
+        Set Button = CommandBar1.Controls.Add(cbrButton, "category")
+        Button.Image = 3
+        Button.Tag = ID_CATEGORY
+        
+        Set Button = CommandBar1.Controls.Add(cbrButton, "sep1")
+        Button.Style = cbrSeparator
+            
+        Set Button = CommandBar1.Controls.Add(cbrButton, "learn")
+        Button.Image = 4
+        Button.Tag = ID_LEARN
+        
+        Set Button = CommandBar1.Controls.Add(cbrButton, "sep2")
+        Button.Style = cbrSeparator
+            
+        Set Button = CommandBar1.Controls.Add(cbrButton, "options")
+        Button.Image = 5
+        Button.Tag = ID_OPTIONS
+        
+        Set Button = CommandBar1.Controls.Add(cbrButton, "sep3")
+        Button.Style = cbrSeparator
+        
+      
+        
+        Set Button = CommandBar1.Controls.Add(cbrButton, "info")
+        Button.Image = 6
+        Button.Tag = ID_INFO
+ 
+    End If
+    
+     
+    AddToCombo Combo1
+    Combo1.Text = Combo1.List(0)
+    KategorieIndex = "01"
+    
+    DBladen
+    EinlesenEintraege
+    Interval = "DAY"
+    
+
+End Sub
+
+Private Sub InvokeAction(ID As Integer, FromButton As Boolean)
+   Select Case (ID)
+    Case ID_EXIT        ' terminate the app
+        App.End
+    Case ID_NEW        ' thin brush mode
+       frmAdd.Show
+    
+    Case ID_EDIT       ' thick brush mode
+        If ListView1.ListItems.Count > 0 Then
+            On Error Resume Next
+            IndexX = ListView1.SelectedItem.SubItems(8)
+            frmWork.Show
+        End If
+         
+    Case ID_CATEGORY
+        frmKatalog.Show
+    
+    Case ID_SAVE
+        DBspeichern
+    
+    Case ID_LEARN
+        frmLearn.Show
+    
+    Case ID_OPTIONS
+        frmOptions.Show
+       
+    Case ID_HELP     ' point tool
+       frmHelp.Show
+        
+    Case ID_INFO         ' pen tool
+        frmInfo.Show
+    Case Else
+        ' programming error -- undefined tool
+        MsgBox "Undefined Commandbar Command!"
+    End Select
+End Sub
+
+Private Sub Label1_Click()
+
+End Sub
+
+Private Sub Label2_Click()
+
+End Sub
+
+Private Sub ListView1_AfterLabelEdit(Cancel As Boolean, ByVal NewString As String)
+
+End Sub

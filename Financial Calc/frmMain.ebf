@@ -1,0 +1,94 @@
+VERSION 5.00
+Object = "{BE67ABF5-0137-11D2-9B8A-00C04FAD5AEC}#1.0#0"; "mscecommandbar.dll"
+Begin VB.Form frmMain 
+   BackColor       =   &H00FFC0C0&
+   Caption         =   "Fuﬂball Manager 1.0"
+   ClientHeight    =   3045
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   7845
+   ScaleHeight     =   3045
+   ScaleWidth      =   7845
+   Begin CommandbarLib.CommandBar cmdBar 
+      Height          =   345
+      Left            =   0
+      TabIndex        =   0
+      Top             =   0
+      Width           =   7815
+      _cx             =   13785
+      _cy             =   600
+      Enabled         =   -1  'True
+      OKButton        =   0   'False
+      HelpButton      =   0   'False
+      CloseButton     =   0   'False
+   End
+End
+Attribute VB_Name = "frmMain"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+'Option Explicit
+
+
+Private Sub cmdBar_MenuClick(ByVal Item As CommandbarLib.Item)
+ Select Case Item.Key
+  'Case "New"
+    'NewGame
+    Case "NewGame"
+        frmNewGame.Show
+    Case "Exit"
+        App.End
+    
+  
+        
+        
+    
+  End Select
+End Sub
+
+
+
+
+
+
+Private Sub Form_Load()
+    Center Me
+
+   
+    Dim mnuMain As CommandbarLib.CommandBarMenuBar
+    Dim mnuFile As CommandbarLib.Item
+    'Dim mnuCalc As CommandbarLib.Item
+    'Dim mnuCalc2 As CommandbarLib.Item
+    
+    Set mnuMain = cmdBar.Controls.Add(cbrMenuBar, "MainMenu")
+    'add File menu items
+    Set mnuFile = mnuMain.Items.Add(1, "File", "&File")
+    
+    mnuFile.SubItems.Add , "NewGame", "&New Game"
+    mnuFile.SubItems.Add , "Load", "&Load"
+    mnuFile.SubItems.Add , "Save", "&Save"
+    mnuFile.SubItems.Add , "", "", cbrMenuSeparator
+    mnuFile.SubItems.Add , "Exit", "E&xit"
+    
+    'Set mnuCalc = mnuMain.Items.Add(2, , "&Private")
+    'mnuCalc.SubItems.Add , "PercCalc", "&Percentage"
+    'mnuCalc.SubItems.Add , "LoanCalc", "&Loan Calc"
+    'mnuCalc.SubItems.Add , "", "", cbrMenuSeparator
+    'mnuCalc.SubItems.Add , "SavingsCalc", "S&avings Calc"
+    
+    'Set mnuCalc2 = mnuMain.Items.Add(2, , "&Business")
+    'mnuCalc2.SubItems.Add , "SaleCalc", "&Sale Calc"
+    'mnuCalc2.SubItems.Add , "NPVCalc", "&NPV Calc"
+    'mnuCalc2.SubItems.Add , "HPRCalc", "&HPR Calc"
+    
+    
+    
+    
+   
+End Sub
+
+
+
+
+

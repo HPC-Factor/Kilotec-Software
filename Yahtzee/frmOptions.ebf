@@ -1,0 +1,220 @@
+VERSION 5.00
+Begin VB.Form frmOptions 
+   Caption         =   "Options"
+   ClientHeight    =   1080
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   4815
+   ScaleHeight     =   1080
+   ScaleWidth      =   4815
+   Begin VBCE.ComboBox Combo2 
+      Height          =   360
+      Left            =   1320
+      TabIndex        =   5
+      Top             =   600
+      Width           =   1575
+      List            =   "frmOptions.frx":0000
+      ItemData        =   "frmOptions.frx":0028
+      _cx             =   2778
+      _cy             =   635
+      Appearance      =   1
+      BackColor       =   -2147483643
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   "3 (default)"
+      IntegralHeight  =   -1  'True
+      Locked          =   0   'False
+      Sorted          =   0   'False
+      Style           =   0
+   End
+   Begin VBCE.Label Label2 
+      Height          =   255
+      Left            =   120
+      TabIndex        =   4
+      Top             =   600
+      Width           =   1215
+      _cx             =   2143
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Max. dice rolls:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.CommandButton Command3 
+      Height          =   375
+      Left            =   3120
+      TabIndex        =   3
+      Top             =   120
+      Width           =   1575
+      _cx             =   2778
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   16761024
+      Caption         =   "Reset Highscore"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command1 
+      Height          =   375
+      Left            =   3960
+      TabIndex        =   2
+      Top             =   600
+      Width           =   735
+      _cx             =   1296
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "OK"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.ComboBox Combo1 
+      Height          =   360
+      Left            =   1320
+      TabIndex        =   1
+      Top             =   120
+      Width           =   1575
+      List            =   "frmOptions.frx":0050
+      ItemData        =   "frmOptions.frx":0078
+      _cx             =   2778
+      _cy             =   635
+      Appearance      =   1
+      BackColor       =   -2147483643
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   "Red (default)"
+      IntegralHeight  =   -1  'True
+      Locked          =   0   'False
+      Sorted          =   0   'False
+      Style           =   0
+   End
+   Begin VBCE.Label Label1 
+      Height          =   255
+      Left            =   120
+      TabIndex        =   0
+      Top             =   120
+      Width           =   855
+      _cx             =   1508
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Dice color:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+End
+Attribute VB_Name = "frmOptions"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub Combo1_Change()
+
+End Sub
+
+Private Sub Combo1_Click()
+Color = Combo1.ListIndex
+End Sub
+
+Private Sub Combo2_Change()
+
+End Sub
+
+Private Sub Combo2_Click()
+DiceRolls = Combo2.ListIndex
+End Sub
+
+
+
+Private Sub Command1_Click()
+Me.Hide
+End Sub
+
+Private Sub Command3_Click()
+AbInDieDatenbank
+End Sub
+
+Private Sub Form_Load()
+Center Me
+
+
+Combo1.AddItem "Red (default)"
+Combo1.AddItem "Blue"
+
+
+Combo2.AddItem 1
+Combo2.AddItem 2
+Combo2.AddItem "3 (default)"
+Combo2.AddItem 4
+Combo2.AddItem 5
+
+End Sub

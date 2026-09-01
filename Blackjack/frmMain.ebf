@@ -1,0 +1,1285 @@
+VERSION 5.00
+Object = "{338D5EA5-4BBD-11D1-9A7D-00C04FAD5AEC}#1.0#0"; "mscepicture.dll"
+Begin VB.Form frmMain 
+   BackColor       =   &H00008000&
+   BorderStyle     =   1  'Fixed Single
+   Caption         =   "BlackJack 1.0"
+   ClientHeight    =   3255
+   ClientLeft      =   45
+   ClientTop       =   330
+   ClientWidth     =   9480
+   ScaleHeight     =   3255
+   ScaleWidth      =   9480
+   Begin VBCE.Frame Frame1 
+      Height          =   1335
+      Left            =   8040
+      TabIndex        =   19
+      Top             =   120
+      Width           =   1335
+      _cx             =   2355
+      _cy             =   2355
+      Appearance      =   1
+      BackColor       =   32768
+      BorderStyle     =   1
+      Caption         =   "Money"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   16777215
+      ClipControls    =   -1  'True
+      Begin VBCE.Label lblBet 
+         Height          =   255
+         Left            =   360
+         TabIndex        =   27
+         Top             =   960
+         Width           =   615
+         _cx             =   1085
+         _cy             =   450
+         Appearance      =   0
+         AutoSize        =   0   'False
+         BackColor       =   16777215
+         BackStyle       =   1
+         BorderStyle     =   1
+         Caption         =   "10"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   2
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.CommandButton cmdMinus 
+         Height          =   255
+         Left            =   120
+         TabIndex        =   29
+         Top             =   960
+         Width           =   255
+         _cx             =   450
+         _cy             =   450
+         Appearance      =   1
+         BackColor       =   12632256
+         Caption         =   "-"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   0
+      End
+      Begin VBCE.Label Label1 
+         Height          =   255
+         Left            =   120
+         TabIndex        =   30
+         Top             =   720
+         Width           =   495
+         _cx             =   873
+         _cy             =   450
+         Appearance      =   1
+         AutoSize        =   0   'False
+         BackColor       =   32768
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Bet:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   16777215
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.CommandButton cmdPlus 
+         Height          =   255
+         Left            =   960
+         TabIndex        =   28
+         Top             =   960
+         Width           =   255
+         _cx             =   450
+         _cy             =   450
+         Appearance      =   1
+         BackColor       =   12632256
+         Caption         =   "+"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   0
+      End
+      Begin VBCE.Label lblMoney 
+         Height          =   375
+         Left            =   120
+         TabIndex        =   20
+         Top             =   240
+         Width           =   1095
+         _cx             =   1931
+         _cy             =   661
+         Appearance      =   0
+         AutoSize        =   0   'False
+         BackColor       =   32896
+         BackStyle       =   1
+         BorderStyle     =   1
+         Caption         =   "1000"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   12
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   65535
+         Alignment       =   2
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+   End
+   Begin PictureBoxCtl.PictureBox Player7 
+      Height          =   1455
+      Left            =   3360
+      TabIndex        =   7
+      Top             =   1680
+      Visible         =   0   'False
+      Width           =   1095
+      _cx             =   1931
+      _cy             =   2566
+      AutoSize        =   0   'False
+      BackColor       =   32768
+      BorderStyle     =   0
+      DrawMode        =   13
+      DrawStyle       =   0
+      DrawWidth       =   4
+      FillColor       =   0
+      FillStyle       =   1
+      ForeColor       =   0
+      FontBold        =   -1  'True
+      FontItalic      =   0   'False
+      FontStrikethru  =   0   'False
+      FontUnderline   =   0   'False
+      FontName        =   ""
+      FontSize        =   10
+      FontTransparent =   -1  'True
+      Object.Height          =   97
+      Object.Width           =   73
+      Object.Left            =   224
+      Object.Top             =   112
+      Picture         =   ""
+      ScaleHeight     =   1455
+      ScaleWidth      =   1095
+      ScaleLeft       =   0
+      ScaleTop        =   0
+      ScaleMode       =   1
+      Enabled         =   -1  'True
+   End
+   Begin PictureBoxCtl.PictureBox Player6 
+      Height          =   1455
+      Left            =   2760
+      TabIndex        =   6
+      Top             =   1680
+      Visible         =   0   'False
+      Width           =   1095
+      _cx             =   1931
+      _cy             =   2566
+      AutoSize        =   0   'False
+      BackColor       =   32768
+      BorderStyle     =   0
+      DrawMode        =   13
+      DrawStyle       =   0
+      DrawWidth       =   4
+      FillColor       =   0
+      FillStyle       =   1
+      ForeColor       =   0
+      FontBold        =   -1  'True
+      FontItalic      =   0   'False
+      FontStrikethru  =   0   'False
+      FontUnderline   =   0   'False
+      FontName        =   ""
+      FontSize        =   10
+      FontTransparent =   -1  'True
+      Object.Height          =   97
+      Object.Width           =   73
+      Object.Left            =   184
+      Object.Top             =   112
+      Picture         =   ""
+      ScaleHeight     =   1455
+      ScaleWidth      =   1095
+      ScaleLeft       =   0
+      ScaleTop        =   0
+      ScaleMode       =   1
+      Enabled         =   -1  'True
+   End
+   Begin PictureBoxCtl.PictureBox Player5 
+      Height          =   1455
+      Left            =   2280
+      TabIndex        =   5
+      Top             =   1680
+      Visible         =   0   'False
+      Width           =   1095
+      _cx             =   1931
+      _cy             =   2566
+      AutoSize        =   0   'False
+      BackColor       =   32768
+      BorderStyle     =   0
+      DrawMode        =   13
+      DrawStyle       =   0
+      DrawWidth       =   4
+      FillColor       =   0
+      FillStyle       =   1
+      ForeColor       =   0
+      FontBold        =   -1  'True
+      FontItalic      =   0   'False
+      FontStrikethru  =   0   'False
+      FontUnderline   =   0   'False
+      FontName        =   ""
+      FontSize        =   10
+      FontTransparent =   -1  'True
+      Object.Height          =   97
+      Object.Width           =   73
+      Object.Left            =   152
+      Object.Top             =   112
+      Picture         =   ""
+      ScaleHeight     =   1455
+      ScaleWidth      =   1095
+      ScaleLeft       =   0
+      ScaleTop        =   0
+      ScaleMode       =   1
+      Enabled         =   -1  'True
+   End
+   Begin PictureBoxCtl.PictureBox Player4 
+      Height          =   1455
+      Left            =   1800
+      TabIndex        =   4
+      Top             =   1680
+      Visible         =   0   'False
+      Width           =   1095
+      _cx             =   1931
+      _cy             =   2566
+      AutoSize        =   0   'False
+      BackColor       =   32768
+      BorderStyle     =   0
+      DrawMode        =   13
+      DrawStyle       =   0
+      DrawWidth       =   4
+      FillColor       =   0
+      FillStyle       =   1
+      ForeColor       =   0
+      FontBold        =   -1  'True
+      FontItalic      =   0   'False
+      FontStrikethru  =   0   'False
+      FontUnderline   =   0   'False
+      FontName        =   ""
+      FontSize        =   10
+      FontTransparent =   -1  'True
+      Object.Height          =   97
+      Object.Width           =   73
+      Object.Left            =   120
+      Object.Top             =   112
+      Picture         =   ""
+      ScaleHeight     =   1455
+      ScaleWidth      =   1095
+      ScaleLeft       =   0
+      ScaleTop        =   0
+      ScaleMode       =   1
+      Enabled         =   -1  'True
+   End
+   Begin PictureBoxCtl.PictureBox Player3 
+      Height          =   1455
+      Left            =   1320
+      TabIndex        =   3
+      Top             =   1680
+      Visible         =   0   'False
+      Width           =   1095
+      _cx             =   1931
+      _cy             =   2566
+      AutoSize        =   0   'False
+      BackColor       =   32768
+      BorderStyle     =   0
+      DrawMode        =   13
+      DrawStyle       =   0
+      DrawWidth       =   4
+      FillColor       =   0
+      FillStyle       =   1
+      ForeColor       =   0
+      FontBold        =   -1  'True
+      FontItalic      =   0   'False
+      FontStrikethru  =   0   'False
+      FontUnderline   =   0   'False
+      FontName        =   ""
+      FontSize        =   10
+      FontTransparent =   -1  'True
+      Object.Height          =   97
+      Object.Width           =   73
+      Object.Left            =   88
+      Object.Top             =   112
+      Picture         =   ""
+      ScaleHeight     =   1455
+      ScaleWidth      =   1095
+      ScaleLeft       =   0
+      ScaleTop        =   0
+      ScaleMode       =   1
+      Enabled         =   -1  'True
+   End
+   Begin PictureBoxCtl.PictureBox Player2 
+      Height          =   1455
+      Left            =   720
+      TabIndex        =   2
+      Top             =   1680
+      Visible         =   0   'False
+      Width           =   1095
+      _cx             =   1931
+      _cy             =   2566
+      AutoSize        =   0   'False
+      BackColor       =   32768
+      BorderStyle     =   0
+      DrawMode        =   13
+      DrawStyle       =   0
+      DrawWidth       =   4
+      FillColor       =   0
+      FillStyle       =   1
+      ForeColor       =   0
+      FontBold        =   -1  'True
+      FontItalic      =   0   'False
+      FontStrikethru  =   0   'False
+      FontUnderline   =   0   'False
+      FontName        =   ""
+      FontSize        =   10
+      FontTransparent =   -1  'True
+      Object.Height          =   97
+      Object.Width           =   73
+      Object.Left            =   48
+      Object.Top             =   112
+      Picture         =   ""
+      ScaleHeight     =   1455
+      ScaleWidth      =   1095
+      ScaleLeft       =   0
+      ScaleTop        =   0
+      ScaleMode       =   1
+      Enabled         =   -1  'True
+   End
+   Begin PictureBoxCtl.PictureBox Player1 
+      Height          =   1455
+      Left            =   120
+      TabIndex        =   1
+      Top             =   1680
+      Width           =   1095
+      _cx             =   1931
+      _cy             =   2566
+      AutoSize        =   0   'False
+      BackColor       =   32768
+      BorderStyle     =   0
+      DrawMode        =   13
+      DrawStyle       =   0
+      DrawWidth       =   4
+      FillColor       =   0
+      FillStyle       =   1
+      ForeColor       =   0
+      FontBold        =   -1  'True
+      FontItalic      =   0   'False
+      FontStrikethru  =   0   'False
+      FontUnderline   =   0   'False
+      FontName        =   ""
+      FontSize        =   10
+      FontTransparent =   -1  'True
+      Object.Height          =   97
+      Object.Width           =   73
+      Object.Left            =   8
+      Object.Top             =   112
+      Picture         =   ""
+      ScaleHeight     =   1455
+      ScaleWidth      =   1095
+      ScaleLeft       =   0
+      ScaleTop        =   0
+      ScaleMode       =   1
+      Enabled         =   -1  'True
+   End
+   Begin PictureBoxCtl.PictureBox Dealer7 
+      Height          =   1455
+      Left            =   3360
+      TabIndex        =   12
+      Top             =   120
+      Visible         =   0   'False
+      Width           =   1095
+      _cx             =   1931
+      _cy             =   2566
+      AutoSize        =   0   'False
+      BackColor       =   32768
+      BorderStyle     =   0
+      DrawMode        =   13
+      DrawStyle       =   0
+      DrawWidth       =   4
+      FillColor       =   0
+      FillStyle       =   1
+      ForeColor       =   0
+      FontBold        =   -1  'True
+      FontItalic      =   0   'False
+      FontStrikethru  =   0   'False
+      FontUnderline   =   0   'False
+      FontName        =   ""
+      FontSize        =   10
+      FontTransparent =   -1  'True
+      Object.Height          =   97
+      Object.Width           =   73
+      Object.Left            =   224
+      Object.Top             =   8
+      Picture         =   ""
+      ScaleHeight     =   1455
+      ScaleWidth      =   1095
+      ScaleLeft       =   0
+      ScaleTop        =   0
+      ScaleMode       =   1
+      Enabled         =   -1  'True
+   End
+   Begin PictureBoxCtl.PictureBox Dealer5 
+      Height          =   1455
+      Left            =   2520
+      TabIndex        =   13
+      Top             =   120
+      Visible         =   0   'False
+      Width           =   1095
+      _cx             =   1931
+      _cy             =   2566
+      AutoSize        =   0   'False
+      BackColor       =   32768
+      BorderStyle     =   0
+      DrawMode        =   13
+      DrawStyle       =   0
+      DrawWidth       =   4
+      FillColor       =   0
+      FillStyle       =   1
+      ForeColor       =   0
+      FontBold        =   -1  'True
+      FontItalic      =   0   'False
+      FontStrikethru  =   0   'False
+      FontUnderline   =   0   'False
+      FontName        =   ""
+      FontSize        =   10
+      FontTransparent =   -1  'True
+      Object.Height          =   97
+      Object.Width           =   73
+      Object.Left            =   168
+      Object.Top             =   8
+      Picture         =   ""
+      ScaleHeight     =   1455
+      ScaleWidth      =   1095
+      ScaleLeft       =   0
+      ScaleTop        =   0
+      ScaleMode       =   1
+      Enabled         =   -1  'True
+   End
+   Begin PictureBoxCtl.PictureBox Dealer4 
+      Height          =   1455
+      Left            =   1800
+      TabIndex        =   14
+      Top             =   120
+      Visible         =   0   'False
+      Width           =   1095
+      _cx             =   1931
+      _cy             =   2566
+      AutoSize        =   0   'False
+      BackColor       =   32768
+      BorderStyle     =   0
+      DrawMode        =   13
+      DrawStyle       =   0
+      DrawWidth       =   4
+      FillColor       =   0
+      FillStyle       =   1
+      ForeColor       =   0
+      FontBold        =   -1  'True
+      FontItalic      =   0   'False
+      FontStrikethru  =   0   'False
+      FontUnderline   =   0   'False
+      FontName        =   ""
+      FontSize        =   10
+      FontTransparent =   -1  'True
+      Object.Height          =   97
+      Object.Width           =   73
+      Object.Left            =   120
+      Object.Top             =   8
+      Picture         =   ""
+      ScaleHeight     =   1455
+      ScaleWidth      =   1095
+      ScaleLeft       =   0
+      ScaleTop        =   0
+      ScaleMode       =   1
+      Enabled         =   -1  'True
+   End
+   Begin PictureBoxCtl.PictureBox Dealer3 
+      Height          =   1455
+      Left            =   1320
+      TabIndex        =   15
+      Top             =   120
+      Visible         =   0   'False
+      Width           =   1095
+      _cx             =   1931
+      _cy             =   2566
+      AutoSize        =   0   'False
+      BackColor       =   32768
+      BorderStyle     =   0
+      DrawMode        =   13
+      DrawStyle       =   0
+      DrawWidth       =   4
+      FillColor       =   0
+      FillStyle       =   1
+      ForeColor       =   0
+      FontBold        =   -1  'True
+      FontItalic      =   0   'False
+      FontStrikethru  =   0   'False
+      FontUnderline   =   0   'False
+      FontName        =   ""
+      FontSize        =   10
+      FontTransparent =   -1  'True
+      Object.Height          =   97
+      Object.Width           =   73
+      Object.Left            =   88
+      Object.Top             =   8
+      Picture         =   ""
+      ScaleHeight     =   1455
+      ScaleWidth      =   1095
+      ScaleLeft       =   0
+      ScaleTop        =   0
+      ScaleMode       =   1
+      Enabled         =   -1  'True
+   End
+   Begin PictureBoxCtl.PictureBox Dealer2 
+      Height          =   1455
+      Left            =   720
+      TabIndex        =   16
+      Top             =   120
+      Visible         =   0   'False
+      Width           =   1095
+      _cx             =   1931
+      _cy             =   2566
+      AutoSize        =   0   'False
+      BackColor       =   32768
+      BorderStyle     =   0
+      DrawMode        =   13
+      DrawStyle       =   0
+      DrawWidth       =   4
+      FillColor       =   0
+      FillStyle       =   1
+      ForeColor       =   0
+      FontBold        =   -1  'True
+      FontItalic      =   0   'False
+      FontStrikethru  =   0   'False
+      FontUnderline   =   0   'False
+      FontName        =   ""
+      FontSize        =   10
+      FontTransparent =   -1  'True
+      Object.Height          =   97
+      Object.Width           =   73
+      Object.Left            =   48
+      Object.Top             =   8
+      Picture         =   ""
+      ScaleHeight     =   1455
+      ScaleWidth      =   1095
+      ScaleLeft       =   0
+      ScaleTop        =   0
+      ScaleMode       =   1
+      Enabled         =   -1  'True
+   End
+   Begin PictureBoxCtl.PictureBox Dealer1 
+      Height          =   1455
+      Left            =   120
+      TabIndex        =   17
+      Top             =   120
+      Width           =   1095
+      _cx             =   1931
+      _cy             =   2566
+      AutoSize        =   0   'False
+      BackColor       =   32768
+      BorderStyle     =   0
+      DrawMode        =   13
+      DrawStyle       =   0
+      DrawWidth       =   4
+      FillColor       =   0
+      FillStyle       =   1
+      ForeColor       =   0
+      FontBold        =   -1  'True
+      FontItalic      =   0   'False
+      FontStrikethru  =   0   'False
+      FontUnderline   =   0   'False
+      FontName        =   ""
+      FontSize        =   10
+      FontTransparent =   -1  'True
+      Object.Height          =   97
+      Object.Width           =   73
+      Object.Left            =   8
+      Object.Top             =   8
+      Picture         =   ""
+      ScaleHeight     =   1455
+      ScaleWidth      =   1095
+      ScaleLeft       =   0
+      ScaleTop        =   0
+      ScaleMode       =   1
+      Enabled         =   -1  'True
+   End
+   Begin PictureBoxCtl.PictureBox Dealer6 
+      Height          =   1455
+      Left            =   2880
+      TabIndex        =   18
+      Top             =   0
+      Visible         =   0   'False
+      Width           =   1095
+      _cx             =   1931
+      _cy             =   2566
+      AutoSize        =   0   'False
+      BackColor       =   32768
+      BorderStyle     =   0
+      DrawMode        =   13
+      DrawStyle       =   0
+      DrawWidth       =   4
+      FillColor       =   0
+      FillStyle       =   1
+      ForeColor       =   0
+      FontBold        =   -1  'True
+      FontItalic      =   0   'False
+      FontStrikethru  =   0   'False
+      FontUnderline   =   0   'False
+      FontName        =   ""
+      FontSize        =   10
+      FontTransparent =   -1  'True
+      Object.Height          =   97
+      Object.Width           =   73
+      Object.Left            =   192
+      Object.Top             =   0
+      Picture         =   ""
+      ScaleHeight     =   1455
+      ScaleWidth      =   1095
+      ScaleLeft       =   0
+      ScaleTop        =   0
+      ScaleMode       =   1
+      Enabled         =   -1  'True
+   End
+   Begin VBCE.Frame Frame2 
+      Height          =   1695
+      Left            =   8040
+      TabIndex        =   21
+      Top             =   1440
+      Width           =   1335
+      _cx             =   2355
+      _cy             =   2990
+      Appearance      =   1
+      BackColor       =   32768
+      BorderStyle     =   1
+      Caption         =   ""
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   16777215
+      ClipControls    =   -1  'True
+      Begin VBCE.CommandButton Command4 
+         Height          =   375
+         Left            =   120
+         TabIndex        =   33
+         Top             =   1200
+         Width           =   1095
+         _cx             =   1931
+         _cy             =   661
+         Appearance      =   1
+         BackColor       =   12632256
+         Caption         =   "Exit game"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   0
+      End
+      Begin VBCE.CommandButton Command5 
+         Height          =   375
+         Left            =   120
+         TabIndex        =   32
+         Top             =   240
+         Width           =   1095
+         _cx             =   1931
+         _cy             =   661
+         Appearance      =   1
+         BackColor       =   12632256
+         Caption         =   "New Game"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   0
+      End
+      Begin VBCE.CommandButton Command1 
+         Height          =   375
+         Left            =   120
+         TabIndex        =   31
+         Top             =   720
+         Width           =   1095
+         _cx             =   1931
+         _cy             =   661
+         Appearance      =   1
+         BackColor       =   12632256
+         Caption         =   "Statistics"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   0
+      End
+   End
+   Begin VBCE.Frame Frame4 
+      Height          =   3015
+      Left            =   6480
+      TabIndex        =   22
+      Top             =   120
+      Width           =   1455
+      _cx             =   2566
+      _cy             =   5318
+      Appearance      =   1
+      BackColor       =   32768
+      BorderStyle     =   1
+      Caption         =   "Game"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   16777215
+      ClipControls    =   -1  'True
+      Begin VBCE.CheckBox Check2 
+         Height          =   255
+         Left            =   120
+         TabIndex        =   34
+         Top             =   2040
+         Width           =   1215
+         _cx             =   2143
+         _cy             =   450
+         Appearance      =   1
+         BackColor       =   32768
+         Caption         =   "Sound"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   16777215
+         Alignment       =   0
+         Value           =   1
+      End
+      Begin VBCE.CommandButton cmdDeal 
+         Height          =   375
+         Left            =   120
+         TabIndex        =   26
+         Top             =   240
+         Width           =   1215
+         _cx             =   2143
+         _cy             =   661
+         Appearance      =   1
+         BackColor       =   12632256
+         Caption         =   "Deal"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   0
+      End
+      Begin VBCE.CommandButton cmdHit 
+         Height          =   375
+         Left            =   120
+         TabIndex        =   25
+         Top             =   720
+         Width           =   1215
+         _cx             =   2143
+         _cy             =   661
+         Appearance      =   1
+         BackColor       =   12632256
+         Caption         =   "Hit"
+         Enabled         =   0   'False
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   0
+      End
+      Begin VBCE.CommandButton cmdStay 
+         Height          =   375
+         Left            =   120
+         TabIndex        =   24
+         Top             =   1200
+         Width           =   1215
+         _cx             =   2143
+         _cy             =   661
+         Appearance      =   1
+         BackColor       =   12632256
+         Caption         =   "Stay"
+         Enabled         =   0   'False
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   0
+      End
+      Begin VBCE.CheckBox Check1 
+         Height          =   255
+         Left            =   120
+         TabIndex        =   23
+         Top             =   1680
+         Width           =   1215
+         _cx             =   2143
+         _cy             =   450
+         Appearance      =   1
+         BackColor       =   32768
+         Caption         =   "Show count"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   16777215
+         Alignment       =   0
+         Value           =   1
+      End
+   End
+   Begin VBCE.Label Label5 
+      Height          =   375
+      Left            =   4680
+      TabIndex        =   11
+      Top             =   1320
+      Visible         =   0   'False
+      Width           =   1335
+      _cx             =   2355
+      _cy             =   661
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   32768
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   ""
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label4 
+      Height          =   255
+      Left            =   4800
+      TabIndex        =   10
+      Top             =   240
+      Width           =   1335
+      _cx             =   2355
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   32768
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Dealer"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   16777215
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Playername 
+      Height          =   255
+      Left            =   4800
+      TabIndex        =   9
+      Top             =   2040
+      Width           =   1335
+      _cx             =   2355
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   32768
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Player"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   16777215
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label3 
+      Height          =   495
+      Left            =   5040
+      TabIndex        =   8
+      Top             =   480
+      Width           =   855
+      _cx             =   1508
+      _cy             =   873
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   12648447
+      BackStyle       =   1
+      BorderStyle     =   1
+      Caption         =   "0"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   18
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label2 
+      Height          =   495
+      Left            =   5040
+      TabIndex        =   0
+      Top             =   2280
+      Width           =   855
+      _cx             =   1508
+      _cy             =   873
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   12648447
+      BackStyle       =   1
+      BorderStyle     =   1
+      Caption         =   "0"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   18
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+End
+Attribute VB_Name = "frmMain"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+
+
+
+
+Private Sub Check1_Click()
+If Check1.Value = 1 Then
+    Label3.Visible = True
+    Label2.Visible = True
+    Playername.Visible = True
+    Label4.Visible = True
+Else
+    Label3.Visible = False
+    Label2.Visible = False
+    Playername.Visible = False
+    Label4.Visible = False
+End If
+End Sub
+
+Private Sub Check2_Click()
+If Check2.Value = 1 Then Sound = True
+If Check2.Value = 0 Then Sound = False
+End Sub
+
+Private Sub cmdDeal_Click()
+NewGame
+
+cmdMinus.Enabled = False
+cmdPlus.Enabled = False
+cmdDeal.Enabled = False
+cmdHit.Enabled = True
+cmdStay.Enabled = True
+
+playMode = 0
+dealMode = DEALER_FIRST
+DealCard
+End Sub
+
+Private Sub cmdHit_Click()
+
+
+dealMode = PLAYER_NEXT
+DealCard
+Dim playercount As Integer
+
+playercount = countHand(player, nextPlayerCard)
+frmMain.Label2.Caption = playercount
+processTestCards
+End Sub
+
+Private Sub cmdMinus_Click()
+PlayWaveFile (App.Path & "\click.wav")
+
+If bet > BET_MIN Then bet = bet - BET_INC
+lblBet.Caption = bet
+End Sub
+
+Private Sub cmdPlus_Click()
+PlayWaveFile (App.Path & "\click.wav")
+
+If bet < BET_MAX Then bet = bet + BET_INC
+lblBet.Caption = bet
+End Sub
+
+Private Sub cmdStay_Click()
+
+
+playMode = MODE_NOINPUT
+hideDealerCard = False
+dealerHit
+
+End Sub
+
+
+
+
+
+
+
+Private Sub Command1_Click()
+PlayWaveFile (App.Path & "\click.wav")
+
+frmStat.Show
+End Sub
+
+Private Sub Command4_Click()
+App.End
+End Sub
+
+Private Sub Command5_Click()
+PlayWaveFile (App.Path & "\click.wav")
+    
+    frmMain.cmdDeal.Enabled = True
+    frmMain.cmdMinus.Enabled = True
+    frmMain.cmdPlus.Enabled = True
+    frmMain.cmdHit.Enabled = False
+    frmMain.cmdStay.Enabled = False
+
+BANK_INIT = 500
+BANK_MAX = 10000
+BET_MIN = 10
+BET_MAX = 100
+BET_INC = 10
+
+bank = BANK_INIT
+bet = BET_MIN
+
+lblMoney.Caption = "$ " & Int(bank)
+lblBet.Caption = bet
+
+For i = 0 To TOTAL_DECK_CARDS
+    deck(i) = i
+Next i
+
+nextDealerCard = 0
+nextPlayerCard = 0
+
+hideDealerCard = True
+
+ShuffleDeck
+
+DisplayHands
+
+
+NewGame
+End Sub
+
+
+
+
+
+
+Private Sub Form_Load()
+Sound = True
+
+
+BANK_INIT = 500
+BANK_MAX = 10000
+BET_MIN = 10
+BET_MAX = 100
+BET_INC = 10
+
+bank = BANK_INIT
+bet = BET_MIN
+
+lblMoney.Caption = "$ " & Int(bank)
+lblBet.Caption = bet
+
+For i = 0 To TOTAL_DECK_CARDS
+    deck(i) = i
+Next i
+
+nextDealerCard = 0
+nextPlayerCard = 0
+
+hideDealerCard = True
+
+ShuffleDeck
+
+DisplayHands
+
+    Dealer1.Top = -100
+    Dealer1.Top = 120
+    'Dealer1.Picture = App.Path & "\Back.bmp"
+    
+    Dealer2.Top = -100
+    Dealer2.Top = 120
+    Dealer3.Top = -100
+    Dealer3.Top = 120
+    Dealer4.Top = -100
+    Dealer4.Top = 120
+    Dealer5.Top = -100
+    Dealer5.Top = 120
+    Dealer6.Top = -100
+    Dealer6.Top = 120
+    Dealer7.Top = -100
+    Dealer7.Top = 120
+
+    Player1.Top = -100
+    Player1.Top = 1680
+    'Player1.Picture = App.Path & "\Back.bmp"
+    
+    Player2.Top = -100
+    Player2.Top = 1680
+    Player3.Top = -100
+    Player3.Top = 1680
+    Player4.Top = -100
+    Player4.Top = 1680
+    Player5.Top = -100
+    Player5.Top = 1680
+    Player6.Top = -100
+    Player6.Top = 1680
+    Player7.Top = -100
+    Player7.Top = 1680
+
+End Sub
+
+Private Sub Label1_Click()
+
+End Sub
+
+Private Sub Spieler3_Click()
+End Sub
+
+Private Sub Spieler4_Click()
+End Sub
+
+

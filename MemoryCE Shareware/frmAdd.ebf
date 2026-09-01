@@ -1,0 +1,280 @@
+VERSION 5.00
+Begin VB.Form frmAdd 
+   Caption         =   "New MemSet"
+   ClientHeight    =   2400
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   7110
+   ScaleHeight     =   2400
+   ScaleWidth      =   7110
+   Begin VBCE.TextBox Answer 
+      Height          =   975
+      Left            =   3600
+      TabIndex        =   2
+      Top             =   840
+      Width           =   3375
+      _cx             =   5953
+      _cy             =   1720
+      Appearance      =   1
+      BackColor       =   -2147483643
+      BorderStyle     =   1
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   ""
+      Alignment       =   0
+      HideSelection   =   -1  'True
+      Locked          =   0   'False
+      MaxLength       =   0
+      MultiLine       =   -1  'True
+      PasswordChar    =   ""
+      ScrollBars      =   0
+   End
+   Begin VBCE.ComboBox Combo1 
+      Height          =   360
+      Left            =   960
+      TabIndex        =   0
+      Top             =   120
+      Width           =   3015
+      List            =   "frmAdd.frx":0000
+      ItemData        =   "frmAdd.frx":0028
+      _cx             =   5318
+      _cy             =   635
+      Appearance      =   1
+      BackColor       =   -2147483643
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   ""
+      IntegralHeight  =   -1  'True
+      Locked          =   0   'False
+      Sorted          =   0   'False
+      Style           =   0
+   End
+   Begin VBCE.Label Label3 
+      Height          =   255
+      Left            =   120
+      TabIndex        =   7
+      Top             =   120
+      Width           =   855
+      _cx             =   1508
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Category:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label1 
+      Height          =   240
+      Left            =   120
+      TabIndex        =   6
+      Top             =   600
+      Width           =   855
+      _cx             =   1508
+      _cy             =   423
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Question:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.TextBox Question 
+      Height          =   975
+      Left            =   120
+      TabIndex        =   1
+      Top             =   840
+      Width           =   3375
+      _cx             =   5953
+      _cy             =   1720
+      Appearance      =   1
+      BackColor       =   -2147483643
+      BorderStyle     =   1
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   ""
+      Alignment       =   0
+      HideSelection   =   -1  'True
+      Locked          =   0   'False
+      MaxLength       =   0
+      MultiLine       =   -1  'True
+      PasswordChar    =   ""
+      ScrollBars      =   0
+   End
+   Begin VBCE.Label Label4 
+      Height          =   240
+      Left            =   3600
+      TabIndex        =   5
+      Top             =   600
+      Width           =   615
+      _cx             =   1085
+      _cy             =   423
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Answer:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.CommandButton Command2 
+      Height          =   375
+      Left            =   5160
+      TabIndex        =   4
+      Top             =   1920
+      Width           =   855
+      _cx             =   1508
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "&Close"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command1 
+      Default         =   -1  'True
+      Height          =   375
+      Left            =   6120
+      TabIndex        =   3
+      Top             =   1920
+      Width           =   855
+      _cx             =   1508
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "&OK"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+End
+Attribute VB_Name = "frmAdd"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub Combo1_Change()
+
+End Sub
+
+Private Sub Command1_Click()
+If Question.Text = "" Or Answer.Text = "" Then
+    MsgBox ("Please fill in the textboxes!"), vbOKOnly, "Info"
+    Exit Sub
+End If
+
+If Zaehler > 9 Then
+MsgBox "Only 10 entries possible in this version!" & vbCrLf & vbCrLf & _
+"Please contact us: info@kilotec.de!", vbOKOnly, ""
+Exit Sub
+End If
+
+AbInDieDatenbank
+EinlesenEintraege
+
+Question.Text = ""
+Answer.Text = ""
+End Sub
+
+Private Sub Command2_Click()
+Me.Hide
+End Sub
+
+Private Sub Form_Load()
+Center Me
+AddToCombo Combo1
+Question.Text = ""
+Answer.Text = ""
+
+End Sub
+
+Private Sub Label3_Click()
+
+End Sub

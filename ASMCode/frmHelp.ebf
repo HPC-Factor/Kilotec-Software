@@ -1,0 +1,377 @@
+VERSION 5.00
+Object = "{532C2BF5-6B55-11D1-9AA5-00C04FAD5AEC}#1.0#0"; "MSCEGRID.DLL"
+Begin VB.Form frmHelp 
+   BorderStyle     =   1  'Fixed Single
+   Caption         =   "Help"
+   ClientHeight    =   3135
+   ClientLeft      =   45
+   ClientTop       =   390
+   ClientWidth     =   9480
+   ScaleHeight     =   3135
+   ScaleWidth      =   9480
+   Begin GRIDLibCtl.GridCtrl Grid1 
+      Height          =   3135
+      Left            =   0
+      TabIndex        =   0
+      Top             =   0
+      Width           =   4815
+      _cx             =   8493
+      _cy             =   5530
+      BackColor       =   16777215
+      BackColorBkg    =   8421504
+      BackColorSel    =   14120960
+      Cols            =   3
+      FillStyle       =   0
+      FocusRect       =   1
+      ForeColor       =   0
+      ForeColorSel    =   16777215
+      GridColor       =   12632256
+      GridLines       =   1
+      GridLineWidth   =   1
+      HighLight       =   1
+      Redraw          =   -1  'True
+      RowHeightMin    =   0
+      Rows            =   2
+      ScrollBars      =   3
+      ScrollTrack     =   0   'False
+      SelectionMode   =   0
+      TextStyle       =   0
+      WordWrap        =   0   'False
+      Enabled         =   -1  'True
+   End
+   Begin VBCE.Label Label8 
+      Height          =   255
+      Left            =   4920
+      TabIndex        =   9
+      Top             =   1080
+      Width           =   3735
+      _cx             =   6588
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Ax (0-7) is a register only for string operation"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label7 
+      Height          =   255
+      Left            =   6000
+      TabIndex        =   8
+      Top             =   2280
+      Width           =   2295
+      _cx             =   4048
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Ctrl+F = Fullscreen editor"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label6 
+      Height          =   255
+      Left            =   6000
+      TabIndex        =   7
+      Top             =   2040
+      Width           =   1695
+      _cx             =   2990
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Ctrl+R = Run program"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label5 
+      Height          =   255
+      Left            =   4920
+      TabIndex        =   6
+      Top             =   2040
+      Width           =   975
+      _cx             =   1720
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Shortkeys:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.CommandButton Command1 
+      Default         =   -1  'True
+      Height          =   375
+      Left            =   6480
+      TabIndex        =   5
+      Top             =   2640
+      Width           =   1455
+      _cx             =   2566
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "&OK"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.Label Label4 
+      Height          =   255
+      Left            =   4920
+      TabIndex        =   4
+      Top             =   1680
+      Width           =   3135
+      _cx             =   5530
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Z and C are the Zero and Carry flags"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label3 
+      Height          =   255
+      Left            =   4920
+      TabIndex        =   3
+      Top             =   1440
+      Width           =   4095
+      _cx             =   7223
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "adr. is an absolute address from 00 to 63 (Hexadezimal)"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label2 
+      Height          =   255
+      Left            =   4920
+      TabIndex        =   2
+      Top             =   840
+      Width           =   3135
+      _cx             =   5530
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Rx and Ry are registers from R0 to R7"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label1 
+      Height          =   855
+      Left            =   4920
+      TabIndex        =   1
+      Top             =   0
+      Width           =   4455
+      _cx             =   7858
+      _cy             =   1508
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   $"frmHelp.frx":0000
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+End
+Attribute VB_Name = "frmHelp"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub Command1_Click()
+Me.Hide
+End Sub
+
+Private Sub Form_Load()
+Center Me
+Dim i As Integer
+
+Grid1.Clear
+
+Grid1.SelectionMode = flexSelectionByRow
+Grid1.ScrollBars = flexScrollBarVertical
+Grid1.Rows = 1
+
+
+Grid1.TextMatrix(0, 0) = "Mnemonic"
+Grid1.TextMatrix(0, 1) = "Flags"
+Grid1.TextMatrix(0, 2) = "Description"
+
+
+Grid1.ColWidth(0) = 1200
+Grid1.ColWidth(1) = 800
+Grid1.ColWidth(2) = 2500
+
+
+
+
+Grid1.FillStyle = flexFillRepeat
+Grid1.RowSel = 0
+Grid1.CellFontBold = True
+Grid1.FillStyle = flexFillSingle
+
+For i = 0 To 2
+Grid1.RowSel = 0
+Grid1.Col = i
+Grid1.CellBackColor = &HC0C0C0
+Next i
+
+Grid1.SelectionMode = flexSelectionFree
+
+
+Grid1.AddItem "BRK" & vbTab & "" & vbTab & "Break"
+Grid1.AddItem "NOP" & vbTab & "" & vbTab & "No operation"
+Grid1.AddItem "RET" & vbTab & "" & vbTab & "Return from sub"
+Grid1.AddItem "TOG" & vbTab & "" & vbTab & "Toggle LED"
+Grid1.AddItem "LDI Rx,Ry" & vbTab & "" & vbTab & "Load immediate constant to Rx"
+Grid1.AddItem "DEC Rx" & vbTab & "Z, C" & vbTab & "Decrement Rx"
+Grid1.AddItem "INC Rx" & vbTab & "Z, C" & vbTab & "Increment Rx"
+Grid1.AddItem "MOV Rx,Ry" & vbTab & "" & vbTab & "Move Rx=Ry"
+Grid1.AddItem "IN Rx" & vbTab & "" & vbTab & "Enter Rx"
+Grid1.AddItem "ADD Rx" & vbTab & "Z, C" & vbTab & "Add Rx to R0"
+Grid1.AddItem "SUB Rx" & vbTab & "Z, C" & vbTab & "Subtract Rx from R0"
+Grid1.AddItem "MUL Rx" & vbTab & "Z, C" & vbTab & "Multiply Rx from R0"
+Grid1.AddItem "DIC Rx" & vbTab & "Z, C" & vbTab & "Divide Rx from R0"
+Grid1.AddItem "PUSH Rx" & vbTab & "" & vbTab & "Push Rx onto stack"
+Grid1.AddItem "POP Rx" & vbTab & "" & vbTab & "Pop Rx from stack"
+
+Grid1.AddItem "JZ adr." & vbTab & "" & vbTab & "Jump if zero"
+Grid1.AddItem "JNZ adr." & vbTab & "" & vbTab & "Jump if not zero"
+Grid1.AddItem "JC adr." & vbTab & "" & vbTab & "Jump if carry set"
+Grid1.AddItem "JSR adr." & vbTab & "" & vbTab & "Jump to sub"
+Grid1.AddItem "JE adr." & vbTab & "" & vbTab & "Jump if equal"
+Grid1.AddItem "JNE adr." & vbTab & "" & vbTab & "Jump if not equal"
+Grid1.AddItem "JA adr." & vbTab & "" & vbTab & "Jump if above"
+Grid1.AddItem "JAE adr." & vbTab & "" & vbTab & "Jump if above or equal"
+Grid1.AddItem "JL adr." & vbTab & "" & vbTab & "Jump if less"
+Grid1.AddItem "JLE adr." & vbTab & "" & vbTab & "Jump if less or equal"
+
+Grid1.AddItem "MSG Ax,String" & vbTab & "" & vbTab & "Move string in Ax"
+Grid1.AddItem "Out Ax" & vbTab & "" & vbTab & "Display a string in Ax"
+
+End Sub

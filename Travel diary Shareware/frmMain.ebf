@@ -1,0 +1,613 @@
+VERSION 5.00
+Object = "{BE67ABF5-0137-11D2-9B8A-00C04FAD5AEC}#1.0#0"; "mscecommandbar.dll"
+Object = "{25C953A7-5464-11D1-A714-00AA0044064C}#1.0#0"; "MSCEFILE.DLL"
+Object = "{E491F001-98EC-11D1-9B3D-00C04FAD5AEC}#1.0#0"; "msceimagelist.dll"
+Object = "{6556ED95-9838-11D1-80AE-00C04FAD5EFB}#1.0#0"; "mscelistview.dll"
+Object = "{A32A88B3-817C-11D1-A762-00AA0044064C}#1.0#0"; "mscecomdlg.dll"
+Begin VB.Form frmMain 
+   Caption         =   "TravelDiary 1.0 - SHAREWARE"
+   ClientHeight    =   2835
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   8085
+   ScaleHeight     =   2835
+   ScaleWidth      =   8085
+   Begin CEComDlgCtl.CommonDialog CommonDialog1 
+      Left            =   5640
+      Top             =   0
+      _cx             =   847
+      _cy             =   847
+      CancelError     =   0   'False
+      Color           =   0
+      DefaultExt      =   ""
+      DialogTitle     =   ""
+      FileName        =   ""
+      Filter          =   ""
+      FilterIndex     =   0
+      Flags           =   0
+      HelpCommand     =   0
+      HelpContext     =   ""
+      HelpFile        =   ""
+      InitDir         =   ""
+      MaxFileSize     =   256
+      FontBold        =   0   'False
+      FontItalic      =   0   'False
+      FontName        =   ""
+      FontSize        =   10
+      FontUnderline   =   0   'False
+      Max             =   0
+      Min             =   0
+      FontStrikethru  =   0   'False
+   End
+   Begin CEImageListCtl.ImageList ImageList1 
+      Left            =   8880
+      Top             =   1200
+      _cx             =   990
+      _cy             =   990
+      ImageWidth      =   16
+      ImageHeight     =   16
+   End
+   Begin CommandbarLib.CommandBar cmdBar 
+      Height          =   345
+      Left            =   0
+      TabIndex        =   0
+      Top             =   0
+      Width           =   3615
+      _cx             =   6376
+      _cy             =   600
+      Enabled         =   -1  'True
+      OKButton        =   0   'False
+      HelpButton      =   0   'False
+      CloseButton     =   0   'False
+   End
+   Begin FILECTLCtl.File File 
+      Left            =   6840
+      Top             =   0
+      _cx             =   1000
+      _cy             =   1000
+   End
+   Begin MSCELISTVIEWLibCtl.ListViewCtrl ListView1 
+      Height          =   1935
+      Left            =   0
+      TabIndex        =   1
+      Top             =   840
+      Width           =   8055
+      _cx             =   14208
+      _cy             =   3413
+      FontBold        =   0   'False
+      FontItalic      =   0   'False
+      FontName        =   "Arial"
+      FontSize        =   8
+      FontStrikethrough=   0   'False
+      FontUnderline   =   0   'False
+      HideColumnHeaders=   0   'False
+      HideSelection   =   -1  'True
+      LabelEdit       =   0
+      LabelWrap       =   0   'False
+      MultiSelect     =   0   'False
+      Sorted          =   0   'False
+      SortKey         =   0
+      SortOrder       =   0
+      View            =   3
+      Enabled         =   -1  'True
+   End
+   Begin VBCE.Timer Timer1 
+      Left            =   6120
+      Top             =   0
+      _cx             =   847
+      _cy             =   847
+      Enabled         =   0   'False
+      Interval        =   60000
+   End
+   Begin VBCE.Label Label2 
+      Height          =   240
+      Left            =   120
+      TabIndex        =   5
+      Top             =   600
+      Width           =   3255
+      _cx             =   5741
+      _cy             =   423
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Label1"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label1 
+      Height          =   240
+      Left            =   120
+      TabIndex        =   4
+      Top             =   360
+      Width           =   2535
+      _cx             =   4471
+      _cy             =   423
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Label1"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label3 
+      Height          =   255
+      Left            =   3720
+      TabIndex        =   3
+      Top             =   480
+      Width           =   1215
+      _cx             =   2143
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Reiseart:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   1
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.ComboBox Combo1 
+      Height          =   360
+      Left            =   5040
+      TabIndex        =   2
+      Top             =   480
+      Width           =   3015
+      List            =   "frmMain.frx":0000
+      ItemData        =   "frmMain.frx":0028
+      _cx             =   5318
+      _cy             =   635
+      Appearance      =   1
+      BackColor       =   -2147483643
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   ""
+      IntegralHeight  =   -1  'True
+      Locked          =   0   'False
+      Sorted          =   0   'False
+      Style           =   0
+   End
+End
+Attribute VB_Name = "frmMain"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub cmdBar_ButtonClick(ByVal Button As CommandbarLib.CommandBarButton)
+InvokeAction CInt(Button.Tag), True
+End Sub
+
+Private Sub cmdBar_MenuClick(ByVal Item As CommandbarLib.Item)
+InvokeAction (Item.Index + (100 * Item.Parent.Index)), False
+End Sub
+Private Sub InvokeAction(ID As Integer, FromButton As Boolean)
+   Select Case (ID)
+            
+    
+    Case ID_ABOUT       ' thick brush mode
+        frmAbout.Show
+        
+    Case ID_EXIT        ' terminate the app
+        App.End
+ '***************************************
+    
+    Case ID_ADD
+        frmAdd.Show
+    
+    Case ID_EDIT
+        If ListView1.ListItems.Count > 0 Then
+        IndexX = ListView1.SelectedItem.SubItems(3)
+        frmEdit.Show
+        End If
+    
+    Case ID_SEARCH
+        frmFind.Show
+    
+    Case ID_DELETE
+        Dim a As Integer
+            a = MsgBox("Möchten Sie die aktuelle Reise löschen?", vbYesNo, "Achtung")
+            If a = vbYes Then
+            On Error Resume Next
+                LoescheEintrag
+                ReplaceIndex = IndexX
+                Exit Sub
+            End If
+    
+    Case ID_SAVE
+        DBspeichern
+    
+    Case ID_OVERVIEW
+        frmOverview.Show
+        
+    '************************************************
+    Case ID_KOSTEN
+        On Error Resume Next
+        If ListView1.ListItems.Count > 0 Then
+        IndexX = ListView1.SelectedItem.SubItems(3)
+        frmKosten.Show
+        End If
+    
+     Case ID_EINZELHEITEN
+     On Error Resume Next
+        If ListView1.ListItems.Count > 0 Then
+        IndexX = ListView1.SelectedItem.SubItems(3)
+        frmEinzelheiten.Show
+        End If
+    
+    Case ID_BEWERTUNG
+    On Error Resume Next
+        If ListView1.ListItems.Count > 0 Then
+        IndexX = ListView1.SelectedItem.SubItems(3)
+        frmBewertung.Show
+        End If
+
+    '************************************************
+    Case ID_KATEGORIE
+        frmKatalog.Show vbModal
+        If frmKatalog.Tag = "OK" Then
+        Dim oldText As String
+        oldText = Combo1.Text
+        Combo1.Clear
+        AddToCombo Combo1
+        Combo1.Text = oldText
+        End If
+        
+    Case ID_OPTIONEN
+        frmOptionen.Show
+        
+    Case ID_EXPORT
+        On Error Resume Next
+            CommonDialog1.ShowSave
+            If Err.Number = 0 Then
+                ExportFile CommonDialog1.FileName
+            End If
+            On Error GoTo 0
+    
+      Case ID_IMPORT
+        On Error Resume Next
+            CommonDialog1.ShowOpen
+            If Err.Number = 0 Then
+                ImportFile CommonDialog1.FileName
+            End If
+            On Error GoTo 0
+   
+    
+    
+            
+  
+        
+           
+    
+        
+    Case ID_ABOUT
+        frmAbout.Show
+        
+      
+    Case Else
+        ' programming error -- undefined tool
+        MsgBox "Undefined Commandbar Command!"
+    End Select
+End Sub
+
+Private Sub Combo1_Change()
+
+End Sub
+
+Private Sub Combo1_Click()
+KategorieIndex = Mid(Combo1.List(Combo1.ListIndex), 1, 2)
+EinlesenEintraege
+End Sub
+
+
+
+
+
+Private Sub Form_Activate()
+'If HINTERGRUNDFARBE = 0 Then frmMain.BackColor = &H8000000F
+'If HINTERGRUNDFARBE = 1 Then frmMain.BackColor = &HC0FFC0
+'If HINTERGRUNDFARBE = 2 Then frmMain.BackColor = &HFFC0C0
+'If HINTERGRUNDFARBE = 3 Then frmMain.BackColor = &HC0FFFF
+
+If AUTOSAVE = 1 Then Timer1.Enabled = True
+
+End Sub
+
+Private Sub Form_Load()
+'Center Me
+
+AUTOSAVE = GetSetting(App.Title, "Settings", "Autosave", "0")
+SAVE_MINUTEN = GetSetting(App.Title, "Settings", "SaveMinuten", "5")
+HINTERGRUNDFARBE = GetSetting(App.Title, "Settings", "Farbe", "0")
+SPRACHE = GetSetting(App.Title, "Settings", "Sprache", "0")
+WSYMBOL = GetSetting(App.Title, "Settings", "Currency", "$")
+MAXIM = GetSetting(App.Title, "Settings", "Max", "0")
+
+'On Error Resume Next
+'If SPRACHE <> 0 Or SPRACHE <> 1 Then SPRACHE = 0
+'If WSYMBOL = Empty Then WSYMBOL = "$"
+'If HINTERGRUNDFARBE = Empty Then HINTERGRUNDFARBE = 0
+'If SAVE_MINUTEN = Empty Then SAVE_MINUTEN = 5
+'If AUTOSAVE = Empty Then AUTOSAVE = 0
+'SPRACHE = 1
+
+'On Error Resume Next
+If HINTERGRUNDFARBE = "0" Then frmMain.BackColor = &H8000000F
+If HINTERGRUNDFARBE = "1" Then frmMain.BackColor = &HC0FFC0
+If HINTERGRUNDFARBE = "2" Then frmMain.BackColor = &HFFC0C0
+If HINTERGRUNDFARBE = "3" Then frmMain.BackColor = &HC0FFFF
+'SPRACHE = 1
+
+If SPRACHE = 0 Then
+    Label3.Caption = "Kind of travel:"
+End If
+If SPRACHE = 1 Then
+    Label3.Caption = "Reiseart:"
+End If
+
+InitializeSaveAsDialog
+
+If MAXIM = 1 Then
+    Me.Left = 0
+    Me.Width = Screen.Width
+    Me.Height = Screen.Height
+    
+    ListView1.Height = Me.Height - ListView1.Top - 800
+    ListView1.Width = Me.Width - 100
+End If
+
+If MAXIM = 0 Then
+Center Me
+End If
+
+
+cmdBar.Left = 0
+cmdBar.Top = 0
+cmdBar.Width = Me.Width
+
+ImageList1.Add App.Path & "\Bar.bmp"
+cmdBar.ImageList = ImageList1.hImageList
+
+Dim mnuMain As CommandbarLib.CommandBarMenuBar
+Dim mnuFile As CommandbarLib.Item
+Dim mnuEdit As CommandbarLib.Item
+Dim mnuReise As CommandbarLib.Item
+Dim mnuKategorie As CommandbarLib.Item
+Dim mnuSearch As CommandbarLib.Item
+   
+   
+If SPRACHE = 0 Then
+    Set mnuMain = cmdBar.Controls.Add(cbrMenuBar, "MainMenu")
+    Set mnuFile = mnuMain.Items.Add(1, , "&File")
+    mnuFile.SubItems.Add 1, , "&About"
+    mnuFile.SubItems.Add 2, , "", cbrMenuSeparator
+    mnuFile.SubItems.Add 3, , "&Exit"
+    
+    Set mnuEdit = mnuMain.Items.Add(2, , "&Travel")
+    mnuEdit.SubItems.Add 1, , "&New travel"
+    mnuEdit.SubItems.Add 2, , "&Edit travel"
+    mnuEdit.SubItems.Add 3, , "&Find travel"
+    mnuEdit.SubItems.Add 4, , "", cbrMenuSeparator
+    mnuEdit.SubItems.Add 5, , "&Delete travel"
+    mnuEdit.SubItems.Add 6, , "", cbrMenuSeparator
+    mnuEdit.SubItems.Add 7, , "&Save database"
+    mnuEdit.SubItems.Add 8, , "", cbrMenuSeparator
+    mnuEdit.SubItems.Add 9, , "&Overview"
+    
+    Set mnuReise = mnuMain.Items.Add(3, , "Travel &options")
+    mnuReise.SubItems.Add 1, , "&Costs"
+    mnuReise.SubItems.Add 2, , "&Details"
+    mnuReise.SubItems.Add 3, , "", cbrMenuSeparator
+    mnuReise.SubItems.Add 4, , "&Rating"
+
+        
+    Set mnuKategorie = mnuMain.Items.Add(4, , "&Extras")
+    mnuKategorie.SubItems.Add 1, , "&Kind of travel"
+    mnuKategorie.SubItems.Add 2, , "", cbrMenuSeparator
+    mnuKategorie.SubItems.Add 3, , "&Options"
+    mnuKategorie.SubItems.Add 4, , "", cbrMenuSeparator
+    mnuKategorie.SubItems.Add 5, , "Data e&xport..."
+    mnuKategorie.SubItems.Add 6, , "Data &import..."
+End If
+If SPRACHE = 1 Then
+    Set mnuMain = cmdBar.Controls.Add(cbrMenuBar, "MainMenu")
+    Set mnuFile = mnuMain.Items.Add(1, , "&Datei")
+    mnuFile.SubItems.Add 1, , "&Über"
+    mnuFile.SubItems.Add 2, , "", cbrMenuSeparator
+    mnuFile.SubItems.Add 3, , "B&eenden"
+    
+    Set mnuEdit = mnuMain.Items.Add(2, , "&Reise")
+    mnuEdit.SubItems.Add 1, , "&Neue Reise"
+    mnuEdit.SubItems.Add 2, , "Reise &bearbeiten"
+    mnuEdit.SubItems.Add 3, , "Reise &suchen"
+    mnuEdit.SubItems.Add 4, , "", cbrMenuSeparator
+    mnuEdit.SubItems.Add 5, , "Reise &löschen"
+    mnuEdit.SubItems.Add 6, , "", cbrMenuSeparator
+    mnuEdit.SubItems.Add 7, , "&Datenbank Speichern"
+    mnuEdit.SubItems.Add 8, , "", cbrMenuSeparator
+    mnuEdit.SubItems.Add 9, , "&Übersicht"
+    
+    Set mnuReise = mnuMain.Items.Add(3, , "Reise&optionen")
+    mnuReise.SubItems.Add 1, , "&Kosten"
+    mnuReise.SubItems.Add 2, , "&Einzelheiten"
+    mnuReise.SubItems.Add 3, , "", cbrMenuSeparator
+    mnuReise.SubItems.Add 4, , "&Bewertung"
+
+        
+    Set mnuKategorie = mnuMain.Items.Add(4, , "&Extras")
+    mnuKategorie.SubItems.Add 1, , "Reise&art bearbeiten"
+    mnuKategorie.SubItems.Add 2, , "", cbrMenuSeparator
+    mnuKategorie.SubItems.Add 3, , "&Optionen"
+    mnuKategorie.SubItems.Add 4, , "", cbrMenuSeparator
+    mnuKategorie.SubItems.Add 5, , "Daten e&xportieren..."
+    mnuKategorie.SubItems.Add 6, , "Daten &importieren..."
+End If
+
+
+
+
+
+If Me.Width >= SIZE_SUPPORTSBUTTONS Then
+    
+        Dim Button As CommandbarLib.CommandBarButton
+        
+        Set Button = cmdBar.Controls.Add(cbrButton, "sep0")
+        Button.Style = cbrSeparator
+        Set Button = cmdBar.Controls.Add(cbrButton, "new")
+        Button.Image = 0
+        Button.Tag = ID_ADD
+        Set Button = cmdBar.Controls.Add(cbrButton, "edit")
+        Button.Image = 1
+        Button.Tag = ID_EDIT
+        Set Button = cmdBar.Controls.Add(cbrButton, "search")
+        Button.Image = 2
+        Button.Tag = ID_SEARCH
+        Set Button = cmdBar.Controls.Add(cbrButton, "delete")
+        Button.Image = 3
+        Button.Tag = ID_DELETE
+        Set Button = cmdBar.Controls.Add(cbrButton, "sep3")
+        Button.Style = cbrSeparator
+        
+        Set Button = cmdBar.Controls.Add(cbrButton, "kosten")
+        Button.Image = 4
+        Button.Tag = ID_KOSTEN
+        Set Button = cmdBar.Controls.Add(cbrButton, "einzelheiten")
+        Button.Image = 5
+        Button.Tag = ID_EINZELHEITEN
+        Set Button = cmdBar.Controls.Add(cbrButton, "bewertung")
+        Button.Image = 6
+        Button.Tag = ID_BEWERTUNG
+        
+        Set Button = cmdBar.Controls.Add(cbrButton, "sep3a")
+        Button.Style = cbrSeparator
+            
+        Set Button = cmdBar.Controls.Add(cbrButton, "overview")
+        Button.Image = 10
+        Button.Tag = ID_OVERVIEW
+        
+        Set Button = cmdBar.Controls.Add(cbrButton, "sep4")
+        Button.Style = cbrSeparator
+            
+        Set Button = cmdBar.Controls.Add(cbrButton, "kategorie")
+        Button.Image = 7
+        Button.Tag = ID_KATEGORIE
+        
+        Set Button = cmdBar.Controls.Add(cbrButton, "sep5")
+        Button.Style = cbrSeparator
+         
+        Set Button = cmdBar.Controls.Add(cbrButton, "save")
+        Button.Image = 8
+        Button.Tag = ID_SAVE
+        
+        Set Button = cmdBar.Controls.Add(cbrButton, "sep6")
+        Button.Style = cbrSeparator
+         
+        Set Button = cmdBar.Controls.Add(cbrButton, "info")
+        Button.Image = 9
+        Button.Tag = ID_ABOUT
+ 
+    End If
+
+
+
+AddToCombo Combo1
+Combo1.Text = Combo1.List(0)
+KategorieIndex = "01"
+    
+DBladen
+EinlesenEintraege
+
+End Sub
+
+Private Sub Label2_Click()
+
+End Sub
+
+Private Sub Label3_Click()
+
+End Sub
+
+Private Sub ListView1_AfterLabelEdit(Cancel As Boolean, ByVal NewString As String)
+
+End Sub
+
+Private Sub ListView1_ColumnClick(ByVal Index As Long)
+On Error Resume Next
+
+ListView1.SortKey = Index - 1
+ListView1.Sorted = True
+
+If ListView1.SortOrder = lvwDescending Then
+    ListView1.SortOrder = lvwAscending
+    Else
+    ListView1.SortOrder = lvwDescending
+    End If
+ListView1.Sorted = False
+
+
+
+End Sub
+
+Private Sub Timer1_Timer()
+TimerFlag = TimerFlag + 1
+
+If TimerFlag = SAVE_MINUTEN Then
+    DBspeichern
+    TimerFlag = 0
+End If
+End Sub
+
+Private Sub InitializeSaveAsDialog()
+    CommonDialog1.Filter = " (*.txt)|*.txt|" & " (*.*)|*.*"
+    CommonDialog1.DefaultExt = "txt"
+    CommonDialog1.CancelError = True
+End Sub

@@ -1,0 +1,355 @@
+VERSION 5.00
+Begin VB.Form frmKaufen 
+   BackColor       =   &H0080FF80&
+   Caption         =   "SPIELER KAUFEN"
+   ClientHeight    =   2880
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   5640
+   ScaleHeight     =   2880
+   ScaleWidth      =   5640
+   Begin VBCE.OptionButton optMittelfeld 
+      Height          =   255
+      Left            =   4320
+      TabIndex        =   8
+      Top             =   840
+      Width           =   975
+      _cx             =   1720
+      _cy             =   450
+      Appearance      =   1
+      BackColor       =   8454016
+      Caption         =   "Mittelfeld"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      Value           =   0   'False
+   End
+   Begin VBCE.OptionButton optAbwehr 
+      Height          =   255
+      Left            =   4320
+      TabIndex        =   7
+      Top             =   480
+      Width           =   975
+      _cx             =   1720
+      _cy             =   450
+      Appearance      =   1
+      BackColor       =   8454016
+      Caption         =   "Abwehr"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      Value           =   -1  'True
+   End
+   Begin VBCE.OptionButton optAngriff 
+      Height          =   255
+      Left            =   4320
+      TabIndex        =   6
+      Top             =   1200
+      Width           =   975
+      _cx             =   1720
+      _cy             =   450
+      Appearance      =   1
+      BackColor       =   8454016
+      Caption         =   "Sturm"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      Value           =   0   'False
+   End
+   Begin VBCE.CommandButton Command2 
+      Height          =   495
+      Left            =   4320
+      TabIndex        =   5
+      Top             =   1680
+      Width           =   1215
+      _cx             =   2143
+      _cy             =   873
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "Kaufen"
+      Enabled         =   0   'False
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.ListBox List1 
+      Height          =   2430
+      Left            =   120
+      TabIndex        =   0
+      Top             =   360
+      Width           =   4095
+      List            =   "frmKaufen.frx":0000
+      ItemData        =   "frmKaufen.frx":0028
+      _cx             =   7223
+      _cy             =   4286
+      Appearance      =   0
+      BackColor       =   -2147483643
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Courier New"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Columns         =   0
+      IntegralHeight  =   -1  'True
+      MultiSelect     =   0
+      Sorted          =   0   'False
+   End
+   Begin VBCE.Label Label3 
+      Height          =   255
+      Left            =   3120
+      TabIndex        =   4
+      Top             =   120
+      Width           =   1095
+      _cx             =   1931
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   8454016
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Ablösesumme"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label2 
+      Height          =   255
+      Left            =   2160
+      TabIndex        =   3
+      Top             =   120
+      Width           =   495
+      _cx             =   873
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   8454016
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Stärke"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label1 
+      Height          =   255
+      Left            =   240
+      TabIndex        =   2
+      Top             =   120
+      Width           =   1215
+      _cx             =   2143
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   8454016
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Nr.  Position"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.CommandButton Command1 
+      Height          =   495
+      Left            =   4320
+      TabIndex        =   1
+      Top             =   2280
+      Width           =   1215
+      _cx             =   2143
+      _cy             =   873
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "Abbrechen"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+End
+Attribute VB_Name = "frmKaufen"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub Command1_Click()
+Me.Hide
+End Sub
+
+Private Sub Command2_Click()
+
+If Geld < ab(List1.ListIndex + 1) Then
+MsgBox "Du hast nicht genug Geld!", vbOKOnly, "ACHTUNG"
+Exit Sub
+End If
+
+Geld = Geld - ab(List1.ListIndex + 1)
+If optAngriff.Value = True Then Angriff(TeamIndex) = Angriff(TeamIndex) + s(List1.ListIndex + 1)
+If optMittelfeld.Value = True Then Mittelfeld(TeamIndex) = Mittelfeld(TeamIndex) + s(List1.ListIndex + 1)
+If optAbwehr.Value = True Then Abwehr(TeamIndex) = Abwehr(TeamIndex) + s(List1.ListIndex + 1)
+
+'Spiel(TeamIndex) = Spiel(TeamIndex) + s(List1.ListIndex + 1)
+'Spiel(TeamIndex) = Spiel(TeamIndex) * 100
+'Spiel(TeamIndex) = Fix(Spiel(TeamIndex))
+'Spiel(TeamIndex) = Spiel(TeamIndex) / 100
+
+
+Aktualisieren
+Me.Hide
+
+End Sub
+
+Private Sub Form_Activate()
+Center Me
+Position = "Tor"
+Anzeige
+
+
+'For i = 1 To 10
+'    If i < 10 Then
+'        VorNull = " "
+'    Else
+'        VorNull = ""
+'    End If
+'    Position = Aufstellung(GetRandomNumber(1, 13))
+'    Staerke = GetRandomNumber(20, 100)
+'    Kosten = GetRandomNumber(100 * Staerke, 10000 * Staerke)
+'
+'    List1.AddItem VorNull & i & " " & Position & Space(14 - Len(Position)) & " " & Staerke & Space(5 - Len(Staerke)) & " " & FormatCurrency(Kosten, 0, , , vbUseDefault) 'Space(10 - Len(i)) & s(i) & Space(10 - Len(s(i))) & ab(i)
+'Next i
+
+End Sub
+
+
+
+Private Sub List1_Click()
+Command2.Enabled = True
+End Sub
+
+Public Sub Anzeige()
+Dim i As Long
+List1.Clear
+
+Dim Staerke As Integer
+Dim Kosten As Long
+
+
+For i = 1 To 10
+    If i < 10 Then
+        VorNull = " "
+    Else
+        VorNull = ""
+    End If
+    'List1.AddItem i & Space(10 - Len(i)) & s(i) & Space(10 - Len(s(i))) & ab(i)
+    List1.AddItem VorNull & i & " " & Position & Space(14 - Len(Position)) & " " & s(i) & Space(6 - Len(s(i))) & ab(i) & " €"
+Next i
+
+Command2.Enabled = False
+End Sub
+
+Private Sub Option1_Click()
+
+End Sub
+
+Private Sub Option2_Click()
+
+End Sub
+
+Private Sub Option3_Click()
+
+End Sub
+
+Private Sub optAbwehr_Click()
+Position = "Abwehr"
+Anzeige
+End Sub
+
+Private Sub optAngriff_Click()
+Position = "Angriff"
+Anzeige
+End Sub
+
+Private Sub optMittelfeld_Click()
+Position = "Mittelfeld"
+Anzeige
+End Sub

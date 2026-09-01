@@ -1,0 +1,562 @@
+VERSION 5.00
+Object = "{F7346713-70C5-11D1-9AC9-00C04FAD5AEC}#1.0#0"; "msceimage.dll"
+Begin VB.Form frmNewGame 
+   BackColor       =   &H00008000&
+   Caption         =   "Neues Spiel"
+   ClientHeight    =   3045
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   7485
+   ScaleHeight     =   3045
+   ScaleWidth      =   7485
+   Begin VBCE.Label Label4 
+      Height          =   1095
+      Left            =   4200
+      TabIndex        =   8
+      Top             =   1800
+      Width           =   3135
+      _cx             =   5530
+      _cy             =   1931
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   32768
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Fußball Manager 1.0"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   21.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   -1  'True
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   16777215
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin IMAGECtl.ImageCtl Soccer 
+      Height          =   1275
+      Left            =   4320
+      TabIndex        =   7
+      Top             =   360
+      Width           =   960
+      _cx             =   1685
+      _cy             =   2258
+      Picture         =   ""
+      Stretch         =   0   'False
+   End
+   Begin VBCE.ComboBox cboLiga 
+      Height          =   360
+      Left            =   120
+      TabIndex        =   5
+      Top             =   1080
+      Width           =   3615
+      List            =   "frmNewGame.frx":0000
+      ItemData        =   "frmNewGame.frx":0028
+      _cx             =   6376
+      _cy             =   635
+      Appearance      =   1
+      BackColor       =   16777215
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   ""
+      IntegralHeight  =   -1  'True
+      Locked          =   0   'False
+      Sorted          =   0   'False
+      Style           =   0
+   End
+   Begin VBCE.Label Label3 
+      Height          =   255
+      Left            =   120
+      TabIndex        =   6
+      Top             =   840
+      Width           =   1695
+      _cx             =   2990
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Liga"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   16777215
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.ComboBox Combo1 
+      Height          =   360
+      Left            =   120
+      TabIndex        =   1
+      Top             =   1800
+      Width           =   3615
+      List            =   "frmNewGame.frx":0050
+      ItemData        =   "frmNewGame.frx":0078
+      _cx             =   6376
+      _cy             =   635
+      Appearance      =   1
+      BackColor       =   16777215
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   ""
+      IntegralHeight  =   -1  'True
+      Locked          =   0   'False
+      Sorted          =   0   'False
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command1 
+      Default         =   -1  'True
+      Height          =   495
+      Left            =   120
+      TabIndex        =   2
+      Top             =   2400
+      Width           =   3615
+      _cx             =   6376
+      _cy             =   873
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "OK"
+      Enabled         =   0   'False
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.Label Label2 
+      Height          =   255
+      Left            =   120
+      TabIndex        =   4
+      Top             =   1560
+      Width           =   1695
+      _cx             =   2990
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Mannschaft"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   16777215
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.TextBox Spielername 
+      Height          =   375
+      Left            =   120
+      TabIndex        =   0
+      Top             =   360
+      Width           =   3615
+      _cx             =   6376
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   16777215
+      BorderStyle     =   1
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   ""
+      Alignment       =   0
+      HideSelection   =   -1  'True
+      Locked          =   0   'False
+      MaxLength       =   0
+      MultiLine       =   0   'False
+      PasswordChar    =   ""
+      ScrollBars      =   0
+   End
+   Begin VBCE.Label Label1 
+      Height          =   255
+      Left            =   120
+      TabIndex        =   3
+      Top             =   120
+      Width           =   1455
+      _cx             =   2566
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Ihr Name"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   16777215
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+End
+Attribute VB_Name = "frmNewGame"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+
+
+Private Sub cboLiga_Click()
+Combo1.Clear
+
+If cboLiga.List(cboLiga.ListIndex) = "1. Bundesliga" Then
+    Mannschaft(1) = "Bayern München"
+    Mannschaft(2) = "Bayer Leverkusen"
+    Mannschaft(3) = "Borussia Dortmund"
+    Mannschaft(4) = "VFB Stuttgart"
+    Mannschaft(5) = "FC Heidenheim"
+    Mannschaft(6) = "FC Augsburg"
+    Mannschaft(7) = "VFL Wolfsburg"
+    Mannschaft(8) = "TSG Hoffenheim"
+    Mannschaft(9) = "Werder Bremen"
+    Mannschaft(10) = "RB Leipzig"
+    Mannschaft(11) = "Mönchengladbach"
+    Mannschaft(12) = "Eintracht Frankfurt"
+    Mannschaft(13) = "Union Berlin"
+    Mannschaft(14) = "SC Freiburg"
+    Mannschaft(15) = "VFL Bochum"
+    Mannschaft(16) = "FSV Mainz"
+    Mannschaft(17) = "St. Pauli"
+    Mannschaft(18) = "Holstein Kiel"
+
+    Stadion(1) = 75000
+    Stadion(2) = 30210
+    Stadion(3) = 81365
+    Stadion(4) = 56589
+    Stadion(5) = 44000
+    Stadion(6) = 50000
+    Stadion(7) = 28917
+    Stadion(8) = 30150
+    Stadion(9) = 42100
+    Stadion(10) = 47069
+    Stadion(11) = 54014
+    Stadion(12) = 58000
+    Stadion(13) = 22012
+    Stadion(14) = 34700
+    Stadion(15) = 26000
+    Stadion(16) = 33305
+    Stadion(17) = 45000
+    Stadion(18) = 32350
+    
+    ab(1) = 252500
+    ab(2) = 400000
+    ab(3) = 542500
+    ab(4) = 593000
+    ab(5) = 670000
+    ab(6) = 767500
+    ab(7) = 895000
+    ab(8) = 1010000
+    ab(9) = 1120000
+    ab(10) = 1225000
+
+    For i = 1 To 18
+        Angriff(i) = GetRandomNumber(20, 100)
+        Mittelfeld(i) = GetRandomNumber(20, 100)
+        Abwehr(i) = GetRandomNumber(20, 100)
+        Form(i) = Int((Angriff(i) + Mittelfeld(i) + Abwehr(i)) / 3)
+    Next i
+
+    Eintritt = 25
+    Liga = 1
+End If
+
+
+
+If cboLiga.List(cboLiga.ListIndex) = "2. Bundesliga" Then
+    Mannschaft(1) = "Fortuna Düsseldorf"
+    Mannschaft(2) = "Karlsruher SC"
+    Mannschaft(3) = "Hamburger SV"
+    Mannschaft(4) = "FC Schalke 04"
+    Mannschaft(5) = "1. FC Magdeburg"
+    Mannschaft(6) = "SC Paderborn"
+    Mannschaft(7) = "Hannover 96"
+    Mannschaft(8) = "Hertha BSC"
+    Mannschaft(9) = "SV Elversberg"
+    Mannschaft(10) = "1. FC Nürnberg"
+    Mannschaft(11) = "1. FC Köln"
+    Mannschaft(12) = "FC Kaiserslautern"
+    Mannschaft(13) = "Greuther Fürth"
+    Mannschaft(14) = "Darmstadt 98"
+    Mannschaft(15) = "SSV Ulm 1846"
+    Mannschaft(16) = "TSV Braunschweig"
+    Mannschaft(17) = "Preußen Münster"
+    Mannschaft(18) = "Jahn Regensburg"
+
+    Stadion(1) = 54600
+    Stadion(2) = 34302
+    Stadion(3) = 57000
+    Stadion(4) = 62271
+    Stadion(5) = 30098
+    Stadion(6) = 15000
+    Stadion(7) = 49000
+    Stadion(8) = 74667
+    Stadion(9) = 10000
+    Stadion(10) = 50000
+    Stadion(11) = 50000
+    Stadion(12) = 49350
+    Stadion(13) = 16626
+    Stadion(14) = 17810
+    Stadion(15) = 17000
+    Stadion(16) = 23325
+    Stadion(17) = 12794
+    Stadion(18) = 15210
+    
+    ab(1) = 152500
+    ab(2) = 300000
+    ab(3) = 442500
+    ab(4) = 493000
+    ab(5) = 570000
+    ab(6) = 667500
+    ab(7) = 795000
+    ab(8) = 910000
+    ab(9) = 1020000
+    ab(10) = 1125000
+
+    For i = 1 To 18
+        Angriff(i) = GetRandomNumber(10, 80)
+        Mittelfeld(i) = GetRandomNumber(10, 80)
+        Abwehr(i) = GetRandomNumber(10, 80)
+        Form(i) = Int((Angriff(i) + Mittelfeld(i) + Abwehr(i)) / 3)
+    Next i
+
+    Eintritt = 15
+    Liga = 2
+End If
+
+If cboLiga.List(cboLiga.ListIndex) = "3. Bundesliga" Then
+    Mannschaft(1) = "Alemannia Aachen"
+    Mannschaft(2) = "Dynamo Dresden"
+    Mannschaft(3) = "Erzgebirge Aue"
+    Mannschaft(4) = "Energie Cottbus"
+    Mannschaft(5) = "Hansa Rostock"
+    Mannschaft(6) = "SV Sandhausen"
+    Mannschaft(7) = "Arminia Bielefeld"
+    Mannschaft(8) = "Rot Weiss Essen"
+    Mannschaft(9) = "VFL Osnabrück"
+    Mannschaft(10) = "Hannover 96 II"
+    Mannschaft(11) = "Viktoria Köln"
+    Mannschaft(12) = "SV Waldhof Mannheim"
+    Mannschaft(13) = "1. FC Sarbrücken"
+    Mannschaft(14) = "SV Wehen Wiesbaden"
+    Mannschaft(15) = "SV Verl"
+    Mannschaft(16) = "VfB Stuttgart II"
+    Mannschaft(17) = "SpVgg Unterhaching"
+    Mannschaft(18) = "FC Ingolstadt"
+
+    Stadion(1) = 32960
+    Stadion(2) = 32123
+    Stadion(3) = 16080
+    Stadion(4) = 20602
+    Stadion(5) = 29000
+    Stadion(6) = 15414
+    Stadion(7) = 27332
+    Stadion(8) = 19962
+    Stadion(9) = 16098
+    Stadion(10) = 2500
+    Stadion(11) = 8343
+    Stadion(12) = 25721
+    Stadion(13) = 16003
+    Stadion(14) = 12518
+    Stadion(15) = 5153
+    Stadion(16) = 7768
+    Stadion(17) = 15053
+    Stadion(18) = 15800
+    
+    ab(1) = 55250
+    ab(2) = 60000
+    ab(3) = 74250
+    ab(4) = 89300
+    ab(5) = 98000
+    ab(6) = 176750
+    ab(7) = 289500
+    ab(8) = 301000
+    ab(9) = 412000
+    ab(10) = 522500
+
+    For i = 1 To 18
+        Angriff(i) = GetRandomNumber(5, 60)
+        Mittelfeld(i) = GetRandomNumber(5, 60)
+        Abwehr(i) = GetRandomNumber(5, 60)
+        Form(i) = Int((Angriff(i) + Mittelfeld(i) + Abwehr(i)) / 3)
+    Next i
+
+    Eintritt = 10
+    Liga = 3
+End If
+
+
+
+
+
+
+NeuesSpiel
+
+End Sub
+
+Private Sub Command1_Click()
+Spieler = Spielername.Text
+Spieltag = 1
+x = 1
+y = 1
+x2 = 1
+Mannschaften = 18
+Dim i As Long
+
+
+'If Combo1.Text = "" Then
+'    TEAM = Teamname.Text
+'    Mannschaft(18) = TEAM
+'    TeamIndex = 18
+'Else
+    TEAM = Combo1.Text
+'    Mannschaft(18) = "1. FC Nürnberg"
+    TeamIndex = Combo1.ListIndex + 1
+'End If
+
+
+Me.Hide
+frmHaupt.Show
+End Sub
+
+Private Sub Form_Activate()
+Center Me
+cboLiga.Clear
+cboLiga.AddItem "1. Bundesliga"
+cboLiga.AddItem "2. Bundesliga"
+cboLiga.AddItem "3. Bundesliga"
+'cboLiga.List(cboLiga.ListIndex) = "1. Bundesliga"
+
+NeuesSpiel
+
+Aufstellung(1) = "Tor"
+Aufstellung(2) = "Abwehr"
+Aufstellung(3) = "Abwehr"
+Aufstellung(4) = "Abwehr"
+Aufstellung(5) = "Abwehr"
+Aufstellung(6) = "Mittelfeld"
+Aufstellung(7) = "Mittelfeld"
+Aufstellung(8) = "Mittelfeld"
+Aufstellung(9) = "Mittelfeld"
+Aufstellung(10) = "Sturm"
+Aufstellung(11) = "Sturm"
+Aufstellung(12) = "Abwehr"
+Aufstellung(13) = "Mittelfeld"
+
+s(1) = 1
+s(2) = 2
+s(3) = 3
+s(4) = 4
+s(5) = 5
+s(6) = 6
+s(7) = 7
+s(8) = 8
+s(9) = 9
+s(10) = 10
+
+
+    Soccer.Top = -100
+    Soccer.Top = 360
+    Soccer.Picture = App.Path & "\Soccer2.bmp"
+End Sub
+
+Private Sub Form_Load()
+
+End Sub
+
+
+
+Private Sub Combo1_Click()
+TeamIndex = Combo1.ListIndex + 1
+Command1.Enabled = True
+Geld = GetRandomNumber((Form(TeamIndex) * 10000 / Liga), 500000 / Liga)
+End Sub
+
+
+
+
+
+
+Private Sub NeuesSpiel()
+Randomize Timer
+
+
+
+
+
+
+Dim i As Long
+For i = 1 To 18
+    Combo1.AddItem Mannschaft(i)
+    Tore(i) = 0
+    Gegentore(i) = 0
+    Punkte(i) = 0
+Next i
+
+
+
+
+
+End Sub

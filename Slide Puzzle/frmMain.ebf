@@ -1,0 +1,810 @@
+VERSION 5.00
+Object = "{BE67ABF5-0137-11D2-9B8A-00C04FAD5AEC}#1.0#0"; "mscecommandbar.dll"
+Begin VB.Form frmMain 
+   BackColor       =   &H0080FF80&
+   Caption         =   "SlidePuzzle"
+   ClientHeight    =   2835
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   4035
+   ScaleHeight     =   2835
+   ScaleWidth      =   4035
+   Begin CommandbarLib.CommandBar cmdBar 
+      Height          =   345
+      Left            =   0
+      TabIndex        =   9
+      Top             =   0
+      Width           =   8175
+      _cx             =   14420
+      _cy             =   600
+      Enabled         =   -1  'True
+      OKButton        =   0   'False
+      HelpButton      =   0   'False
+      CloseButton     =   0   'False
+   End
+   Begin VBCE.Label Label4 
+      Height          =   255
+      Left            =   3240
+      TabIndex        =   14
+      Top             =   2040
+      Visible         =   0   'False
+      Width           =   615
+      _cx             =   1085
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   8454016
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Label4"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label3 
+      Height          =   255
+      Left            =   3240
+      TabIndex        =   13
+      Top             =   1440
+      Visible         =   0   'False
+      Width           =   615
+      _cx             =   1085
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   8454016
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Label3"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label2 
+      Height          =   255
+      Left            =   3120
+      TabIndex        =   12
+      Top             =   840
+      Visible         =   0   'False
+      Width           =   735
+      _cx             =   1296
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   8454016
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Label2"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Clicks 
+      Height          =   255
+      Left            =   3480
+      TabIndex        =   11
+      Top             =   480
+      Width           =   615
+      _cx             =   1085
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "0"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label1 
+      Height          =   255
+      Left            =   2520
+      TabIndex        =   10
+      Top             =   480
+      Width           =   855
+      _cx             =   1508
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Moves:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.CommandButton Command9 
+      Height          =   735
+      Left            =   1560
+      TabIndex        =   8
+      Top             =   1920
+      Width           =   735
+      _cx             =   1296
+      _cy             =   1296
+      Appearance      =   1
+      BackColor       =   16777215
+      Caption         =   ""
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command8 
+      Height          =   735
+      Left            =   840
+      TabIndex        =   7
+      Top             =   1920
+      Width           =   735
+      _cx             =   1296
+      _cy             =   1296
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "8"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command7 
+      Height          =   735
+      Left            =   120
+      TabIndex        =   6
+      Top             =   1920
+      Width           =   735
+      _cx             =   1296
+      _cy             =   1296
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "7"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command6 
+      Height          =   735
+      Left            =   1560
+      TabIndex        =   5
+      Top             =   1200
+      Width           =   735
+      _cx             =   1296
+      _cy             =   1296
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "6"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command5 
+      Height          =   735
+      Left            =   840
+      TabIndex        =   4
+      Top             =   1200
+      Width           =   735
+      _cx             =   1296
+      _cy             =   1296
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "5"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command4 
+      Height          =   735
+      Left            =   120
+      TabIndex        =   3
+      Top             =   1200
+      Width           =   735
+      _cx             =   1296
+      _cy             =   1296
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "4"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command3 
+      Height          =   735
+      Left            =   1560
+      TabIndex        =   2
+      Top             =   480
+      Width           =   735
+      _cx             =   1296
+      _cy             =   1296
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "3"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command2 
+      Height          =   735
+      Left            =   840
+      TabIndex        =   1
+      Top             =   480
+      Width           =   735
+      _cx             =   1296
+      _cy             =   1296
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "2"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command1 
+      Height          =   735
+      Left            =   120
+      TabIndex        =   0
+      Top             =   480
+      Width           =   735
+      _cx             =   1296
+      _cy             =   1296
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "1"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+End
+Attribute VB_Name = "frmMain"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub cmdBar_ButtonClick(ByVal Button As CommandbarLib.CommandBarButton)
+
+End Sub
+
+Private Sub cmdBar_MenuClick(ByVal Item As CommandbarLib.Item)
+Select Case Item.Key
+    Case "New"
+        'NewGame
+        'Shuffle
+        NewGame = 1
+        Label2.Caption = "1"
+        ClicksCount = 0
+        Clicks.Caption = "0"
+        Ausgangslage
+        Shuffle
+    Case "About"
+        frmAbout.Show
+    Case "Exit"
+        App.End
+    
+    Case "Original"
+        Command1.Caption = "1"
+        Command2.Caption = "2"
+        Command3.Caption = "3"
+        Command4.Caption = "4"
+        Command5.Caption = "5"
+        Command6.Caption = "6"
+        Command7.Caption = "7"
+        Command8.Caption = "8"
+        Command9.Caption = ""
+        Game = 0
+        Label3.Caption = "0"
+        Label2.Caption = "0"
+        Ausgangslage
+      
+    Case "HP"
+        Command1.Caption = "95LX"
+        Command2.Caption = "100LX"
+        Command3.Caption = "200LX"
+        Command4.Caption = "300LX"
+        Command5.Caption = "320LX"
+        Command6.Caption = "J.680"
+        Command7.Caption = "J.690"
+        Command8.Caption = "J.720"
+        Command9.Caption = ""
+        Game = 1
+        Label3.Caption = "1"
+        Label2.Caption = "0"
+        Ausgangslage
+        
+    Case "HARD"
+        frmfour.Show
+        
+    Case "Gray"
+        Command1.BackColor = &HC0C0C0
+        Command2.BackColor = &HC0C0C0
+        Command3.BackColor = &HC0C0C0
+        Command4.BackColor = &HC0C0C0
+        Command5.BackColor = &HC0C0C0
+        Command6.BackColor = &HC0C0C0
+        Command7.BackColor = &HC0C0C0
+        Command8.BackColor = &HC0C0C0
+        Command9.BackColor = vbWhite
+        Label4.Caption = "1"
+        Label2.Caption = "0"
+        Ausgangslage
+    Case "Yellow"
+        Command1.BackColor = vbYellow
+        Command2.BackColor = vbYellow
+        Command3.BackColor = vbYellow
+        Command4.BackColor = vbYellow
+        Command5.BackColor = vbYellow
+        Command6.BackColor = vbYellow
+        Command7.BackColor = vbYellow
+        Command8.BackColor = vbYellow
+        Command9.BackColor = vbWhite
+        Label4.Caption = "2"
+        Label2.Caption = "0"
+        Ausgangslage
+    Case "Blue"
+        Command1.BackColor = vbBlue
+        Command2.BackColor = vbBlue
+        Command3.BackColor = vbBlue
+        Command4.BackColor = vbBlue
+        Command5.BackColor = vbBlue
+        Command6.BackColor = vbBlue
+        Command7.BackColor = vbBlue
+        Command8.BackColor = vbBlue
+        Command9.BackColor = vbWhite
+        Label4.Caption = "3"
+        Label2.Caption = "0"
+        Ausgangslage
+    Case "Red"
+        Command1.BackColor = vbRed
+        Command2.BackColor = vbRed
+        Command3.BackColor = vbRed
+        Command4.BackColor = vbRed
+        Command5.BackColor = vbRed
+        Command6.BackColor = vbRed
+        Command7.BackColor = vbRed
+        Command8.BackColor = vbRed
+        Command9.BackColor = vbWhite
+        Label4.Caption = "4"
+        Label2.Caption = "0"
+        Ausgangslage
+    
+  End Select
+End Sub
+
+Private Sub Command1_Click()
+cblev1 Command1, Command2
+cblev1 Command1, Command4
+
+End Sub
+Private Sub Ausgangslage()
+If frmMain.Label3.Caption = "0" Then
+    Command1.Caption = "1"
+    Command2.Caption = "2"
+    Command3.Caption = "3"
+    Command4.Caption = "4"
+    Command5.Caption = "5"
+    Command6.Caption = "6"
+    Command7.Caption = "7"
+    Command8.Caption = "8"
+    Command9.Caption = ""
+End If
+If frmMain.Label3.Caption = "1" Then
+        Command1.Caption = "95LX"
+        Command2.Caption = "100LX"
+        Command3.Caption = "200LX"
+        Command4.Caption = "300LX"
+        Command5.Caption = "320LX"
+        Command6.Caption = "J.680"
+        Command7.Caption = "J.690"
+        Command8.Caption = "J.720"
+        Command9.Caption = ""
+End If
+If Label4.Caption = "1" Then
+    Command9.BackColor = &HFFFFFF
+    Command1.BackColor = &HC0C0C0
+    Command2.BackColor = &HC0C0C0
+    Command3.BackColor = &HC0C0C0
+    Command4.BackColor = &HC0C0C0
+    Command5.BackColor = &HC0C0C0
+    Command6.BackColor = &HC0C0C0
+    Command7.BackColor = &HC0C0C0
+    Command8.BackColor = &HC0C0C0
+End If
+If Label4.Caption = "2" Then
+    Command9.BackColor = &HFFFFFF
+    Command1.BackColor = vbYellow
+    Command2.BackColor = vbYellow
+    Command3.BackColor = vbYellow
+    Command4.BackColor = vbYellow
+    Command5.BackColor = vbYellow
+    Command6.BackColor = vbYellow
+    Command7.BackColor = vbYellow
+    Command8.BackColor = vbYellow
+End If
+If Label4.Caption = "3" Then
+    Command9.BackColor = &HFFFFFF
+    Command1.BackColor = vbBlue
+    Command2.BackColor = vbBlue
+    Command3.BackColor = vbBlue
+    Command4.BackColor = vbBlue
+    Command5.BackColor = vbBlue
+    Command6.BackColor = vbBlue
+    Command7.BackColor = vbBlue
+    Command8.BackColor = vbBlue
+End If
+If Label4.Caption = "4" Then
+    Command9.BackColor = &HFFFFFF
+    Command1.BackColor = vbRed
+    Command2.BackColor = vbRed
+    Command3.BackColor = vbRed
+    Command4.BackColor = vbRed
+    Command5.BackColor = vbRed
+    Command6.BackColor = vbRed
+    Command7.BackColor = vbRed
+    Command8.BackColor = vbRed
+End If
+End Sub
+
+
+Private Sub Command2_Click()
+cblev1 Command2, Command1
+cblev1 Command2, Command3
+cblev1 Command2, Command5
+End Sub
+
+Private Sub Command3_Click()
+cblev1 Command3, Command2
+cblev1 Command3, Command6
+End Sub
+
+Private Sub Command4_Click()
+cblev1 Command4, Command1
+cblev1 Command4, Command5
+cblev1 Command4, Command7
+End Sub
+
+Private Sub Command5_Click()
+cblev1 Command5, Command2
+cblev1 Command5, Command4
+cblev1 Command5, Command6
+cblev1 Command5, Command8
+End Sub
+
+Private Sub Command6_Click()
+cblev1 Command6, Command3
+cblev1 Command6, Command5
+cblev1 Command6, Command9
+End Sub
+
+Private Sub Command7_Click()
+cblev1 Command7, Command4
+cblev1 Command7, Command8
+
+End Sub
+
+Private Sub Command8_Click()
+cblev1 Command8, Command5
+cblev1 Command8, Command7
+cblev1 Command8, Command9
+End Sub
+
+Private Sub Command9_Click()
+cblev1 Command9, Command6
+cblev1 Command9, Command8
+
+ 
+End Sub
+
+Private Sub CommandBar1_ButtonClick(ByVal Button As CommandbarLib.CommandBarButton)
+ 
+End Sub
+
+Private Sub CommandBar1_MenuClick(ByVal Item As CommandbarLib.Item)
+
+End Sub
+
+Private Sub Form_Load()
+    Dim mnuMain As CommandbarLib.CommandBarMenuBar
+    Dim mnuFile As CommandbarLib.Item
+    Dim mnuGame As CommandbarLib.Item
+    Dim mnuColor As CommandbarLib.Item
+    
+    Set mnuMain = cmdBar.Controls.Add(cbrMenuBar, "MainMenu")
+    'add File menu items
+    Set mnuFile = mnuMain.Items.Add(1, "File", "&File")
+    mnuFile.SubItems.Add , "New", "&New Game"
+    mnuFile.SubItems.Add , "", "", cbrMenuSeparator
+    mnuFile.SubItems.Add , "About", "&About"
+    mnuFile.SubItems.Add , "", "", cbrMenuSeparator
+    mnuFile.SubItems.Add , "Exit", "E&xit"
+    
+    'add File menu items
+    Set mnuGame = mnuMain.Items.Add(2, , "Game style")
+    mnuGame.SubItems.Add , "Original", "&Original"
+    mnuGame.SubItems.Add , "HP", "&HP Version"
+    mnuGame.SubItems.Add , "HARD", "4x4"
+    
+    Set mnuColor = mnuMain.Items.Add(3, , "Tile Color")
+    mnuColor.SubItems.Add , "Gray", "&Grey"
+    mnuColor.SubItems.Add , "Yellow", "Yellow"
+    mnuColor.SubItems.Add , "Blue", "Blue"
+    mnuColor.SubItems.Add , "Red", "Red"
+   
+    
+    Color = 1
+    Game = 0
+    Label3.Caption = "0"
+    Label4.Caption = "1"
+    
+    tile(0) = "95LX"
+    tile(1) = "100LX"
+    tile(2) = "200LX"
+    tile(3) = "300LX"
+    tile(4) = "320LX"
+    tile(5) = "J.680"
+    tile(6) = "J.690"
+    tile(7) = "J.720"
+    
+    
+End Sub
+
+Private Sub Shuffle()
+Randomize Timer
+Dim a
+Dim b
+Dim c
+Dim d
+Dim e
+Dim f
+Dim g
+Dim h
+Dim upperbound
+Dim lowerbound
+
+upperbound = 8
+lowerbound = 1
+
+
+Command9.Caption = ""
+a = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+b = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+c = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+d = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+e = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+f = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+g = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+h = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+
+If frmMain.Label3.Caption = "0" Then
+    Command1.Caption = a
+    Do Until b <> a
+    b = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+    Loop
+    Command2.Caption = b
+    Do Until c <> a And c <> b
+    c = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+    Loop
+    Command3.Caption = c
+    Do Until d <> a And d <> b And d <> c
+    d = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+    Loop
+    Command4.Caption = d
+    Do Until e <> a And e <> b And e <> c And e <> d
+    e = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+    Loop
+    Command5.Caption = e
+    Do Until f <> a And f <> b And f <> c And f <> d And f <> e
+    f = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+    Loop
+    Command6.Caption = f
+    Do Until g <> a And g <> b And g <> c And g <> d And g <> e And g <> f
+    g = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+    Loop
+    Command7.Caption = g
+    Do Until h <> a And h <> b And h <> c And h <> d And h <> e And h <> f And h <> g
+    h = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+    Loop
+    Command8.Caption = h
+End If
+
+If frmMain.Label3.Caption = "1" Then
+    
+   
+    a = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+    
+    Command1.Caption = tile(a - 1)
+    
+    Do Until b <> a
+    b = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+    Loop
+    Command2.Caption = tile(b - 1)
+    Do Until c <> a And c <> b
+    c = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+    Loop
+    Command3.Caption = tile(c - 1)
+    Do Until d <> a And d <> b And d <> c
+    d = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+    Loop
+    Command4.Caption = tile(d - 1)
+    Do Until e <> a And e <> b And e <> c And e <> d
+    e = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+    Loop
+    Command5.Caption = tile(e - 1)
+    Do Until f <> a And f <> b And f <> c And f <> d And f <> e
+    f = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+    Loop
+    Command6.Caption = tile(f - 1)
+    Do Until g <> a And g <> b And g <> c And g <> d And g <> e And g <> f
+    g = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+    Loop
+    Command7.Caption = tile(g - 1)
+    Do Until h <> a And h <> b And h <> c And h <> d And h <> e And h <> f And h <> g
+    h = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+    Loop
+    Command8.Caption = tile(h - 1)
+End If
+
+End Sub
+
+Private Sub Label1_Click()
+        MsgBox ("YOU ARE A CHATER!!!!"), vbOKOnly, "Argh.."
+        
+   If Label3.Caption = "1" Then
+        Command1.Caption = "95LX"
+        Command2.Caption = "100LX"
+        Command3.Caption = "200LX"
+        Command4.Caption = "300LX"
+        Command5.Caption = "320LX"
+        Command6.Caption = "J.680"
+        Command7.Caption = "J.690"
+        Command8.Caption = ""
+        Command9.Caption = "J.720"
+    End If
+           
+   If Label3.Caption = "0" Then
+        Command1.Caption = "1"
+        Command2.Caption = "2"
+        Command3.Caption = "3"
+        Command4.Caption = "4"
+        Command5.Caption = "5"
+        Command6.Caption = "6"
+        Command7.Caption = "7"
+        Command8.Caption = ""
+        Command9.Caption = "8"
+    End If
+    
+    
+    
+Command8.BackColor = &HFFFFFF
+Command1.BackColor = &HC0C0C0
+Command2.BackColor = &HC0C0C0
+Command3.BackColor = &HC0C0C0
+Command4.BackColor = &HC0C0C0
+Command5.BackColor = &HC0C0C0
+Command6.BackColor = &HC0C0C0
+Command7.BackColor = &HC0C0C0
+Command9.BackColor = &HC0C0C0
+End Sub

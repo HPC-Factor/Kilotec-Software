@@ -1,0 +1,460 @@
+VERSION 5.00
+Object = "{BE67ABF5-0137-11D2-9B8A-00C04FAD5AEC}#1.0#0"; "mscecommandbar.dll"
+Object = "{F7346713-70C5-11D1-9AC9-00C04FAD5AEC}#1.0#0"; "msceimage.dll"
+Object = "{25C953A7-5464-11D1-A714-00AA0044064C}#1.0#0"; "MSCEFILE.DLL"
+Begin VB.Form frmHaupt 
+   BackColor       =   &H00FF8080&
+   Caption         =   "FUßBALL MANAGER 1.0"
+   ClientHeight    =   3255
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   9480
+   ScaleHeight     =   3255
+   ScaleWidth      =   9480
+   Begin CommandbarLib.CommandBar cmdBar 
+      Height          =   345
+      Left            =   0
+      TabIndex        =   0
+      Top             =   0
+      Width           =   7215
+      _cx             =   12726
+      _cy             =   600
+      Enabled         =   -1  'True
+      OKButton        =   0   'False
+      HelpButton      =   0   'False
+      CloseButton     =   0   'False
+   End
+   Begin FILECTLCtl.File File 
+      Left            =   4320
+      Top             =   2520
+      _cx             =   1000
+      _cy             =   1000
+   End
+   Begin VBCE.CommandButton Command2 
+      Height          =   255
+      Left            =   5280
+      TabIndex        =   11
+      Top             =   2880
+      Width           =   735
+      _cx             =   1296
+      _cy             =   450
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "Command2"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin IMAGECtl.ImageCtl Ball 
+      Height          =   155
+      Left            =   6600
+      TabIndex        =   9
+      Top             =   720
+      Width           =   225
+      _cx             =   397
+      _cy             =   273
+      Picture         =   ""
+      Stretch         =   0   'False
+   End
+   Begin VBCE.Label lblLiga 
+      Height          =   345
+      Left            =   6360
+      TabIndex        =   10
+      Top             =   360
+      Width           =   3135
+      _cx             =   5530
+      _cy             =   609
+      Appearance      =   0
+      AutoSize        =   0   'False
+      BackColor       =   16761024
+      BackStyle       =   1
+      BorderStyle     =   1
+      Caption         =   "Label1"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   0
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label lblSpieltag 
+      Height          =   345
+      Left            =   3360
+      TabIndex        =   8
+      Top             =   360
+      Width           =   3015
+      _cx             =   5318
+      _cy             =   609
+      Appearance      =   0
+      AutoSize        =   0   'False
+      BackColor       =   16761024
+      BackStyle       =   1
+      BorderStyle     =   1
+      Caption         =   "Label1"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   0
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label1 
+      Height          =   255
+      Left            =   6120
+      TabIndex        =   7
+      Top             =   840
+      Width           =   3255
+      _cx             =   5741
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   12640511
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Nächstes Spiel:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   16777215
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label lblGegner 
+      Height          =   2055
+      Left            =   6120
+      TabIndex        =   6
+      Top             =   1080
+      Width           =   3255
+      _cx             =   5741
+      _cy             =   3625
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   16777215
+      BackStyle       =   1
+      BorderStyle     =   1
+      Caption         =   ""
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label lblPlatz 
+      Height          =   345
+      Left            =   240
+      TabIndex        =   5
+      Top             =   1800
+      Width           =   3135
+      _cx             =   5530
+      _cy             =   609
+      Appearance      =   0
+      AutoSize        =   0   'False
+      BackColor       =   16761024
+      BackStyle       =   1
+      BorderStyle     =   1
+      Caption         =   "Label1"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   0
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label lblGeld 
+      Height          =   345
+      Left            =   240
+      TabIndex        =   4
+      Top             =   2280
+      Width           =   3135
+      _cx             =   5530
+      _cy             =   609
+      Appearance      =   0
+      AutoSize        =   0   'False
+      BackColor       =   16761024
+      BackStyle       =   1
+      BorderStyle     =   1
+      Caption         =   "Label1"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   0
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.CommandButton Command1 
+      Height          =   1095
+      Left            =   4080
+      TabIndex        =   3
+      Top             =   1440
+      Width           =   1455
+      _cx             =   2566
+      _cy             =   1931
+      Appearance      =   1
+      BackColor       =   12632319
+      Caption         =   "Nächster Spieltag"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.Label lblTeam 
+      Height          =   345
+      Left            =   0
+      TabIndex        =   2
+      Top             =   360
+      Width           =   3375
+      _cx             =   5953
+      _cy             =   609
+      Appearance      =   0
+      AutoSize        =   0   'False
+      BackColor       =   16761024
+      BackStyle       =   1
+      BorderStyle     =   1
+      Caption         =   "Label1"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   0
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label lblSpieler 
+      Height          =   345
+      Left            =   240
+      TabIndex        =   1
+      Top             =   1320
+      Width           =   3135
+      _cx             =   5530
+      _cy             =   609
+      Appearance      =   0
+      AutoSize        =   0   'False
+      BackColor       =   16761024
+      BackStyle       =   1
+      BorderStyle     =   1
+      Caption         =   "Label1"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   0
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+End
+Attribute VB_Name = "frmHaupt"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub Command1_Click()
+If Command1.Caption = "SAISONENDE" Then
+    frmSaisonende.Show
+    Exit Sub
+End If
+
+Command1.Enabled = False
+frmErgebnis.Show
+
+If Spieltag = 35 Then
+    Command1.Caption = "SAISONENDE"
+    frmHaupt.lblSpieltag.Caption = "SAISONENDE"
+End If
+End Sub
+
+
+
+
+
+Private Sub Command2_Click()
+Angriff(TeamIndex) = 100
+Mittelfeld(TeamIndex) = 100
+Abwehr(TeamIndex) = 100
+End Sub
+
+Private Sub Form_Activate()
+
+End Sub
+
+Private Sub Form_Load()
+Center Me
+
+
+Aktualisieren
+
+    Ball.Top = -100
+    Ball.Top = 455
+    Ball.Picture = App.Path & "\Deutsch.bmp"
+    
+    
+    Dim mnuMain As CommandbarLib.CommandBarMenuBar
+    Dim mnuFile As CommandbarLib.Item
+    Dim mnuCalc As CommandbarLib.Item
+    Dim mnuCalc2 As CommandbarLib.Item
+    Dim mnuCalc3 As CommandbarLib.Item
+    
+    Set mnuMain = cmdBar.Controls.Add(cbrMenuBar, "MainMenu")
+    Set mnuFile = mnuMain.Items.Add(1, "Haupt", "&Hauptmenü")
+    mnuFile.SubItems.Add , "NewGame", "&Neues Spiel"
+    mnuFile.SubItems.Add , "Load", "&Laden"
+    mnuFile.SubItems.Add , "Save", "&Speichern"
+    mnuFile.SubItems.Add , "", "", cbrMenuSeparator
+    mnuFile.SubItems.Add , "Exit", "E&xit"
+    
+    Set mnuCalc = mnuMain.Items.Add(2, , "&Aktuell")
+    mnuCalc.SubItems.Add , "Tabelle", "&Tabelle"
+    mnuCalc.SubItems.Add , "Spieltag", "&Begegnungen"
+    mnuCalc.SubItems.Add , "Form", "T&eamstärken"
+    
+    Set mnuCalc2 = mnuMain.Items.Add(3, , "&Mannschaft")
+    'mnuCalc2.SubItems.Add , "Aufstellung", "Aufstellung"
+    'mnuCalc2.SubItems.Add , "", "", cbrMenuSeparator
+    mnuCalc2.SubItems.Add , "Kaufen", "Spieler kaufen"
+    mnuCalc2.SubItems.Add , "Verkaufen", "Spieler verkaufen"
+    mnuCalc2.SubItems.Add , "Training", "Training"
+    
+    Set mnuCalc3 = mnuMain.Items.Add(4, , "&Verein")
+    mnuCalc3.SubItems.Add , "Bilanz", "Bilanz"
+    mnuCalc3.SubItems.Add , "Stadion", "Eintrittspreise"
+ 
+End Sub
+
+Private Sub cmdBar_MenuClick(ByVal Item As CommandbarLib.Item)
+ Select Case Item.Key
+     Case "NewGame"
+        frmNewGame.Show
+        Me.Hide
+    
+    Case "Exit"
+        App.End
+ 
+  
+    Case "Tabelle"
+        frmTabelle.Show
+    Case "Spieltag"
+        
+        frmSpieltag.Show
+    Case "Form"
+        frmStaerken.Show
+    Case "Bilanz"
+        frmBilanz.Show
+    Case "Kaufen"
+        frmKaufen.Show
+    Case "Verkaufen"
+        frmVerkaufen.Show
+        
+    Case "Training"
+        frmTraining.Show
+        
+    Case "Stadion"
+        frmPreise.Show
+    
+    Case "Load"
+        DBladen
+        MsgBox "Spiel erfolgreich geladen!", vbOKOnly, "Hinweis"
+        Aktualisieren
+        Berechnen
+        TabellenRechner
+    
+    Case "Save"
+        DBspeichern
+        MsgBox "Spiel erfolgreich gespeichert!", vbOKOnly, "Hinweis"
+        
+    
+  End Select
+End Sub
+
+Private Sub List4_Click()
+End Sub
+
+Private Sub Label2_Click()
+
+End Sub
+
+Private Sub Label3_Click()
+
+End Sub
+
+Private Sub Label1_Click()
+
+End Sub

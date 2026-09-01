@@ -1,0 +1,60 @@
+[Version]
+Signature="$Chicago$"
+CESignature="$Windows CE$"
+Provider=%CompanyName%
+
+[SourceDisksNames]
+1=,"Application Files",, App
+
+[DefaultInstall]
+CopyFiles=Files.App, Files.Windows
+CEShortcuts=Shortcuts
+
+[Shortcuts]
+%AppName%,0,"FM.vb"
+
+[CEStrings]
+InstallDir=%CE1%\%AppName%
+AppName="Fussball"
+
+[Strings]
+CompanyName="Dominik Kristen"
+
+[DestinationDirs]
+Shortcuts=,%CE11%
+Files.App=,%InstallDir%
+Files.Windows=,%CE2%
+Files.SH 3 (1K) v2.10=,%CE2%
+
+[SourceDisksFiles]
+FM.vb=1
+
+[DefaultInstall.SH 3 (1K) v2.10]
+CopyFiles=Files.SH 3 (1K) v2.10
+CESelfRegister=MSCECommandBar.dll,vbscript.dll,pvbhost2.dll,pvbform2.dll
+
+[CEDevice.SH 3 (1K) v2.10]
+ProcessorType=10003
+
+[SourceDisksNames.SH 3 (1K) v2.10]
+3= ,"SH 3 (1K) v2.10 Files",,SH 3 (1K) v2.10
+
+[SourceDisksFiles.SH 3 (1K) v2.10]
+pvbload.exe=3
+pvbform2.dll=3
+vbscript.dll=3
+pvbhost2.dll=3
+vbsen.dll=3
+MSCECommandBar.dll=3
+
+[Files.App]
+FM.vb
+
+[Files.SH 3 (1K) v2.10]
+pvbload.exe
+pvbform2.dll,,0x80000000
+vbscript.dll,,0x80000000
+pvbhost2.dll,,0x80000000
+vbsen.dll
+MSCECommandBar.dll,,0x80000000
+

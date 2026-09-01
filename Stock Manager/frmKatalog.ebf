@@ -1,0 +1,341 @@
+VERSION 5.00
+Begin VB.Form frmKatalog 
+   BackColor       =   &H00C0FFFF&
+   Caption         =   "Stocks"
+   ClientHeight    =   2250
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   3075
+   ScaleHeight     =   2250
+   ScaleWidth      =   3075
+   Begin VBCE.CommandButton Command3 
+      Height          =   375
+      Left            =   1080
+      TabIndex        =   6
+      Top             =   1800
+      Width           =   855
+      _cx             =   1508
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "&Delete"
+      Enabled         =   0   'False
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command2 
+      Height          =   375
+      Left            =   120
+      TabIndex        =   5
+      Top             =   1800
+      Width           =   855
+      _cx             =   1508
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "&Close"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command1 
+      Default         =   -1  'True
+      Height          =   375
+      Left            =   2040
+      TabIndex        =   4
+      Top             =   1800
+      Width           =   855
+      _cx             =   1508
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "&OK"
+      Enabled         =   0   'False
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.TextBox Text1 
+      Height          =   255
+      Left            =   120
+      TabIndex        =   3
+      Top             =   1440
+      Width           =   2775
+      _cx             =   4895
+      _cy             =   450
+      Appearance      =   1
+      BackColor       =   -2147483643
+      BorderStyle     =   1
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   ""
+      Alignment       =   0
+      HideSelection   =   -1  'True
+      Locked          =   0   'False
+      MaxLength       =   0
+      MultiLine       =   0   'False
+      PasswordChar    =   ""
+      ScrollBars      =   0
+   End
+   Begin VBCE.Label Label2 
+      Height          =   255
+      Left            =   120
+      TabIndex        =   2
+      Top             =   1200
+      Width           =   1935
+      _cx             =   3413
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "New entry:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.ListBox List1 
+      Height          =   840
+      Left            =   120
+      TabIndex        =   1
+      Top             =   240
+      Width           =   2775
+      List            =   "frmKatalog.frx":0000
+      ItemData        =   "frmKatalog.frx":0028
+      _cx             =   4895
+      _cy             =   1482
+      Appearance      =   1
+      BackColor       =   -2147483643
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Columns         =   0
+      IntegralHeight  =   -1  'True
+      MultiSelect     =   0
+      Sorted          =   0   'False
+   End
+   Begin VBCE.Label Label1 
+      Height          =   255
+      Left            =   120
+      TabIndex        =   0
+      Top             =   0
+      Width           =   2655
+      _cx             =   4683
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Entries:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+End
+Attribute VB_Name = "frmKatalog"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub Command1_Click()
+
+
+Dim I As Integer
+
+For I = 0 To List1.ListCount - 1
+    If Trim(Text1.Text) = Mid(List1.List(I), 3) Then
+ MsgBox "This stock already exist!", vbOKOnly, ""
+
+    Text1.SelStart = 0
+    Text1.SelLength = Len(Text1.Text)
+    Text1.SetFocus
+Exit Sub
+    End If
+Next I
+
+'Aktualisieren der Listbox
+Dim Zahl As Integer
+Zahl = List1.ListCount
+If Zahl = 0 Then List1.AddItem "01" & " " & Text1.Text
+If Zahl = 1 Then List1.AddItem "02" & " " & Text1.Text
+If Zahl = 2 Then List1.AddItem "03" & " " & Text1.Text
+If Zahl = 3 Then List1.AddItem "04" & " " & Text1.Text
+If Zahl = 4 Then List1.AddItem "05" & " " & Text1.Text
+If Zahl = 5 Then List1.AddItem "06" & " " & Text1.Text
+If Zahl = 6 Then List1.AddItem "07" & " " & Text1.Text
+If Zahl = 7 Then List1.AddItem "08" & " " & Text1.Text
+If Zahl = 8 Then List1.AddItem "09" & " " & Text1.Text
+
+If Zahl > 8 Then List1.AddItem Zahl + 1 & " " & Text1.Text
+    
+
+'Katalog speichern
+
+'On Error Resume Next
+frmMain.File.Open "Stocks.dat", fsModeOutput, fsAccessWrite, fsLockReadWrite
+For I = 0 To List1.ListCount - 1
+        frmMain.File.LinePrint List1.List(I)
+    Next I
+frmMain.File.Close
+
+
+Label1.Caption = "Entries (" & _
+List1.ListCount & ")"
+Command1.Enabled = False
+
+Me.Tag = "OK"
+Text1.Text = ""
+Text1.SetFocus
+
+Exit Sub
+
+SaveCat2:
+    frmMain.File.Close
+    MsgBox "Saving error", vbOKOnly, ""
+    Exit Sub
+
+
+   
+End Sub
+
+Private Sub Command2_Click()
+frmMain.Combo1.Clear
+AddToCombo frmMain.Combo1
+Me.Hide
+
+End Sub
+
+Private Sub Command3_Click()
+On Error Resume Next 'wenn keine Einträge vorhanden
+Dim Del As Integer
+'Schleife rückwärts zählen !!!!
+For Del = List1.ListCount To 0 Step (-1)
+    If List1.Selected(Del) = True Then
+    List1.RemoveItem Del
+    End If
+   
+Next Del
+Dim ii As Integer
+frmMain.File.Open "Stocks.dat", fsModeOutput, fsAccessWrite, fsLockReadWrite
+For ii = 0 To List1.ListCount - 1
+        frmMain.File.LinePrint List1.List(I)
+    Next I
+frmMain.File.Close
+
+
+
+Label1.Caption = "Entries (" & _
+List1.ListCount & ")"
+
+Me.Tag = "OK"
+frmMain.Combo1.Clear
+AddToCombo frmMain.Combo1
+End Sub
+
+Private Sub Form_Activate()
+Text1.SetFocus
+End Sub
+
+Private Sub Form_Load()
+Me.Caption = "Stocks"
+
+Dim Kat As String
+Dim flKat As String
+flKat = "Stocks.dat"
+
+On Error Resume Next
+  frmMain.File.Open flKat, fsModeInput, fsAccessRead, fsLockRead
+  Do While Not frmMain.File.EOF
+      Kat = frmMain.File.LineInputString
+       If Kat <> Empty Then
+            List1.AddItem Kat
+        End If
+  Loop
+ 
+  frmMain.File.Close
+
+
+
+
+Label1.Caption = "Entries (" & _
+List1.ListCount & ")"
+
+End Sub
+
+Private Sub List1_Click()
+Command3.Enabled = True
+End Sub
+
+Private Sub Text1_Change()
+ If Text1.Text = "" Then
+        Command1.Enabled = False
+    Else
+        Command1.Enabled = True
+    End If
+End Sub

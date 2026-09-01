@@ -1,0 +1,526 @@
+VERSION 5.00
+Begin VB.Form frmOptionen 
+   Caption         =   "Optionen"
+   ClientHeight    =   1530
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   6375
+   ScaleHeight     =   1530
+   ScaleWidth      =   6375
+   Begin VBCE.CheckBox Check2 
+      Height          =   255
+      Left            =   3840
+      TabIndex        =   11
+      Top             =   600
+      Width           =   2055
+      _cx             =   3625
+      _cy             =   450
+      Appearance      =   1
+      BackColor       =   -2147483633
+      Caption         =   "Maximiert"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      Value           =   0
+   End
+   Begin VBCE.TextBox Symbol 
+      Height          =   255
+      Left            =   1560
+      TabIndex        =   10
+      Top             =   1080
+      Width           =   495
+      _cx             =   873
+      _cy             =   450
+      Appearance      =   1
+      BackColor       =   -2147483643
+      BorderStyle     =   1
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   "€"
+      Alignment       =   0
+      HideSelection   =   -1  'True
+      Locked          =   0   'False
+      MaxLength       =   0
+      MultiLine       =   0   'False
+      PasswordChar    =   ""
+      ScrollBars      =   0
+   End
+   Begin VBCE.Label Label4 
+      Height          =   255
+      Left            =   120
+      TabIndex        =   9
+      Top             =   1080
+      Width           =   1335
+      _cx             =   2355
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Währungssymbol:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   1
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label2 
+      Height          =   255
+      Left            =   120
+      TabIndex        =   8
+      Top             =   600
+      Width           =   1335
+      _cx             =   2355
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Sprache:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   1
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.ComboBox Combo2 
+      Height          =   360
+      Left            =   1560
+      TabIndex        =   7
+      Top             =   600
+      Width           =   2055
+      List            =   "frmOptionen.frx":0000
+      ItemData        =   "frmOptionen.frx":0028
+      _cx             =   3625
+      _cy             =   635
+      Appearance      =   1
+      BackColor       =   -2147483643
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   ""
+      IntegralHeight  =   -1  'True
+      Locked          =   0   'False
+      Sorted          =   0   'False
+      Style           =   0
+   End
+   Begin VBCE.Label Label1 
+      Height          =   255
+      Left            =   5640
+      TabIndex        =   6
+      Top             =   120
+      Width           =   975
+      _cx             =   1720
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Minuten"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.TextBox Text1 
+      Height          =   255
+      Left            =   5160
+      TabIndex        =   5
+      Top             =   120
+      Width           =   375
+      _cx             =   661
+      _cy             =   450
+      Appearance      =   1
+      BackColor       =   -2147483643
+      BorderStyle     =   1
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   "5"
+      Alignment       =   2
+      HideSelection   =   -1  'True
+      Locked          =   0   'False
+      MaxLength       =   0
+      MultiLine       =   0   'False
+      PasswordChar    =   ""
+      ScrollBars      =   0
+   End
+   Begin VBCE.CheckBox Check1 
+      Height          =   255
+      Left            =   3840
+      TabIndex        =   4
+      Top             =   120
+      Width           =   1215
+      _cx             =   2143
+      _cy             =   450
+      Appearance      =   1
+      BackColor       =   -2147483633
+      Caption         =   "Autosave"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      Value           =   0
+   End
+   Begin VBCE.ComboBox Combo1 
+      Height          =   360
+      Left            =   1560
+      TabIndex        =   3
+      Top             =   120
+      Width           =   2055
+      List            =   "frmOptionen.frx":0050
+      ItemData        =   "frmOptionen.frx":0078
+      _cx             =   3625
+      _cy             =   635
+      Appearance      =   1
+      BackColor       =   -2147483643
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   ""
+      IntegralHeight  =   -1  'True
+      Locked          =   0   'False
+      Sorted          =   0   'False
+      Style           =   0
+   End
+   Begin VBCE.Label Label3 
+      Height          =   255
+      Left            =   120
+      TabIndex        =   2
+      Top             =   120
+      Width           =   1335
+      _cx             =   2355
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Hintergrundfarbe:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   1
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.CommandButton Command2 
+      Height          =   375
+      Left            =   4200
+      TabIndex        =   1
+      Top             =   1080
+      Width           =   975
+      _cx             =   1720
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "&Abbrechen"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command1 
+      Default         =   -1  'True
+      Height          =   375
+      Left            =   5280
+      TabIndex        =   0
+      Top             =   1080
+      Width           =   975
+      _cx             =   1720
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "&OK"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+End
+Attribute VB_Name = "frmOptionen"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub Check1_Click()
+
+If Check1.Value = 0 Then
+    Text1.Enabled = False
+    frmMain.Timer1.Enabled = False
+Else
+    Text1.Enabled = True
+    frmMain.Timer1.Enabled = True
+End If
+End Sub
+
+Private Sub Check2_Click()
+If Check2.Value = 0 Then
+    frmMain.Width = 8205
+    frmMain.Height = 3240
+    Center frmMain
+Else
+    frmMain.Left = 0
+    frmMain.Width = Screen.Width
+    frmMain.Height = Screen.Height
+    
+    frmMain.ListView1.Height = frmMain.Height - frmMain.ListView1.Top - 800
+    frmMain.ListView1.Width = frmMain.Width - 100
+End If
+ 
+    
+End Sub
+
+Private Sub Combo1_Change()
+
+End Sub
+
+Private Sub Combo1_Click()
+HINTERGRUNDFARBE = Combo1.ListIndex
+
+If HINTERGRUNDFARBE = 0 Then frmOptionen.BackColor = &H8000000F
+If HINTERGRUNDFARBE = 1 Then frmOptionen.BackColor = &HC0FFC0
+If HINTERGRUNDFARBE = 2 Then frmOptionen.BackColor = &HFFC0C0
+If HINTERGRUNDFARBE = 3 Then frmOptionen.BackColor = &HC0FFFF
+
+
+End Sub
+
+Private Sub Combo2_Change()
+
+End Sub
+
+Private Sub Combo2_Click()
+SPRACHE = Combo2.ListIndex
+If SPRACHE = 0 Then
+    Me.Caption = "Options"
+    Label3.Caption = "Backcolor:"
+    Label2.Caption = "Language:"
+    Label1.Caption = "minutes"
+    Command2.Caption = "&Cancel"
+    Label4.Caption = "Currency:"
+    Check2.Caption = "Maximize Main"
+End If
+If SPRACHE = 1 Then
+    Me.Caption = "Optionen"
+    Label3.Caption = "Hintergrundfarbe:"
+    Label2.Caption = "Sprache:"
+    Label1.Caption = "Minuten"
+    Command2.Caption = "&Abbrechen"
+    Label4.Caption = "Währung:"
+    Check2.Caption = "Maximieren"
+End If
+End Sub
+
+Private Sub Command1_Click()
+If Combo2.Text = "Deutsch" Then SPRACHE = 1
+If Combo2.Text = "English" Then SPRACHE = 0
+
+If SPRACHE = 0 Then
+    If Combo1.Text = "Default" Then HINTERGRUNDFARBE = 0
+    If Combo1.Text = "Green" Then HINTERGRUNDFARBE = 1
+    If Combo1.Text = "Blue" Then HINTERGRUNDFARBE = 2
+    If Combo1.Text = "Yellow" Then HINTERGRUNDFARBE = 3
+End If
+If SPRACHE = 1 Then
+    If Combo1.Text = "Standard" Then HINTERGRUNDFARBE = 0
+    If Combo1.Text = "Grün" Then HINTERGRUNDFARBE = 1
+    If Combo1.Text = "Blau" Then HINTERGRUNDFARBE = 2
+    If Combo1.Text = "Gelb" Then HINTERGRUNDFARBE = 3
+End If
+
+
+SaveSetting App.Title, "Settings", "Autosave", Check1.Value
+SaveSetting App.Title, "Settings", "SaveMinuten", Text1.Text
+SaveSetting App.Title, "Settings", "Farbe", HINTERGRUNDFARBE
+SaveSetting App.Title, "Settings", "Sprache", SPRACHE
+SaveSetting App.Title, "Settings", "Currency", Symbol.Text
+SaveSetting App.Title, "Settings", "Max", Check2.Value
+Me.Hide
+
+End Sub
+
+Private Sub Command2_Click()
+Me.Hide
+End Sub
+
+
+
+
+
+
+
+
+Private Sub Form_Activate()
+Check1.Value = AUTOSAVE
+Check2.Value = MAXIM
+
+If AUTOSAVE = 1 Then Text1.Enabled = True
+If AUTOSAVE = 0 Then Text1.Enabled = False
+Text1.Text = SAVE_MINUTEN
+Combo1.Text = Combo1.List(HINTERGRUNDFARBE)
+Combo2.Text = Combo2.List(SPRACHE)
+Symbol.Text = WSYMBOL
+
+If HINTERGRUNDFARBE = 0 Then frmOptionen.BackColor = &H8000000F: Check1.BackColor = &H8000000F: Check2.BackColor = &H8000000F
+If HINTERGRUNDFARBE = 1 Then frmOptionen.BackColor = &HC0FFC0: Check1.BackColor = &HC0FFC0: Check2.BackColor = &HC0FFC0
+If HINTERGRUNDFARBE = 2 Then frmOptionen.BackColor = &HFFC0C0: Check1.BackColor = &HFFC0C0: Check2.BackColor = &HFFC0C0
+If HINTERGRUNDFARBE = 3 Then frmOptionen.BackColor = &HC0FFFF: Check1.BackColor = &HC0FFFF: Check2.BackColor = &HC0FFFF
+
+If SPRACHE = 0 Then
+    Me.Caption = "Options"
+    Label3.Caption = "Backcolor"
+    Label2.Caption = "Language"
+    Label1.Caption = "minutes"
+    Command2.Caption = "&Cancel"
+    Label4.Caption = "Currency:"
+    Check2.Caption = "Maximize Main"
+End If
+If SPRACHE = 1 Then
+   Me.Caption = "Optionen"
+   Label3.Caption = "Hintergrundfarbe"
+   Label2.Caption = "Sprache"
+   Label1.Caption = "Minuten"
+   Command2.Caption = "&Abbrechen"
+   Label4.Caption = "Währung:"
+   Check2.Caption = "Maximieren"
+End If
+
+End Sub
+
+Private Sub Form_Load()
+Center Me
+
+If SPRACHE = 0 Then
+    Combo1.AddItem "Default"
+    Combo1.AddItem "Green"
+    Combo1.AddItem "Blue"
+    Combo1.AddItem "Yellow"
+End If
+If SPRACHE = 1 Then
+    Combo1.AddItem "Standard"
+    Combo1.AddItem "Grün"
+    Combo1.AddItem "Blau"
+    Combo1.AddItem "Gelb"
+End If
+
+Combo2.AddItem "English"
+Combo2.AddItem "Deutsch"
+End Sub
+
+Private Sub Text1_Change()
+
+End Sub
+
+Private Sub Text1_LostFocus()
+On Error Resume Next
+If CDbl(Text1.Text) > 25 Then Text1.Text = "25"
+If CDbl(Text1.Text) < 1 Then Text1.Text = "1"
+If Text1.Text = Empty Then Text1.Text = "1"
+
+End Sub

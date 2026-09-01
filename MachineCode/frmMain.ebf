@@ -1,0 +1,1134 @@
+VERSION 5.00
+Object = "{A32A88B3-817C-11D1-A762-00AA0044064C}#1.0#0"; "mscecomdlg.dll"
+Object = "{25C953A7-5464-11D1-A714-00AA0044064C}#1.0#0"; "MSCEFILE.DLL"
+Object = "{BE67ABF5-0137-11D2-9B8A-00C04FAD5AEC}#1.0#0"; "mscecommandbar.dll"
+Object = "{E491F001-98EC-11D1-9B3D-00C04FAD5AEC}#1.0#0"; "msceimagelist.dll"
+Begin VB.Form frmMain 
+   BackColor       =   &H00000000&
+   Caption         =   "MachineCode 1.0"
+   ClientHeight    =   3255
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   9480
+   KeyPreview      =   -1  'True
+   ScaleHeight     =   3255
+   ScaleWidth      =   9480
+   Begin FILECTLCtl.File File 
+      Left            =   7680
+      Top             =   2640
+      _cx             =   1000
+      _cy             =   1000
+   End
+   Begin CEComDlgCtl.CommonDialog CommonDialog1 
+      Left            =   6960
+      Top             =   2760
+      _cx             =   847
+      _cy             =   847
+      CancelError     =   0   'False
+      Color           =   0
+      DefaultExt      =   ""
+      DialogTitle     =   ""
+      FileName        =   ""
+      Filter          =   ""
+      FilterIndex     =   0
+      Flags           =   0
+      HelpCommand     =   0
+      HelpContext     =   ""
+      HelpFile        =   ""
+      InitDir         =   ""
+      MaxFileSize     =   256
+      FontBold        =   0   'False
+      FontItalic      =   0   'False
+      FontName        =   ""
+      FontSize        =   10
+      FontUnderline   =   0   'False
+      Max             =   0
+      Min             =   0
+      FontStrikethru  =   0   'False
+   End
+   Begin CommandbarLib.CommandBar cmdBar 
+      Height          =   345
+      Left            =   0
+      TabIndex        =   1
+      Top             =   0
+      Width           =   3615
+      _cx             =   6376
+      _cy             =   600
+      Enabled         =   -1  'True
+      OKButton        =   0   'False
+      HelpButton      =   0   'False
+      CloseButton     =   0   'False
+   End
+   Begin CEImageListCtl.ImageList ImageList1 
+      Left            =   7320
+      Top             =   2760
+      _cx             =   990
+      _cy             =   990
+      ImageWidth      =   16
+      ImageHeight     =   16
+   End
+   Begin VBCE.CommandButton Command2 
+      Height          =   615
+      Left            =   8640
+      TabIndex        =   20
+      Top             =   1800
+      Width           =   615
+      _cx             =   1085
+      _cy             =   1085
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "DEL"
+      Enabled         =   0   'False
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command1 
+      Height          =   615
+      Left            =   8640
+      TabIndex        =   19
+      Top             =   1200
+      Width           =   615
+      _cx             =   1085
+      _cy             =   1085
+      Appearance      =   1
+      BackColor       =   8421631
+      Caption         =   "STOP"
+      Enabled         =   0   'False
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command24 
+      Height          =   615
+      Left            =   8040
+      TabIndex        =   18
+      Top             =   2400
+      Width           =   615
+      _cx             =   1085
+      _cy             =   1085
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "D"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command23 
+      Height          =   615
+      Left            =   7440
+      TabIndex        =   17
+      Top             =   2400
+      Width           =   615
+      _cx             =   1085
+      _cy             =   1085
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "F"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command22 
+      Height          =   615
+      Left            =   6840
+      TabIndex        =   16
+      Top             =   2400
+      Width           =   615
+      _cx             =   1085
+      _cy             =   1085
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "0"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command21 
+      Height          =   615
+      Left            =   6240
+      TabIndex        =   15
+      Top             =   2400
+      Width           =   615
+      _cx             =   1085
+      _cy             =   1085
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "E"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command19 
+      Height          =   615
+      Left            =   8040
+      TabIndex        =   14
+      Top             =   1800
+      Width           =   615
+      _cx             =   1085
+      _cy             =   1085
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "C"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command18 
+      Height          =   615
+      Left            =   7440
+      TabIndex        =   13
+      Top             =   1800
+      Width           =   615
+      _cx             =   1085
+      _cy             =   1085
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "9"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command17 
+      Height          =   615
+      Left            =   6840
+      TabIndex        =   12
+      Top             =   1800
+      Width           =   615
+      _cx             =   1085
+      _cy             =   1085
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "8"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command16 
+      Height          =   615
+      Left            =   6240
+      TabIndex        =   11
+      Top             =   1800
+      Width           =   615
+      _cx             =   1085
+      _cy             =   1085
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "7"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command14 
+      Height          =   615
+      Left            =   8040
+      TabIndex        =   10
+      Top             =   1200
+      Width           =   615
+      _cx             =   1085
+      _cy             =   1085
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "B"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command13 
+      Height          =   615
+      Left            =   7440
+      TabIndex        =   9
+      Top             =   1200
+      Width           =   615
+      _cx             =   1085
+      _cy             =   1085
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "6"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command12 
+      Height          =   615
+      Left            =   6840
+      TabIndex        =   8
+      Top             =   1200
+      Width           =   615
+      _cx             =   1085
+      _cy             =   1085
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "5"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command11 
+      Height          =   615
+      Left            =   6240
+      TabIndex        =   7
+      Top             =   1200
+      Width           =   615
+      _cx             =   1085
+      _cy             =   1085
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "4"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command10 
+      Height          =   615
+      Left            =   8640
+      TabIndex        =   6
+      Top             =   600
+      Width           =   615
+      _cx             =   1085
+      _cy             =   1085
+      Appearance      =   1
+      BackColor       =   12648384
+      Caption         =   "RUN"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command9 
+      Height          =   615
+      Left            =   8040
+      TabIndex        =   5
+      Top             =   600
+      Width           =   615
+      _cx             =   1085
+      _cy             =   1085
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "A"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command8 
+      Height          =   615
+      Left            =   7440
+      TabIndex        =   4
+      Top             =   600
+      Width           =   615
+      _cx             =   1085
+      _cy             =   1085
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "3"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command7 
+      Height          =   615
+      Left            =   6840
+      TabIndex        =   3
+      Top             =   600
+      Width           =   615
+      _cx             =   1085
+      _cy             =   1085
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "2"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command6 
+      Height          =   615
+      Left            =   6240
+      TabIndex        =   2
+      Top             =   600
+      Width           =   615
+      _cx             =   1085
+      _cy             =   1085
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "1"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.Timer Timer1 
+      Left            =   6120
+      Top             =   2760
+      _cx             =   847
+      _cy             =   847
+      Enabled         =   0   'False
+      Interval        =   500
+   End
+   Begin VBCE.ListBox List1 
+      Height          =   2985
+      Left            =   0
+      TabIndex        =   0
+      Top             =   360
+      Width           =   6015
+      List            =   "frmMain.frx":0000
+      ItemData        =   "frmMain.frx":0028
+      _cx             =   10610
+      _cy             =   5265
+      Appearance      =   1
+      BackColor       =   0
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Courier"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   16777215
+      Columns         =   0
+      IntegralHeight  =   -1  'True
+      MultiSelect     =   0
+      Sorted          =   0   'False
+   End
+End
+Attribute VB_Name = "frmMain"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Dim mnuMain As CommandbarLib.CommandBarMenuBar
+Dim mnuFile As CommandbarLib.Item
+Dim mnuEdit As CommandbarLib.Item
+Dim mnuKategorie As CommandbarLib.Item
+Dim mnuExtras As CommandbarLib.Item
+Dim mnuInfo As CommandbarLib.Item
+
+
+
+
+Private Sub cmdBar_ButtonClick(ByVal Button As CommandbarLib.CommandBarButton)
+ Select Case Button.Key
+    Case "new"
+        Dim a As Integer
+        a = MsgBox("Do you want to start a new project without saving?", vbYesNo, "Info")
+        If a = vbYes Then
+        On Error Resume Next
+            List1.Clear
+            Indexx = 0
+            LINE = 0
+            pc = 0
+            sp = 0
+            zero = False
+            carry = False
+            err = False
+            
+            For r = 0 To 7
+                reg(r) = 0
+            Next r
+            Exit Sub
+        End If
+    
+    
+    Case "save"
+        CommonDialog1.Flags = cdlOFNHideReadOnly + cdlOFNOverwritePrompt + cdlOFNPathMustExist
+        CommonDialog1.DefaultExt = "tmc"
+        CommonDialog1.Filename = ""
+        CommonDialog1.Filter = "Tiny Machine Code (*.tmc)|*.tmc"
+        CommonDialog1.DialogTitle = "Saving..."
+        CommonDialog1.ShowSave
+        On Error Resume Next
+        Filename = CommonDialog1.Filename
+        DBSpeichern
+    
+    Case "open"
+        CommonDialog1.Flags = cdlOFNHideReadOnly + cdlOFNOverwritePrompt + cdlOFNPathMustExist
+        CommonDialog1.DefaultExt = "tmc"
+        CommonDialog1.Filename = ""
+        CommonDialog1.Filter = "Tiny Machine Code (*.tmc)|*.tmc"
+        CommonDialog1.DialogTitle = "Open..."
+        CommonDialog1.ShowOpen
+        On Error Resume Next
+        Filename = CommonDialog1.Filename
+        DBladen
+        LINE = frmMain.List1.ListCount - 1
+
+    
+    Case "run"
+        Command10_Click
+        
+  
+    
+    Case "settings"
+        frmOptionen.Show
+        
+
+        Case "about"
+            frmAbout.Show
+        
+        Case "help"
+            frmHelp.Show
+        
+
+    End Select
+End Sub
+
+Private Sub cmdBar_MenuClick(ByVal Item As CommandbarLib.Item)
+ Select Case Item.Key
+    Case "new"
+        Dim a As Integer
+        a = MsgBox("Do you want to start a new project without saving?", vbYesNo, "Info")
+        If a = vbYes Then
+        On Error Resume Next
+            List1.Clear
+            Indexx = 0
+            LINE = 0
+            pc = 0
+            sp = 0
+            zero = False
+            carry = False
+            err = False
+            
+            For r = 0 To 7
+                reg(r) = 0
+            Next r
+            Exit Sub
+        End If
+    
+    
+    Case "save"
+        CommonDialog1.Flags = cdlOFNHideReadOnly + cdlOFNOverwritePrompt + cdlOFNPathMustExist
+        CommonDialog1.DefaultExt = "tmc"
+        CommonDialog1.Filename = ""
+        CommonDialog1.Filter = "Tiny Machine Code (*.tmc)|*.tmc"
+        CommonDialog1.DialogTitle = "Saving..."
+        CommonDialog1.ShowSave
+        On Error Resume Next
+        Filename = CommonDialog1.Filename
+        DBSpeichern
+    
+    Case "open"
+        CommonDialog1.Flags = cdlOFNHideReadOnly + cdlOFNOverwritePrompt + cdlOFNPathMustExist
+        CommonDialog1.DefaultExt = "tmc"
+        CommonDialog1.Filename = ""
+        CommonDialog1.Filter = "Tiny Machine Code (*.tmc)|*.tmc"
+        CommonDialog1.DialogTitle = "Open..."
+        CommonDialog1.ShowOpen
+        On Error Resume Next
+        Filename = CommonDialog1.Filename
+        DBladen
+        LINE = frmMain.List1.ListCount - 1
+
+    
+    Case "Exit"
+        App.End
+        
+  
+    
+    Case "settings"
+        frmOptionen.Show
+    
+    Case "samples"
+        frmSamples.Show
+        
+
+        Case "about"
+            frmAbout.Show
+        
+        Case "help"
+            frmHelp.Show
+        
+
+    End Select
+End Sub
+
+Private Sub Command13_KeyDown(ByVal KeyCode As Integer, ByVal Shift As Integer)
+
+End Sub
+
+Private Sub Form_KeyDown(KeyCode As Integer, Shift As Integer)
+
+End Sub
+
+Private Sub Form_KeyPress(KeyAscii As Integer)
+
+End Sub
+
+Private Sub Form_Load()
+Indexx = 0
+
+pc = 0
+sp = 0
+zero = False
+carry = False
+err = False
+
+For r = 0 To 7
+    reg(r) = 0
+Next r
+
+
+
+cmdBar.Left = 0
+cmdBar.Top = 0
+cmdBar.Width = Me.Width
+
+ImageList1.Add App.Path & "\BarMC.bmp"
+cmdBar.ImageList = ImageList1.hImageList
+
+Dim mnuMain As CommandbarLib.CommandBarMenuBar
+Dim mnuFile As CommandbarLib.Item
+Dim mnuKategorie As CommandbarLib.Item
+Dim mnuEdit As CommandbarLib.Item
+
+   
+    Set mnuMain = cmdBar.Controls.Add(cbrMenuBar, "MainMenu")
+    Set mnuFile = mnuMain.Items.Add(1, , "&File")
+    mnuFile.SubItems.Add , "new", "&New"
+    mnuFile.SubItems.Add , "open", "&Open"
+    mnuFile.SubItems.Add , "save", "&Save"
+    mnuFile.SubItems.Add , , "", cbrMenuSeparator
+    mnuFile.SubItems.Add , "Exit", "E&xit"
+    
+    Set mnuKategorie = mnuMain.Items.Add(2, , "&Extras")
+    mnuKategorie.SubItems.Add , "settings", "&Settings"
+
+    
+    Set mnuEdit = mnuMain.Items.Add(3, , "&?")
+    mnuEdit.SubItems.Add , "about", "&About"
+    mnuEdit.SubItems.Add , "help", "&Help"
+    
+
+If Me.Width >= SIZE_SUPPORTSBUTTONS Then
+    
+        Dim Button As CommandbarLib.CommandBarButton
+        
+        Set Button = cmdBar.Controls.Add(cbrButton, "sep0")
+        Button.Style = cbrSeparator
+        
+        Set Button = cmdBar.Controls.Add(cbrButton, "new")
+        Button.Image = 2
+        Button.Tag = "new"
+        Set Button = cmdBar.Controls.Add(cbrButton, "open")
+        Button.Image = 0
+        Button.Tag = "open"
+        Set Button = cmdBar.Controls.Add(cbrButton, "save")
+        Button.Image = 1
+        Button.Tag = "save"
+        Set Button = cmdBar.Controls.Add(cbrButton, "sep1")
+        Button.Style = cbrSeparator
+        
+        Set Button = cmdBar.Controls.Add(cbrButton, "run")
+        Button.Image = 6
+        Button.Tag = "run"
+        
+        Set Button = cmdBar.Controls.Add(cbrButton, "sep2")
+        Button.Style = cbrSeparator
+        
+        Set Button = cmdBar.Controls.Add(cbrButton, "settings")
+        Button.Image = 3
+        Button.Tag = "settings"
+        Set Button = cmdBar.Controls.Add(cbrButton, "help")
+        Button.Image = 5
+        Button.Tag = "help"
+
+        
+
+ 
+    End If
+
+
+Hints = GetSetting(App.Title, "Settings", "Help", 1)
+TimerSpeed = GetSetting(App.Title, "Settings", "TimerSpeed", 500)
+Layout = GetSetting(App.Title, "Settings", "Layout", 0)
+
+If Layout = 0 Then
+    List1.BackColor = vbBlack
+    List1.ForeColor = vbWhite
+    frmMain.BackColor = vbBlack
+End If
+If Layout = 1 Then
+    List1.BackColor = vbWhite
+    List1.ForeColor = vbBlack
+    frmMain.BackColor = vbWhite
+End If
+
+Timer1.Interval = TimerSpeed
+
+End Sub
+
+
+
+
+
+
+Private Sub Command1_Click()
+    Timer1.Enabled = False
+    Command10.Enabled = True
+    Command1.Enabled = False
+    frmOutput.Hide
+    
+    
+End Sub
+
+Private Sub Command10_Click()
+Command10.Enabled = False
+Command1.Enabled = True
+'Running = True
+'Run
+Timer1.Enabled = True
+    
+frmOutput.Show
+End Sub
+
+Private Sub Command11_Click()
+If CHAR = 0 Then
+    Hi = 4
+    CHAR = CHAR + 1
+Else
+    Lo = 4
+    CHAR = 0
+    Eingabe
+End If
+End Sub
+
+Private Sub Command12_Click()
+If CHAR = 0 Then
+    Hi = 5
+    CHAR = CHAR + 1
+Else
+    Lo = 5
+    CHAR = 0
+    Eingabe
+End If
+End Sub
+
+Private Sub Command13_Click()
+If CHAR = 0 Then
+    Hi = 6
+    CHAR = CHAR + 1
+Else
+    Lo = 6
+    CHAR = 0
+    Eingabe
+End If
+End Sub
+
+Private Sub Command14_Click()
+If CHAR = 0 Then
+    Hi = "B"
+    CHAR = CHAR + 1
+Else
+    Lo = "B"
+    CHAR = 0
+    Eingabe
+End If
+End Sub
+
+
+
+Private Sub Command16_Click()
+If CHAR = 0 Then
+    Hi = 7
+    CHAR = CHAR + 1
+Else
+    Lo = 7
+    CHAR = 0
+    Eingabe
+End If
+End Sub
+
+Private Sub Command17_Click()
+If CHAR = 0 Then
+    Hi = 8
+    CHAR = CHAR + 1
+Else
+    Lo = 8
+    CHAR = 0
+    Eingabe
+End If
+End Sub
+
+Private Sub Command18_Click()
+If CHAR = 0 Then
+    Hi = 9
+    CHAR = CHAR + 1
+Else
+    Lo = 9
+    CHAR = 0
+    Eingabe
+End If
+End Sub
+
+Private Sub Command19_Click()
+If CHAR = 0 Then
+    Hi = "C"
+    CHAR = CHAR + 1
+Else
+    Lo = "C"
+    CHAR = 0
+    Eingabe
+End If
+End Sub
+
+
+
+
+
+
+
+Private Sub Command2_Click()
+If List1.Selected(List1.ListIndex) = True Then
+    frmMain.List1.RemoveItem (List1.ListIndex)
+    LINE = LINE - 1
+End If
+End Sub
+
+
+
+Private Sub Command21_Click()
+If CHAR = 0 Then
+    Hi = "E"
+    CHAR = CHAR + 1
+Else
+    Lo = "E"
+    CHAR = 0
+    Eingabe
+End If
+End Sub
+
+Private Sub Command22_Click()
+If CHAR = 0 Then
+    Hi = 0
+    CHAR = CHAR + 1
+Else
+    Lo = 0
+    CHAR = 0
+    Eingabe
+End If
+End Sub
+
+Private Sub Command23_Click()
+If CHAR = 0 Then
+    Hi = "F"
+    CHAR = CHAR + 1
+Else
+    Lo = "F"
+    CHAR = 0
+    Eingabe
+End If
+End Sub
+
+Private Sub Command24_Click()
+If CHAR = 0 Then
+    Hi = "D"
+    CHAR = CHAR + 1
+Else
+    Lo = "D"
+    CHAR = 0
+    Eingabe
+End If
+End Sub
+
+
+
+
+
+
+
+Private Sub Command6_Click()
+If CHAR = 0 Then
+    Hi = 1
+    CHAR = CHAR + 1
+Else
+    Lo = 1
+    CHAR = 0
+    Eingabe
+End If
+
+End Sub
+
+Private Sub Command7_Click()
+If CHAR = 0 Then
+    Hi = 2
+    CHAR = CHAR + 1
+Else
+    Lo = 2
+    CHAR = 0
+    Eingabe
+End If
+
+End Sub
+
+Private Sub Command8_Click()
+If CHAR = 0 Then
+    Hi = 3
+    CHAR = CHAR + 1
+Else
+    Lo = 3
+    CHAR = 0
+    Eingabe
+End If
+End Sub
+
+Private Sub Command9_Click()
+If CHAR = 0 Then
+    Hi = "A"
+    CHAR = CHAR + 1
+Else
+    Lo = "A"
+    CHAR = 0
+    Eingabe
+End If
+End Sub
+
+
+
+
+
+
+Private Sub List1_Click()
+If Selected = False Then
+    Selected = True
+    Indexx = List1.ListIndex
+    Command2.Enabled = True
+Else
+    Selected = False
+    Command2.Enabled = False
+    'List1.Selected(List1.ListIndex) = False
+End If
+End Sub
+
+Private Sub List1_KeyDown(ByVal KeyCode As Integer, ByVal Shift As Integer)
+Select Case KeyCode
+
+Case vbKey0
+    If CHAR = 0 Then
+        Hi = 0
+        CHAR = CHAR + 1
+    Else
+        Lo = 0
+        CHAR = 0
+        Eingabe
+    End If
+Case vbKey1
+    If CHAR = 0 Then
+        Hi = 1
+        CHAR = CHAR + 1
+    Else
+        Lo = 1
+        CHAR = 0
+        Eingabe
+    End If
+Case vbKey2
+    If CHAR = 0 Then
+        Hi = 2
+        CHAR = CHAR + 1
+    Else
+        Lo = 2
+        CHAR = 0
+        Eingabe
+    End If
+Case vbKey3
+    If CHAR = 0 Then
+        Hi = 3
+        CHAR = CHAR + 1
+    Else
+        Lo = 3
+        CHAR = 0
+        Eingabe
+    End If
+Case vbKey4
+    If CHAR = 0 Then
+        Hi = 4
+        CHAR = CHAR + 1
+    Else
+        Lo = 4
+        CHAR = 0
+        Eingabe
+    End If
+Case vbKey5
+    If CHAR = 0 Then
+        Hi = 5
+        CHAR = CHAR + 1
+    Else
+        Lo = 5
+        CHAR = 0
+        Eingabe
+    End If
+Case vbKey6
+    If CHAR = 0 Then
+        Hi = 6
+        CHAR = CHAR + 1
+    Else
+        Lo = 6
+        CHAR = 0
+        Eingabe
+    End If
+
+
+End Select
+End Sub
+
+Private Sub Timer1_Timer()
+If List1.ListCount > 0 Then Run
+
+If TOGGLE = True Then
+    'frmOutput.LED.Value = 1
+    frmOutput.lblLED.BackColor = &HFF&
+Else
+    'frmOutput.LED.Value = 0
+    frmOutput.lblLED.BackColor = &H80&
+End If
+End Sub

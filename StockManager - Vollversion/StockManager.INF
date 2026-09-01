@@ -1,0 +1,91 @@
+[Version]
+Signature="$Chicago$"
+CESignature="$Windows CE$"
+Provider=%CompanyName%
+
+[SourceDisksNames]
+1=,"Application Files",, App
+
+[DefaultInstall]
+CopyFiles=Files.App, Files.Windows
+CEShortcuts=Shortcuts
+
+[Shortcuts]
+%AppName%,0,"StockManager.vb"
+
+[CEStrings]
+InstallDir=%CE1%\%AppName%
+AppName="StockManager1.0"
+
+[Strings]
+CompanyName="Kilotec"
+
+[DestinationDirs]
+Shortcuts=,%CE11%
+Files.App=,%InstallDir%
+Files.Windows=,%CE2%
+Files.SH 4 (4K) v2.10=,%CE2%
+Files.SH 3 (1K) v2.10=,%CE2%
+
+[SourceDisksFiles]
+StockManager.vb=1
+
+[DefaultInstall.SH 4 (4K) v2.10]
+CopyFiles=Files.SH 4 (4K) v2.10
+CESelfRegister=MSCEFile.dll,MSCEListView.dll,vbscript.dll,pvbhost2.dll,pvbform2.dll
+
+[CEDevice.SH 4 (4K) v2.10]
+ProcessorType=10005
+
+[SourceDisksNames.SH 4 (4K) v2.10]
+3= ,"SH 4 (4K) v2.10 Files",,SH 4 (4K) v2.10
+
+[SourceDisksFiles.SH 4 (4K) v2.10]
+pvbload.exe=3
+MSCEFile.dll=3
+pvbhost2.dll=3
+vbscript.dll=3
+MSCEListView.dll=3
+vbsen.dll=3
+pvbform2.dll=3
+
+[DefaultInstall.SH 3 (1K) v2.10]
+CopyFiles=Files.SH 3 (1K) v2.10
+CESelfRegister=MSCEFile.dll,MSCEListView.dll,vbscript.dll,pvbhost2.dll,pvbform2.dll
+
+[CEDevice.SH 3 (1K) v2.10]
+ProcessorType=10003
+
+[SourceDisksNames.SH 3 (1K) v2.10]
+3= ,"SH 3 (1K) v2.10 Files",,SH 3 (1K) v2.10
+
+[SourceDisksFiles.SH 3 (1K) v2.10]
+vbsen.dll=3
+MSCEListView.dll=3
+pvbform2.dll=3
+MSCEFile.dll=3
+pvbhost2.dll=3
+pvbload.exe=3
+vbscript.dll=3
+
+[Files.SH 4 (4K) v2.10]
+pvbload.exe
+MSCEFile.dll,,0x80000000
+pvbhost2.dll,,0x80000000
+vbscript.dll,,0x80000000
+MSCEListView.dll,,0x80000000
+vbsen.dll
+pvbform2.dll,,0x80000000
+
+[Files.App]
+StockManager.vb
+
+[Files.SH 3 (1K) v2.10]
+vbsen.dll
+MSCEListView.dll,,0x80000000
+pvbform2.dll,,0x80000000
+MSCEFile.dll,,0x80000000
+pvbhost2.dll,,0x80000000
+pvbload.exe
+vbscript.dll,,0x80000000
+

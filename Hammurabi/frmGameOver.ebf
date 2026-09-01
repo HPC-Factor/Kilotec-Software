@@ -1,0 +1,136 @@
+VERSION 5.00
+Begin VB.Form frmGameOver 
+   BackColor       =   &H00C0FFFF&
+   Caption         =   "END OF GAME"
+   ClientHeight    =   2475
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   8550
+   ScaleHeight     =   2475
+   ScaleWidth      =   8550
+   Begin VBCE.CommandButton Command1 
+      Default         =   -1  'True
+      Height          =   375
+      Left            =   2280
+      TabIndex        =   1
+      Top             =   2040
+      Width           =   3855
+      _cx             =   6800
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "OK"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.Label Label1 
+      Height          =   1815
+      Left            =   120
+      TabIndex        =   0
+      Top             =   120
+      Width           =   8295
+      _cx             =   14631
+      _cy             =   3201
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Label1"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+End
+Attribute VB_Name = "frmGameOver"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub Command1_Click()
+Me.Hide
+frmSplash.Show
+
+End Sub
+
+Private Sub Form_Load()
+
+Dim sString As String
+
+Dim X As Integer
+Dim Y As Integer
+
+Center Me
+
+
+L = A / P
+
+Label1.Caption = "In your 10-year term of office, " & Int(U) & " percent of the population starved per year on the average, I.E. " & _
+"A total of " & Int(D1) & " people died!" & vbCrLf & vbCrLf & _
+"You started with 10 acres per person and ended with " & Mid(L, 1, 4) & " acres per person. "
+
+If P1 > 33 Then
+    sString = "Due to this extreme mismanagement you have not only been impeached " & _
+    "and thrown out of offcie but you have also been declared national fink!!!"
+     Label1.Caption = Label1.Caption & sString
+Exit Sub
+End If
+
+
+If L < 7 Then
+    sString = "Due to this extreme mismanagement you have not only been impeached " & _
+    "and thrown out of offcie but you have also been declared national fink!!!"
+     Label1.Caption = Label1.Caption & sString
+Exit Sub
+End If
+
+If P1 > 10 Then
+    sString = "Your heavy-handed performance smacks of Nero and Ivan IV. " & _
+    "The people (remaining) find you an unpleasant ruler, and Franky, hate your guts!!"
+     Label1.Caption = Label1.Caption & sString
+Exit Sub
+End If
+
+If L < 9 Then
+    sString = "Your heavy-handed performance smacks of Nero and Ivan IV. " & _
+    "The people (remaining) find you an unpleasant ruler, and Franky, hate your guts!!"
+     Label1.Caption = Label1.Caption & sString
+Exit Sub
+End If
+
+If P1 > 3 Then
+    sString = "Your performance could have been somewhat better, but really wans't too " & _
+    "bad at all. " & Int(P * 0.8 * (Rnd(1) * 10)) & " people dearly like to see you assassinated " & _
+    "but we all have our trivial problems."
+     Label1.Caption = Label1.Caption & sString
+Exit Sub
+End If
+
+sString = "A fantastic performance!!! Charlemagne, Disraeli and Jefferson combined " & _
+    "could not have done better! "
+    Label1.Caption = Label1.Caption & sString
+    Exit Sub
+
+End Sub

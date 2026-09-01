@@ -1,0 +1,674 @@
+VERSION 5.00
+Begin VB.Form frmfour 
+   BackColor       =   &H000000C0&
+   Caption         =   "4x4 SlidePuzzle"
+   ClientHeight    =   3195
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   4515
+   ScaleHeight     =   3195
+   ScaleWidth      =   4515
+   Begin VBCE.Label Label1 
+      Height          =   255
+      Left            =   3240
+      TabIndex        =   17
+      Top             =   240
+      Width           =   1095
+      _cx             =   1931
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Moves"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   16777215
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Clicks 
+      Height          =   255
+      Left            =   3240
+      TabIndex        =   16
+      Top             =   600
+      Width           =   1095
+      _cx             =   1931
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "0"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   16777215
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.CommandButton Command15 
+      Height          =   735
+      Left            =   1560
+      TabIndex        =   15
+      Top             =   2280
+      Width           =   735
+      _cx             =   1296
+      _cy             =   1296
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "15"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command14 
+      Height          =   735
+      Left            =   840
+      TabIndex        =   14
+      Top             =   2280
+      Width           =   735
+      _cx             =   1296
+      _cy             =   1296
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "14"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command13 
+      Height          =   735
+      Left            =   120
+      TabIndex        =   13
+      Top             =   2280
+      Width           =   735
+      _cx             =   1296
+      _cy             =   1296
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "13"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command12 
+      Height          =   735
+      Left            =   2280
+      TabIndex        =   12
+      Top             =   1560
+      Width           =   735
+      _cx             =   1296
+      _cy             =   1296
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "12"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command11 
+      Height          =   735
+      Left            =   1560
+      TabIndex        =   11
+      Top             =   1560
+      Width           =   735
+      _cx             =   1296
+      _cy             =   1296
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "11"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command10 
+      Height          =   735
+      Left            =   840
+      TabIndex        =   10
+      Top             =   1560
+      Width           =   735
+      _cx             =   1296
+      _cy             =   1296
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "10"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command9 
+      Height          =   735
+      Left            =   120
+      TabIndex        =   9
+      Top             =   1560
+      Width           =   735
+      _cx             =   1296
+      _cy             =   1296
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "9"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command1 
+      Height          =   735
+      Left            =   120
+      TabIndex        =   8
+      Top             =   120
+      Width           =   735
+      _cx             =   1296
+      _cy             =   1296
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "1"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command2 
+      Height          =   735
+      Left            =   840
+      TabIndex        =   7
+      Top             =   120
+      Width           =   735
+      _cx             =   1296
+      _cy             =   1296
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "2"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command3 
+      Height          =   735
+      Left            =   1560
+      TabIndex        =   6
+      Top             =   120
+      Width           =   735
+      _cx             =   1296
+      _cy             =   1296
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "3"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command4 
+      Height          =   735
+      Left            =   2280
+      TabIndex        =   5
+      Top             =   120
+      Width           =   735
+      _cx             =   1296
+      _cy             =   1296
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "4"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command5 
+      Height          =   735
+      Left            =   120
+      TabIndex        =   4
+      Top             =   840
+      Width           =   735
+      _cx             =   1296
+      _cy             =   1296
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "5"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command6 
+      Height          =   735
+      Left            =   840
+      TabIndex        =   3
+      Top             =   840
+      Width           =   735
+      _cx             =   1296
+      _cy             =   1296
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "6"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command7 
+      Height          =   735
+      Left            =   1560
+      TabIndex        =   2
+      Top             =   840
+      Width           =   735
+      _cx             =   1296
+      _cy             =   1296
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "7"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command8 
+      Height          =   735
+      Left            =   2280
+      TabIndex        =   1
+      Top             =   840
+      Width           =   735
+      _cx             =   1296
+      _cy             =   1296
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "8"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command16 
+      Height          =   735
+      Left            =   2280
+      TabIndex        =   0
+      Top             =   2280
+      Width           =   735
+      _cx             =   1296
+      _cy             =   1296
+      Appearance      =   1
+      BackColor       =   16777215
+      Caption         =   ""
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+End
+Attribute VB_Name = "frmfour"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub Command1_Click()
+cblev2 Command1, Command2
+cblev2 Command1, Command5
+
+End Sub
+
+Private Sub Command10_Click()
+cblev2 Command10, Command9
+cblev2 Command10, Command6
+cblev2 Command10, Command11
+cblev2 Command10, Command14
+End Sub
+
+Private Sub Command11_Click()
+cblev2 Command11, Command10
+cblev2 Command11, Command7
+cblev2 Command11, Command12
+cblev2 Command11, Command15
+End Sub
+
+Private Sub Command12_Click()
+cblev2 Command12, Command8
+cblev2 Command12, Command11
+cblev2 Command12, Command16
+End Sub
+
+Private Sub Command13_Click()
+cblev2 Command13, Command9
+cblev2 Command13, Command14
+
+End Sub
+
+Private Sub Command14_Click()
+cblev2 Command14, Command13
+cblev2 Command14, Command10
+cblev2 Command14, Command15
+End Sub
+
+Private Sub Command15_Click()
+cblev2 Command15, Command14
+cblev2 Command15, Command11
+cblev2 Command15, Command16
+End Sub
+
+Private Sub Command16_Click()
+cblev2 Command16, Command12
+cblev2 Command16, Command15
+End Sub
+
+Private Sub Command2_Click()
+cblev2 Command2, Command1
+cblev2 Command2, Command3
+cblev2 Command2, Command6
+End Sub
+
+Private Sub Command3_Click()
+cblev2 Command3, Command2
+cblev2 Command3, Command4
+cblev2 Command3, Command7
+End Sub
+
+Private Sub Command4_Click()
+cblev2 Command4, Command8
+cblev2 Command4, Command3
+End Sub
+
+Private Sub Command5_Click()
+cblev2 Command5, Command1
+cblev2 Command5, Command6
+cblev2 Command5, Command9
+End Sub
+
+Private Sub Command6_Click()
+cblev2 Command6, Command5
+cblev2 Command6, Command2
+cblev2 Command6, Command7
+cblev2 Command6, Command10
+End Sub
+
+Private Sub Command7_Click()
+cblev2 Command7, Command6
+cblev2 Command7, Command3
+cblev2 Command7, Command8
+cblev2 Command7, Command11
+End Sub
+
+Private Sub Command8_Click()
+cblev2 Command8, Command4
+cblev2 Command8, Command7
+cblev2 Command8, Command12
+End Sub
+
+Private Sub Command9_Click()
+cblev2 Command9, Command5
+cblev2 Command9, Command10
+cblev2 Command9, Command13
+End Sub
+
+Private Sub Form_Activate()
+shuffle2
+End Sub
+
+Private Sub Form_Load()
+
+End Sub
+Public Sub shuffle2()
+    Command1.Caption = "1"
+    Command2.Caption = "2"
+    Command3.Caption = "3"
+    Command4.Caption = "4"
+    Command5.Caption = "5"
+    Command6.Caption = "6"
+    Command7.Caption = "7"
+    Command8.Caption = "8"
+    Command9.Caption = "9"
+    Command10.Caption = "10"
+    Command11.Caption = "11"
+    Command12.Caption = "12"
+    Command13.Caption = "13"
+    Command14.Caption = "14"
+    Command15.Caption = "15"
+    Command16.Caption = ""
+
+
+
+Randomize Timer
+Dim a
+Dim b
+Dim c
+Dim d
+Dim e
+Dim f
+Dim g
+Dim h
+Dim i
+Dim j
+Dim k
+Dim l
+Dim m
+Dim n
+Dim o
+Dim p
+Dim upperbound
+Dim lowerbound
+
+upperbound = 16
+lowerbound = 1
+
+
+Command16.Caption = ""
+a = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+b = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+c = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+d = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+e = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+f = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+g = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+h = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+i = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+j = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+k = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+l = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+m = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+n = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+o = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+p = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+
+    Command1.Caption = a
+    Do Until b <> a
+    b = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+    Loop
+    Command2.Caption = b
+    Do Until c <> a And c <> b
+    c = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+    Loop
+    Command3.Caption = c
+    Do Until d <> a And d <> b And d <> c
+    d = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+    Loop
+    Command4.Caption = d
+    Do Until e <> a And e <> b And e <> c And e <> d
+    e = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+    Loop
+    Command5.Caption = e
+    Do Until f <> a And f <> b And f <> c And f <> d And f <> e
+    f = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+    Loop
+    Command6.Caption = f
+    Do Until g <> a And g <> b And g <> c And g <> d And g <> e And g <> f
+    g = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+    Loop
+    Command7.Caption = g
+    Do Until h <> a And h <> b And h <> c And h <> d And h <> e And h <> f And h <> g
+    h = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+    Loop
+    Command8.Caption = h
+    Do Until i <> a And i <> b And i <> c And i <> d And i <> e And i <> f And i <> g And i <> h
+    i = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+    Loop
+    Command9.Caption = i
+    Do Until j <> a And j <> b And j <> c And j <> d And j <> e And j <> f And j <> g And j <> h And j <> i
+    j = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+    Loop
+    Command10.Caption = j
+    Do Until k <> a And k <> b And k <> c And k <> d And k <> e And k <> f And k <> g And k <> h And k <> i And k <> j
+    k = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+    Loop
+    Command11.Caption = k
+    Do Until l <> a And l <> b And l <> c And l <> d And l <> e And l <> f And l <> g And l <> h And l <> i And l <> j And l <> k
+    l = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+    Loop
+    Command12.Caption = l
+    Do Until m <> a And m <> b And m <> c And m <> d And m <> e And m <> f And m <> g And m <> h And m <> i And m <> j And m <> k And m <> l
+    m = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+    Loop
+    Command13.Caption = m
+    Do Until n <> a And n <> b And n <> c And n <> d And n <> e And n <> f And n <> g And n <> h And n <> i And n <> j And n <> k And n <> l And n <> m
+    n = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+    Loop
+    Command14.Caption = n
+    Do Until o <> a And o <> b And o <> c And o <> d And o <> e And o <> f And o <> g And o <> h And o <> i And o <> j And o <> k And o <> l And o <> m And o <> n
+    o = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+    Loop
+    Command15.Caption = o
+
+    'Do Until p <> a And p <> b And p <> c And p <> d And p <> e And p <> f And p <> g And p <> h And p <> i And p <> j And p <> k And p <> l And p <> m And p <> n And p <> o
+    'p = Int((upperbound - lowerbound + 1) * Rnd + lowerbound)
+    'Loop
+    'Command16.Caption = p
+End Sub

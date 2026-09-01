@@ -1,0 +1,199 @@
+VERSION 5.00
+Begin VB.Form frmErgebnis 
+   BackColor       =   &H00008000&
+   Caption         =   "Form1"
+   ClientHeight    =   2835
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   7335
+   ScaleHeight     =   2835
+   ScaleWidth      =   7335
+   Begin VBCE.CommandButton Command1 
+      Height          =   375
+      Left            =   120
+      TabIndex        =   1
+      Top             =   2400
+      Width           =   7095
+      _cx             =   12515
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "OK"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.ListBox List1 
+      Height          =   2190
+      Left            =   120
+      TabIndex        =   0
+      Top             =   120
+      Width           =   7095
+      List            =   "frmErgebnis.frx":0000
+      ItemData        =   "frmErgebnis.frx":0028
+      _cx             =   12515
+      _cy             =   3863
+      Appearance      =   0
+      BackColor       =   -2147483643
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Courier New"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Columns         =   0
+      IntegralHeight  =   -1  'True
+      MultiSelect     =   0
+      Sorted          =   0   'False
+   End
+End
+Attribute VB_Name = "frmErgebnis"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+
+Private Sub Command1_Click()
+frmHaupt.Command1.Enabled = True
+Dim Teiler As Integer
+
+If Platz = 1 Then Teiler = 1
+If Platz > 1 Then Teiler = 2
+
+Spieltag = Spieltag + 1
+
+If Spieltag Mod 2 = 0 Then
+    Zuschauer = (Stadion(TeamIndex) / (Platz / Teiler)) - Int(Rnd() * (Eintritt * 100))
+    
+    If Platz < 8 And GetRandomNumber(0, 40) = 1 Then Zuschauer = Stadion(TeamIndex)
+    If Platz < 3 And GetRandomNumber(0, 10) = 1 Then Zuschauer = Stadion(TeamIndex)
+    
+    
+    Geld = Geld + (Zuschauer * Eintritt)
+    Zuschauerschnitt = Zuschauerschnitt + Zuschauer
+End If
+Kosten = Form(TeamIndex) * 1000
+Geld = Geld - Kosten
+Ausgaben = Ausgaben + Kosten
+
+
+
+
+Aktualisieren
+Me.Hide
+End Sub
+
+Private Sub Form_Activate()
+Center Me
+frmErgebnis.Caption = "Ergebnisse vom " & Spieltag & ". Spieltag"
+List1.Clear
+Randomize Timer
+
+Dim Tore1(19) As Integer
+Dim Tore2(19) As Integer
+
+
+    y = x + 1
+    If y > (18 - 1) Then y = 1
+    For spiele = 1 To 18 / 2 - 1
+        
+        
+        Angriffsfaktor(x) = Round((Angriff(x) / 100) * 2.8)
+        Mittelfeldfaktor(x) = Round((Mittelfeld(x) / 100) * 2)
+        Abwehrfaktor(x) = (Round(Abwehr(x) / 100) * 2.2)
+        
+        Angriffsfaktor(y) = Round((Angriff(y) / 100) * 2.8)
+        Mittelfeldfaktor(y) = Round((Mittelfeld(y) / 100) * 2)
+        Abwehrfaktor(y) = Round((Abwehr(y) / 100) * 2.5)
+        
+        
+        Tore1(spiele) = Int(Rnd() * (1 + Angriffsfaktor(x) + Mittelfeldfaktor(x) - Abwehrfaktor(y)))
+        Tore2(spiele) = Int(Rnd() * (1 + Angriffsfaktor(y) + Mittelfeldfaktor(y) - Abwehrfaktor(x)))
+        
+        If Tore1(spiele) < 0 Then Tore1(spiele) = 0
+        If Tore2(spiele) < 0 Then Tore2(spiele) = 0
+        
+        Tore1(spiele) = Tore1(spiele) + Int(Rnd() * 2)
+        Tore2(spiele) = Tore2(spiele) + Int(Rnd() * 2)
+        
+        List1.AddItem Mannschaft(x) & Space(20 - Len(Mannschaft(x))) & " " & Tore1(spiele) & " - " & Tore2(spiele) & " " & Space(4 - Len(" - ")) & Mannschaft(y)
+        If Tore1(spiele) > Tore2(spiele) Then Punkte(x) = Punkte(x) + 3: Punkte(y) = Punkte(y) + 0
+        If Tore1(spiele) < Tore2(spiele) Then Punkte(x) = Punkte(x) + 0: Punkte(y) = Punkte(y) + 3
+        If Tore1(spiele) = Tore2(spiele) Then Punkte(x) = Punkte(x) + 1: Punkte(y) = Punkte(y) + 1
+        
+
+        Tore(y) = Tore(y) + Tore2(spiele)
+        Tore(x) = Tore(x) + Tore1(spiele)
+        Gegentore(x) = Gegentore(x) + Tore2(spiele)
+        Gegentore(y) = Gegentore(y) + Tore1(spiele)
+
+        
+        x = x - 1
+        y = y + 1
+        If x < 1 Then x = 18 - 1
+        If y > (18 - 1) Then y = 1
+    Next spiele
+        
+        Angriffsfaktor(18) = Round((Angriff(18) / 100) * 2.8)
+        Mittelfeldfaktor(18) = Round((Mittelfeld(18) / 100) * 2)
+        Abwehrfaktor(18) = (Round(Abwehr(18) / 100) * 2.2)
+        
+        Angriffsfaktor(x) = Round((Angriff(x) / 100) * 2.8)
+        Mittelfeldfaktor(x) = Round((Mittelfeld(x) / 100) * 2)
+        Abwehrfaktor(x) = Round((Abwehr(x) / 100) * 2.5)
+        
+        Tore1(18) = Int(Rnd() * (1 + Angriffsfaktor(18) + Mittelfeldfaktor(18) - Abwehrfaktor(x)))
+        Tore2(x) = Int(Rnd() * (1 + Angriffsfaktor(x) + Mittelfeldfaktor(x) - Abwehrfaktor(18)))
+        
+        If Tore1(18) < 0 Then Tore1(18) = 0
+        If Tore2(x) < 0 Then Tore2(x) = 0
+        
+        Tore1(18) = Tore1(18) + Int(Rnd() * 2)
+        Tore2(x) = Tore2(x) + Int(Rnd() * 2)
+        
+        List1.AddItem Mannschaft(18) & Space(20 - Len(Mannschaft(18))) & " " & Tore1(18) & " - " & Tore2(x) & " " & Space(4 - Len(" - ")) & Mannschaft(x)
+
+        If Tore1(18) > Tore2(x) Then Punkte(18) = Punkte(18) + 3: Punkte(x) = Punkte(x) + 0
+        If Tore1(18) < Tore2(x) Then Punkte(18) = Punkte(18) + 0: Punkte(x) = Punkte(x) + 3
+        If Tore1(18) = Tore2(x) Then Punkte(18) = Punkte(18) + 1: Punkte(x) = Punkte(x) + 1
+        
+
+        Tore(x) = Tore(x) + Tore2(x)
+        Tore(18) = Tore(18) + Tore1(18)
+        Gegentore(18) = Gegentore(18) + Tore2(x)
+        Gegentore(x) = Gegentore(x) + Tore1(18)
+
+
+End Sub
+
+Private Sub Form_Load()
+
+
+
+
+
+
+End Sub
+
+Private Sub Form_Unload(Cancel As Integer)
+frmHaupt.Command1.Enabled = True
+End Sub
+
+Private Sub List1_Click()
+
+End Sub

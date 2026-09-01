@@ -1,0 +1,72 @@
+[Version]
+Signature="$Chicago$"
+CESignature="$Windows CE$"
+Provider=%CompanyName%
+
+[SourceDisksNames]
+1=,"Application Files",, App
+
+[DefaultInstall]
+CopyFiles=Files.App, Files.Windows
+CEShortcuts=Shortcuts
+
+[Shortcuts]
+%AppName%,0,"TravelDiary2.vb"
+
+[CEStrings]
+InstallDir=%CE1%\%AppName%
+AppName="TravelDiary2"
+
+[Strings]
+CompanyName="Kilotec"
+
+[DestinationDirs]
+Shortcuts=,%CE11%
+Files.App=,%InstallDir%
+Files.Windows=,%CE2%
+Files.SH 3 (1K) v2.10=,%CE2%
+
+[SourceDisksFiles]
+TravelDiary2.vb=1
+Bar.BMP=1
+
+[DefaultInstall.SH 3 (1K) v2.10]
+CopyFiles=Files.SH 3 (1K) v2.10
+CESelfRegister=MSCECommandBar.dll,MSCEComDlg.dll,MSCEFile.dll,MSCEImageList.dll,MSCEListView.dll,vbscript.dll,pvbhost2.dll,pvbform2.dll,pvbdecl.dll
+
+[CEDevice.SH 3 (1K) v2.10]
+ProcessorType=10003
+
+[SourceDisksNames.SH 3 (1K) v2.10]
+3= ,"SH 3 (1K) v2.10 Files",,SH 3 (1K) v2.10
+
+[SourceDisksFiles.SH 3 (1K) v2.10]
+MSCEFile.dll=3
+pvbhost2.dll=3
+vbscript.dll=3
+MSCEComDlg.dll=3
+MSCEListView.dll=3
+vbsen.dll=3
+MSCECommandBar.dll=3
+MSCEImageList.dll=3
+pvbload.exe=3
+pvbdecl.dll=3
+pvbform2.dll=3
+
+[Files.App]
+TravelDiary2.vb
+Bar.BMP
+
+[Files.SH 3 (1K) v2.10]
+MSCEFile.dll,,0x80000000
+pvbhost2.dll,,0x80000000
+vbscript.dll,,0x80000000
+MSCEComDlg.dll,,0x80000000
+MSCEListView.dll,,0x80000000
+vbsen.dll
+MSCECommandBar.dll,,0x80000000
+MSCEImageList.dll,,0x80000000
+pvbload.exe
+pvbdecl.dll,,0x80000000
+pvbform2.dll,,0x80000000
+

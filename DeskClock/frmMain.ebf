@@ -1,0 +1,295 @@
+VERSION 5.00
+Object = "{BE67ABF5-0137-11D2-9B8A-00C04FAD5AEC}#1.0#0"; "mscecommandbar.dll"
+Object = "{25C953A7-5464-11D1-A714-00AA0044064C}#1.0#0"; "MSCEFILE.DLL"
+Begin VB.Form frmMain 
+   BackColor       =   &H00000000&
+   Caption         =   "LEDCLock1.0"
+   ClientHeight    =   5595
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   11445
+   ScaleHeight     =   5595
+   ScaleWidth      =   11445
+   Begin FILECTLCtl.File File 
+      Left            =   6960
+      Top             =   480
+      _cx             =   1000
+      _cy             =   1000
+   End
+   Begin CommandbarLib.CommandBar cmdBar 
+      Height          =   345
+      Left            =   0
+      TabIndex        =   0
+      Top             =   0
+      Width           =   1575
+      _cx             =   2778
+      _cy             =   600
+      Enabled         =   -1  'True
+      OKButton        =   0   'False
+      HelpButton      =   0   'False
+      CloseButton     =   0   'False
+   End
+   Begin VBCE.Label Label3 
+      Height          =   615
+      Left            =   6600
+      TabIndex        =   3
+      Top             =   1440
+      Width           =   2775
+      _cx             =   4895
+      _cy             =   1085
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Label1"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   20.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   16777215
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label2 
+      Height          =   615
+      Left            =   6600
+      TabIndex        =   2
+      Top             =   2160
+      Width           =   2775
+      _cx             =   4895
+      _cy             =   1085
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Label1"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   20.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   16777215
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Timer Timer1 
+      Left            =   5880
+      Top             =   4080
+      _cx             =   847
+      _cy             =   847
+      Enabled         =   -1  'True
+      Interval        =   60000
+   End
+   Begin VBCE.Label Label1 
+      Height          =   3015
+      Left            =   120
+      TabIndex        =   1
+      Top             =   120
+      Width           =   6495
+      _cx             =   11456
+      _cy             =   5318
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   ""
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Arial"
+         Size            =   80.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   16777215
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+End
+Attribute VB_Name = "frmMain"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub cmdBar_ButtonClick(ByVal Button As CommandbarLib.CommandBarButton)
+
+End Sub
+
+Private Sub cmdBar_MenuClick(ByVal Item As CommandbarLib.Item)
+InvokeAction (Item.Index + (100 * Item.Parent.Index)), False
+End Sub
+
+Private Sub InvokeAction(ID As Integer, FromButton As Boolean)
+   Select Case (ID)
+    Case ID_EXIT        ' terminate the app
+        App.End
+    
+    Case ID_ABOUT       ' thick brush mode
+        frmAbout.Show
+   
+    Case ID_OPTIONS
+        frmOptions.Show
+   
+    Case Else
+        ' programming error -- undefined tool
+        MsgBox "Undefined Commandbar Command!"
+    End Select
+End Sub
+
+
+
+
+
+Private Sub Form_Load()
+Me.Height = Screen.Height
+Me.Width = Screen.Width
+
+Label1.Caption = Mid(Time, 1, 5)
+Label2.Caption = Date
+
+
+cmdBar.Left = 0
+cmdBar.Top = 0
+cmdBar.Width = Me.Width
+
+On Error Resume Next
+DBladen
+
+If FCOLOR = Empty Then FCOLOR = 0
+If BCOLOR = Empty Then BCOLOR = 1
+If SIZE = Empty Then SIZE = 115
+If FNAME = Empty Then FONTNAME = 1
+
+If BCOLOR = 0 Then frmMain.BACKCOLOR = vbWhite
+If BCOLOR = 1 Then frmMain.BACKCOLOR = vbBlack
+
+If FCOLOR = 0 Then Label1.FORECOLOR = vbWhite
+If FCOLOR = 1 Then Label1.FORECOLOR = vbBlack
+If FCOLOR = 2 Then Label1.FORECOLOR = vbGreen
+If FCOLOR = 3 Then Label1.FORECOLOR = vbRed
+
+If FCOLOR = 0 Then Label2.FORECOLOR = vbWhite
+If FCOLOR = 1 Then Label2.FORECOLOR = vbBlack
+If FCOLOR = 2 Then Label2.FORECOLOR = vbGreen
+If FCOLOR = 3 Then Label2.FORECOLOR = vbRed
+
+If FCOLOR = 0 Then Label3.FORECOLOR = vbWhite
+If FCOLOR = 1 Then Label3.FORECOLOR = vbBlack
+If FCOLOR = 2 Then Label3.FORECOLOR = vbGreen
+If FCOLOR = 3 Then Label3.FORECOLOR = vbRed
+
+'Label1.Font.SIZE = SIZE
+
+If FNAME = 0 Then Label1.Font.Name = "Tahoma"
+If FNAME = 1 Then Label1.Font.Name = "The Led Display St"
+If FNAME = 2 Then Label1.Font.Name = "Dot Matrix"
+If FNAME = 3 Then Label1.Font.Name = "DS-Digital"
+If FNAME = 4 Then Label1.Font.Name = "Open 24 Display St"
+
+If FNAME = 0 Then Label2.Font.Name = "Tahoma"
+If FNAME = 1 Then Label2.Font.Name = "The Led Display St"
+If FNAME = 2 Then Label2.Font.Name = "Dot Matrix"
+If FNAME = 3 Then Label2.Font.Name = "DS-Digital"
+If FNAME = 4 Then Label2.Font.Name = "Open 24 Display St"
+
+If FNAME = 0 Then Label3.Font.Name = "Tahoma"
+If FNAME = 1 Then Label3.Font.Name = "The Led Display St"
+If FNAME = 2 Then Label3.Font.Name = "Dot Matrix"
+If FNAME = 3 Then Label3.Font.Name = "DS-Digital"
+If FNAME = 4 Then Label3.Font.Name = "Open 24 Display St"
+
+Label1.Font.SIZE = SIZE
+
+
+Dim mnuMain As CommandbarLib.CommandBarMenuBar
+Dim mnuFile As CommandbarLib.Item
+Dim mnuEdit As CommandbarLib.Item
+
+Set mnuMain = cmdBar.Controls.Add(cbrMenuBar, "MainMenu")
+Set mnuFile = mnuMain.Items.Add(1, , "&File")
+mnuFile.SubItems.Add 1, , "&About"
+mnuFile.SubItems.Add 2, , "", cbrMenuSeparator
+mnuFile.SubItems.Add 3, , "E&xit"
+    
+Set mnuEdit = mnuMain.Items.Add(2, , "&Options")
+mnuEdit.SubItems.Add 1, , "&Options"
+
+If FNAME = 0 Then frmMain.Label2.Top = frmMain.Label1.Top + frmMain.Label1.Height - 750
+If FNAME = 1 Then frmMain.Label2.Top = frmMain.Label1.Top + frmMain.Label1.Height - 1100
+If FNAME = 2 Then frmMain.Label2.Top = frmMain.Label1.Top + frmMain.Label1.Height - 850
+If FNAME = 3 Then frmMain.Label2.Top = frmMain.Label1.Top + frmMain.Label1.Height - 800
+If FNAME = 4 Then frmMain.Label2.Top = frmMain.Label1.Top + frmMain.Label1.Height - 550
+
+Dim X As Integer
+Dim x2 As Integer
+
+Dim Y As Integer
+
+X = (Screen.Width - Label1.Width) / 2
+x2 = (Screen.Width - Label2.Width) / 2
+Y = (Screen.Height - Label1.Height) / 2
+
+'Label1.Left = X
+'Label2.Left = x2
+'frmMain.Label1.Height = frmMain.ScaleHeight
+'frmMain.Label1.Width = frmMain.ScaleWidth
+'Label2.Top = Label1.Top + Label1.Height - 600
+
+If Weekday(Date) = 1 Then Label3.Caption = "Sunday"
+If Weekday(Date) = 2 Then Label3.Caption = "Monday"
+If Weekday(Date) = 3 Then Label3.Caption = "Tuesday"
+If Weekday(Date) = 4 Then Label3.Caption = "Wednesday"
+If Weekday(Date) = 5 Then Label3.Caption = "Thursday"
+If Weekday(Date) = 6 Then Label3.Caption = "Friday"
+If Weekday(Date) = 7 Then Label3.Caption = "Saturday"
+
+If FNAME = 0 Then frmMain.Label3.Top = frmMain.Label2.Top - 750
+If FNAME = 1 Then frmMain.Label3.Top = frmMain.Label2.Top - 1100
+If FNAME = 2 Then frmMain.Label3.Top = frmMain.Label2.Top - 850
+If FNAME = 3 Then frmMain.Label3.Top = frmMain.Label2.Top - 800
+If FNAME = 4 Then frmMain.Label3.Top = frmMain.Label2.Top - 550
+
+End Sub
+
+Private Sub Label1_Click()
+
+End Sub
+
+Private Sub Label2_Click()
+
+End Sub
+
+Private Sub Label2_DblClick()
+If cmdBar.Visible = True Then
+cmdBar.Visible = False
+Else
+cmdBar.Visible = True
+End If
+End Sub
+
+Private Sub Timer1_Timer()
+Label1.Caption = Mid(Time, 1, 5)
+
+End Sub
+

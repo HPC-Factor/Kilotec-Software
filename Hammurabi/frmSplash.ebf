@@ -1,0 +1,243 @@
+VERSION 5.00
+Begin VB.Form frmSplash 
+   BackColor       =   &H00000000&
+   Caption         =   "HAMMURABI"
+   ClientHeight    =   2730
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   7605
+   ScaleHeight     =   2730
+   ScaleWidth      =   7605
+   Begin VBCE.CommandButton Command3 
+      Height          =   375
+      Left            =   6840
+      TabIndex        =   6
+      Top             =   2280
+      Width           =   615
+      _cx             =   1085
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   8454016
+      Caption         =   "Exit"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command2 
+      Height          =   375
+      Left            =   6840
+      TabIndex        =   5
+      Top             =   1920
+      Width           =   615
+      _cx             =   1085
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   8454016
+      Caption         =   "Rules"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   1
+   End
+   Begin VBCE.CommandButton Command1 
+      Height          =   375
+      Left            =   2760
+      TabIndex        =   4
+      Top             =   1800
+      Width           =   2055
+      _cx             =   3625
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "START GAME"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.Label Label4 
+      Height          =   255
+      Left            =   120
+      TabIndex        =   3
+      Top             =   2400
+      Width           =   7335
+      _cx             =   12938
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   0
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "(c) 2023 by Dominik Kristen (KILOTEC)"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Arial"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   65535
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label3 
+      Height          =   615
+      Left            =   120
+      TabIndex        =   2
+      Top             =   1320
+      Width           =   7335
+      _cx             =   12938
+      _cy             =   1085
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   0
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "King of ancient Babylonia"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Arial"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   16711935
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label2 
+      Height          =   615
+      Left            =   120
+      TabIndex        =   1
+      Top             =   720
+      Width           =   7335
+      _cx             =   12938
+      _cy             =   1085
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   0
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "HAMMURABI"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Bodoni MT Black"
+         Size            =   26.25
+         Charset         =   0
+         Weight          =   900
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   33023
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label1 
+      Height          =   615
+      Left            =   120
+      TabIndex        =   0
+      Top             =   120
+      Width           =   7335
+      _cx             =   12938
+      _cy             =   1085
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   0
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "In this game you can direct the administrator of the ancient city of Babylon on how he should manage your city. Because you are..."
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Arial"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   16777215
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+End
+Attribute VB_Name = "frmSplash"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub Command1_Click()
+T = 0
+U = 0
+Z = 0
+P = 95
+S = 2800
+H = 3000
+E = H - S
+Y = 3
+Y2 = 3
+A = H / Y2
+I = 5
+Q = 1
+B = 0
+D = 0
+QQ = 1
+NewYear
+'Aktualisieren
+frmMain.Show
+End Sub
+
+Private Sub Command2_Click()
+frmRules.Show
+End Sub
+
+Private Sub Command3_Click()
+App.End
+End Sub
+
+Private Sub Form_Load()
+Center Me
+End Sub
+
+Private Sub Label2_Click()
+
+End Sub
+
+Private Sub Label4_Click()
+
+End Sub

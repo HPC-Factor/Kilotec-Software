@@ -1,0 +1,428 @@
+VERSION 5.00
+Object = "{BE67ABF5-0137-11D2-9B8A-00C04FAD5AEC}#1.0#0"; "mscecommandbar.dll"
+Object = "{25C953A7-5464-11D1-A714-00AA0044064C}#1.0#0"; "MSCEFILE.DLL"
+Object = "{E491F001-98EC-11D1-9B3D-00C04FAD5AEC}#1.0#0"; "msceimagelist.dll"
+Object = "{6556ED95-9838-11D1-80AE-00C04FAD5EFB}#1.0#0"; "mscelistview.dll"
+Object = "{A32A88B3-817C-11D1-A762-00AA0044064C}#1.0#0"; "mscecomdlg.dll"
+Begin VB.Form frmMain 
+   Caption         =   "Kassenbuch 1.0"
+   ClientHeight    =   3255
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   9480
+   ScaleHeight     =   3255
+   ScaleWidth      =   9480
+   Begin CEComDlgCtl.CommonDialog CommonDialog1 
+      Left            =   8760
+      Top             =   2520
+      _cx             =   847
+      _cy             =   847
+      CancelError     =   0   'False
+      Color           =   0
+      DefaultExt      =   ""
+      DialogTitle     =   ""
+      FileName        =   ""
+      Filter          =   ""
+      FilterIndex     =   0
+      Flags           =   0
+      HelpCommand     =   0
+      HelpContext     =   ""
+      HelpFile        =   ""
+      InitDir         =   ""
+      MaxFileSize     =   256
+      FontBold        =   0   'False
+      FontItalic      =   0   'False
+      FontName        =   ""
+      FontSize        =   10
+      FontUnderline   =   0   'False
+      Max             =   0
+      Min             =   0
+      FontStrikethru  =   0   'False
+   End
+   Begin CommandbarLib.CommandBar cmdBar 
+      Height          =   345
+      Left            =   0
+      TabIndex        =   0
+      Top             =   0
+      Width           =   3615
+      _cx             =   6376
+      _cy             =   600
+      Enabled         =   -1  'True
+      OKButton        =   0   'False
+      HelpButton      =   0   'False
+      CloseButton     =   0   'False
+   End
+   Begin CEImageListCtl.ImageList ImageList1 
+      Left            =   8880
+      Top             =   120
+      _cx             =   990
+      _cy             =   990
+      ImageWidth      =   16
+      ImageHeight     =   16
+   End
+   Begin MSCELISTVIEWLibCtl.ListViewCtrl ListView1 
+      Height          =   2535
+      Left            =   0
+      TabIndex        =   1
+      Top             =   720
+      Width           =   9375
+      _cx             =   16536
+      _cy             =   4471
+      FontBold        =   0   'False
+      FontItalic      =   0   'False
+      FontName        =   "Arial"
+      FontSize        =   8
+      FontStrikethrough=   0   'False
+      FontUnderline   =   0   'False
+      HideColumnHeaders=   0   'False
+      HideSelection   =   -1  'True
+      LabelEdit       =   1
+      LabelWrap       =   0   'False
+      MultiSelect     =   0   'False
+      Sorted          =   0   'False
+      SortKey         =   0
+      SortOrder       =   0
+      View            =   3
+      Enabled         =   -1  'True
+   End
+   Begin FILECTLCtl.File File 
+      Left            =   8280
+      Top             =   120
+      _cx             =   1000
+      _cy             =   1000
+   End
+   Begin VBCE.Label lblKontostand 
+      Height          =   255
+      Left            =   3840
+      TabIndex        =   4
+      Top             =   420
+      Width           =   1935
+      _cx             =   3413
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Kontostand:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.ComboBox Combo1 
+      Height          =   360
+      Left            =   720
+      TabIndex        =   3
+      Top             =   380
+      Width           =   3015
+      List            =   "frmMain.frx":0000
+      ItemData        =   "frmMain.frx":0028
+      _cx             =   5318
+      _cy             =   635
+      Appearance      =   1
+      BackColor       =   -2147483643
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   ""
+      IntegralHeight  =   -1  'True
+      Locked          =   0   'False
+      Sorted          =   0   'False
+      Style           =   0
+   End
+   Begin VBCE.Label Label3 
+      Height          =   255
+      Left            =   120
+      TabIndex        =   2
+      Top             =   420
+      Width           =   615
+      _cx             =   1085
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Konto:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+End
+Attribute VB_Name = "frmMain"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub cmdBar_ButtonClick(ByVal Button As CommandbarLib.CommandBarButton)
+
+Select Case Button.Key
+    Case "open"
+        'CommonDialog1.ShowOpen
+        'On Error Resume Next
+        'CommonDialog1.Filter = "*.txt"
+        'ReadFile CommonDialog1.FileName
+    
+    Case "save"
+        DBspeichern
+        MsgBox "Kassenbuch gespeichert!", vbOKOnly, "Info"
+
+        
+    Case "newK"
+        frmKonto.Show
+    Case "newV"
+        frmZweck.Show
+        
+    Case "new"
+        frmAdd.Show
+    Case "edit"
+        If ListView1.ListItems.Count > 0 Then
+            IndexX = Int(ListView1.SelectedItem.SubItems(1))
+            frmEdit.Show
+        End If
+    Case "delete"
+        Dim a As Integer
+        a = MsgBox("Möchten Sie die Buchung wirklich löschen?", vbYesNo, "Info")
+        If a = vbYes Then
+        On Error Resume Next
+            LoescheEintrag
+            ReplaceIndex = IndexX
+            Exit Sub
+        End If
+    
+    Case "overview"
+        frmOverview.Show
+    
+    Case "search"
+        frmSuchen.Show
+    
+    Case "info"
+        frmAbout.Show
+  
+  End Select
+
+End Sub
+Private Sub cmdBar_MenuClick(ByVal Item As CommandbarLib.Item)
+ Select Case Item.Key
+
+    Case "save"
+        DBspeichern
+        MsgBox "Kassenbuch gespeichert!", vbOKOnly, "Info"
+    
+    Case "Exit"
+        App.End
+        
+    
+    
+    Case "newK"
+        frmKonto.Show
+    Case "newV"
+        frmZweck.Show
+        
+    Case "new"
+        frmAdd.Show
+    Case "edit"
+        If ListView1.ListItems.Count > 0 Then
+            IndexX = Int(ListView1.SelectedItem.SubItems(1))
+            frmEdit.Show
+        End If
+    Case "delete"
+        Dim a As Integer
+        a = MsgBox("Möchten Sie die Buchung wirklich löschen?", vbYesNo, "Info")
+        If a = vbYes Then
+        On Error Resume Next
+            LoescheEintrag
+            ReplaceIndex = IndexX
+            Exit Sub
+        End If
+    
+    Case "overview"
+        frmOverview.Show
+    
+    Case "search"
+        frmSuchen.Show
+    
+    Case "info"
+        frmAbout.Show
+    
+    End Select
+End Sub
+
+
+
+Private Sub Combo1_Click()
+On Error Resume Next
+KategorieIndex = Combo1.List(Combo1.ListIndex)
+SaveSetting App.Title, "Settings", "Combo1", Combo1.List(Combo1.ListIndex)
+EinlesenEintraege
+End Sub
+
+
+
+Private Sub Form_Load()
+Center Me
+
+cmdBar.Left = 0
+cmdBar.Top = 0
+cmdBar.Width = Me.Width
+
+ImageList1.Add App.Path & "\CommandBar.bmp"
+cmdBar.ImageList = ImageList1.hImageList
+
+Dim mnuMain As CommandbarLib.CommandBarMenuBar
+Dim mnuFile As CommandbarLib.Item
+Dim mnuEdit As CommandbarLib.Item
+Dim mnuKategorie As CommandbarLib.Item
+Dim mnuExtras As CommandbarLib.Item
+Dim mnuInfo As CommandbarLib.Item
+   
+    Set mnuMain = cmdBar.Controls.Add(cbrMenuBar, "MainMenu")
+    Set mnuFile = mnuMain.Items.Add(1, , "&Datei")
+    mnuFile.SubItems.Add , "open", "&Öffnen"
+    mnuFile.SubItems.Add , "save", "&Speichern"
+    mnuFile.SubItems.Add , , "", cbrMenuSeparator
+    mnuFile.SubItems.Add , "Exit", "E&xit"
+    
+    Set mnuKategorie = mnuMain.Items.Add(2, , "&Konto")
+    mnuKategorie.SubItems.Add , "newK", "Konten bearbeiten"
+    mnuKategorie.SubItems.Add , "newV", "Verwendungszweck bearbeiten"
+    
+    Set mnuEdit = mnuMain.Items.Add(3, , "&Buchung")
+    mnuEdit.SubItems.Add , "new", "&Neue Buchung"
+    mnuEdit.SubItems.Add , "edit", "&Buchung editieren"
+    mnuEdit.SubItems.Add , , "", cbrMenuSeparator
+    mnuEdit.SubItems.Add , "delete", "Buchung &löschen"
+
+    Set mnuExtras = mnuMain.Items.Add(4, , "&Extras")
+    mnuExtras.SubItems.Add , "overview", "&Berichte"
+    mnuExtras.SubItems.Add , , "", cbrMenuSeparator
+    mnuExtras.SubItems.Add , "search", "&Suchen"
+    
+    Set mnuInfo = mnuMain.Items.Add(5, , "&?")
+    mnuInfo.SubItems.Add , "info", "&Über"
+    
+    'Set mnuSearch = mnuMain.Items.Add(4, , "&Find")
+    'mnuSearch.SubItems.Add 1, , "&Find item"
+    
+
+If Me.Width >= SIZE_SUPPORTSBUTTONS Then
+    
+        Dim Button As CommandbarLib.CommandBarButton
+        
+        Set Button = cmdBar.Controls.Add(cbrButton, "sep0")
+        Button.Style = cbrSeparator
+        
+        Set Button = cmdBar.Controls.Add(cbrButton, "open")
+        Button.Image = 0
+        Button.Tag = "open"
+        Set Button = cmdBar.Controls.Add(cbrButton, "save")
+        Button.Image = 1
+        Button.Tag = "save"
+        Set Button = cmdBar.Controls.Add(cbrButton, "sep1")
+        Button.Style = cbrSeparator
+        
+        Set Button = cmdBar.Controls.Add(cbrButton, "newK")
+        Button.Image = 5
+        Button.Tag = "newK"
+        Set Button = cmdBar.Controls.Add(cbrButton, "newV")
+        Button.Image = 8
+        Button.Tag = "newV"
+        
+        Set Button = cmdBar.Controls.Add(cbrButton, "sep2")
+        Button.Style = cbrSeparator
+        
+        Set Button = cmdBar.Controls.Add(cbrButton, "new")
+        Button.Image = 2
+        Button.Tag = "new"
+        Set Button = cmdBar.Controls.Add(cbrButton, "edit")
+        Button.Image = 3
+        Button.Tag = "edit"
+        Set Button = cmdBar.Controls.Add(cbrButton, "delete")
+        Button.Image = 4
+        Button.Tag = "delete"
+        
+        Set Button = cmdBar.Controls.Add(cbrButton, "sep3")
+        Button.Style = cbrSeparator
+        
+        Set Button = cmdBar.Controls.Add(cbrButton, "overview")
+        Button.Image = 9
+        Button.Tag = "overview"
+        Set Button = cmdBar.Controls.Add(cbrButton, "search")
+        Button.Image = 6
+        Button.Tag = "search"
+
+ 
+    End If
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AddToCombo Combo1
+Combo1.Text = GetSetting(App.Title, "Settings", "Combo1", Combo1.List(Combo1.ListIndex(0)))
+KategorieIndex = Combo1.Text
+
+DBladen
+EinlesenEintraege
+End Sub
+
+
+Private Sub ListView1_AfterLabelEdit(Cancel As Boolean, ByVal NewString As String)
+
+End Sub
+
+Private Sub ListView1_ColumnClick(ByVal Index As Long)
+On Error Resume Next
+
+ListView1.SortKey = Index - 1
+ListView1.Sorted = True
+
+If ListView1.SortOrder = lvwDescending Then
+    ListView1.SortOrder = lvwAscending
+    Else
+    ListView1.SortOrder = lvwDescending
+    End If
+ListView1.Sorted = False
+
+End Sub

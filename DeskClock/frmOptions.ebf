@@ -1,0 +1,543 @@
+VERSION 5.00
+Begin VB.Form frmOptions 
+   Caption         =   "Options"
+   ClientHeight    =   1635
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   7875
+   ScaleHeight     =   1635
+   ScaleWidth      =   7875
+   Begin VBCE.Frame Frame1 
+      Height          =   735
+      Left            =   0
+      TabIndex        =   0
+      Top             =   840
+      Width           =   3855
+      _cx             =   6800
+      _cy             =   1296
+      Appearance      =   1
+      BackColor       =   -2147483633
+      BorderStyle     =   1
+      Caption         =   "Clock color"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      ClipControls    =   -1  'True
+      Begin VBCE.OptionButton Option6 
+         Height          =   255
+         Left            =   3000
+         TabIndex        =   7
+         Top             =   360
+         Width           =   615
+         _cx             =   1085
+         _cy             =   450
+         Appearance      =   1
+         BackColor       =   -2147483633
+         Caption         =   "Red"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         Value           =   0   'False
+      End
+      Begin VBCE.OptionButton Option5 
+         Height          =   255
+         Left            =   2040
+         TabIndex        =   6
+         Top             =   360
+         Width           =   855
+         _cx             =   1508
+         _cy             =   450
+         Appearance      =   1
+         BackColor       =   -2147483633
+         Caption         =   "Green"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         Value           =   0   'False
+      End
+      Begin VBCE.OptionButton Option2 
+         Height          =   255
+         Left            =   1200
+         TabIndex        =   2
+         Top             =   360
+         Width           =   855
+         _cx             =   1508
+         _cy             =   450
+         Appearance      =   1
+         BackColor       =   -2147483633
+         Caption         =   "Black"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         Value           =   0   'False
+      End
+      Begin VBCE.OptionButton Option1 
+         Height          =   255
+         Left            =   240
+         TabIndex        =   1
+         Top             =   360
+         Width           =   855
+         _cx             =   1508
+         _cy             =   450
+         Appearance      =   1
+         BackColor       =   -2147483633
+         Caption         =   "White"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         Value           =   0   'False
+      End
+   End
+   Begin VBCE.Frame Frame2 
+      Height          =   1575
+      Left            =   3960
+      TabIndex        =   3
+      Top             =   0
+      Width           =   3855
+      _cx             =   6800
+      _cy             =   2778
+      Appearance      =   1
+      BackColor       =   -2147483633
+      BorderStyle     =   1
+      Caption         =   "Clock font"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      ClipControls    =   -1  'True
+      Begin VBCE.OptionButton Font5 
+         Height          =   255
+         Left            =   240
+         TabIndex        =   13
+         Top             =   1080
+         Width           =   1695
+         _cx             =   2990
+         _cy             =   450
+         Appearance      =   1
+         BackColor       =   -2147483633
+         Caption         =   "FONT 5"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Open 24 Display St"
+            Size            =   15.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         Value           =   0   'False
+      End
+      Begin VBCE.OptionButton Font4 
+         Height          =   255
+         Left            =   2040
+         TabIndex        =   12
+         Top             =   720
+         Width           =   1335
+         _cx             =   2355
+         _cy             =   450
+         Appearance      =   1
+         BackColor       =   -2147483633
+         Caption         =   "FONT 4"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "DS-Digital"
+            Size            =   14.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         Value           =   0   'False
+      End
+      Begin VBCE.OptionButton Font3 
+         Height          =   255
+         Left            =   240
+         TabIndex        =   11
+         Top             =   720
+         Width           =   1575
+         _cx             =   2778
+         _cy             =   450
+         Appearance      =   1
+         BackColor       =   -2147483633
+         Caption         =   "FONT 3"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Dot Matrix"
+            Size            =   15.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         Value           =   0   'False
+      End
+      Begin VBCE.OptionButton Font1 
+         Height          =   255
+         Left            =   240
+         TabIndex        =   5
+         Top             =   360
+         Width           =   1335
+         _cx             =   2355
+         _cy             =   450
+         Appearance      =   1
+         BackColor       =   -2147483633
+         Caption         =   "FONT 1"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   14.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         Value           =   0   'False
+      End
+      Begin VBCE.OptionButton Font2 
+         Height          =   255
+         Left            =   2040
+         TabIndex        =   4
+         Top             =   360
+         Width           =   1695
+         _cx             =   2990
+         _cy             =   450
+         Appearance      =   1
+         BackColor       =   -2147483633
+         Caption         =   "FONT 2"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "The Led Display St"
+            Size            =   15.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         Value           =   0   'False
+      End
+   End
+   Begin VBCE.Frame Frame3 
+      Height          =   735
+      Left            =   0
+      TabIndex        =   8
+      Top             =   0
+      Width           =   3855
+      _cx             =   6800
+      _cy             =   1296
+      Appearance      =   1
+      BackColor       =   -2147483633
+      BorderStyle     =   1
+      Caption         =   "Background color"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      ClipControls    =   -1  'True
+      Begin VBCE.OptionButton Option8 
+         Height          =   255
+         Left            =   1200
+         TabIndex        =   10
+         Top             =   360
+         Width           =   855
+         _cx             =   1508
+         _cy             =   450
+         Appearance      =   1
+         BackColor       =   -2147483633
+         Caption         =   "Black"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         Value           =   0   'False
+      End
+      Begin VBCE.OptionButton Option7 
+         Height          =   255
+         Left            =   240
+         TabIndex        =   9
+         Top             =   360
+         Width           =   855
+         _cx             =   1508
+         _cy             =   450
+         Appearance      =   1
+         BackColor       =   -2147483633
+         Caption         =   "White"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         Value           =   0   'False
+      End
+   End
+End
+Attribute VB_Name = "frmOptions"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub Check1_Click()
+
+End Sub
+
+Private Sub cmbFontSize_Change()
+
+End Sub
+
+Private Sub cmbFontSize_Click()
+frmMain.Label1.Font.SIZE = cmbFontSize.List(cmbFontSize.ListIndex)
+SIZE = cmbFontSize.List(cmbFontSize.ListIndex)
+End Sub
+
+
+
+
+
+Private Sub Font1_Click()
+Aktualisieren
+End Sub
+
+Private Sub Font2_Click()
+Aktualisieren
+End Sub
+
+Private Sub Font3_Click()
+Aktualisieren
+End Sub
+
+Private Sub Font4_Click()
+Aktualisieren
+End Sub
+
+Private Sub Font5_Click()
+Aktualisieren
+End Sub
+
+Private Sub Form_Activate()
+Center Me
+DBladen
+
+Option7.Value = False
+Option8.Value = False
+Option1.Value = False
+Option2.Value = False
+Option5.Value = False
+Option6.Value = False
+Font1.Value = False
+Font2.Value = False
+Font3.Value = False
+Font4.Value = False
+Font5.Value = False
+
+If BCOLOR = 0 Then Option7.Value = True
+If BCOLOR = 1 Then Option8.Value = True
+
+If FCOLOR = 0 Then Option1.Value = True
+If FCOLOR = 1 Then Option2.Value = True
+If FCOLOR = 2 Then Option5.Value = True
+If FCOLOR = 3 Then Option6.Value = True
+
+
+If FNAME = 0 Then Font1.Value = True
+If FNAME = 1 Then Font2.Value = True
+If FNAME = 2 Then Font3.Value = True
+If FNAME = 3 Then Font4.Value = True
+If FNAME = 4 Then Font5.Value = True
+
+Aktualisieren
+End Sub
+
+Private Sub Form_Load()
+Center Me
+
+End Sub
+
+Public Sub Aktualisieren()
+If Option7.Value = True Then BCOLOR = 0
+If Option8.Value = True Then BCOLOR = 1
+
+If Option1.Value = True Then FCOLOR = 0
+If Option2.Value = True Then FCOLOR = 1
+If Option5.Value = True Then FCOLOR = 2
+If Option6.Value = True Then FCOLOR = 3
+
+If Font1.Value = True Then FNAME = 0
+If Font2.Value = True Then FNAME = 1
+If Font3.Value = True Then FNAME = 2
+If Font4.Value = True Then FNAME = 3
+If Font5.Value = True Then FNAME = 4
+
+
+
+If Option7.Value = True Then frmMain.BACKCOLOR = vbWhite
+If Option8.Value = True Then frmMain.BACKCOLOR = vbBlack
+
+
+
+If Option1.Value = True Then frmMain.Label1.FORECOLOR = vbWhite
+If Option2.Value = True Then frmMain.Label1.FORECOLOR = vbBlack
+If Option5.Value = True Then frmMain.Label1.FORECOLOR = vbGreen
+If Option6.Value = True Then frmMain.Label1.FORECOLOR = vbRed
+
+If Option1.Value = True Then frmMain.Label2.FORECOLOR = vbWhite
+If Option2.Value = True Then frmMain.Label2.FORECOLOR = vbBlack
+If Option5.Value = True Then frmMain.Label2.FORECOLOR = vbGreen
+If Option6.Value = True Then frmMain.Label2.FORECOLOR = vbRed
+
+If Option1.Value = True Then frmMain.Label3.FORECOLOR = vbWhite
+If Option2.Value = True Then frmMain.Label3.FORECOLOR = vbBlack
+If Option5.Value = True Then frmMain.Label3.FORECOLOR = vbGreen
+If Option6.Value = True Then frmMain.Label3.FORECOLOR = vbRed
+
+If Font1.Value = True Then frmMain.Label1.Font.Name = "Tahoma": frmMain.Label1.Font.SIZE = 130: SIZE = 130
+If Font2.Value = True Then frmMain.Label1.Font.Name = "The Led Display St": frmMain.Label1.Font.SIZE = 95: SIZE = 95
+If Font3.Value = True Then frmMain.Label1.Font.Name = "Dot Matrix": frmMain.Label1.Font.SIZE = 150: SIZE = 150
+If Font4.Value = True Then frmMain.Label1.Font.Name = "DS-Digital": frmMain.Label1.Font.SIZE = 150: SIZE = 150
+If Font5.Value = True Then frmMain.Label1.Font.Name = "Open 24 Display St": frmMain.Label1.Font.SIZE = 140: SIZE = 140
+
+If Font1.Value = True Then frmMain.Label2.Font.Name = "Tahoma"
+If Font2.Value = True Then frmMain.Label2.Font.Name = "The Led Display St"
+If Font3.Value = True Then frmMain.Label2.Font.Name = "Dot Matrix"
+If Font4.Value = True Then frmMain.Label2.Font.Name = "DS-Digital"
+If Font5.Value = True Then frmMain.Label2.Font.Name = "Open 24 Display St"
+
+If Font1.Value = True Then frmMain.Label3.Font.Name = "Tahoma"
+If Font2.Value = True Then frmMain.Label3.Font.Name = "The Led Display St"
+If Font3.Value = True Then frmMain.Label3.Font.Name = "Dot Matrix"
+If Font4.Value = True Then frmMain.Label3.Font.Name = "DS-Digital"
+If Font5.Value = True Then frmMain.Label3.Font.Name = "Open 24 Display St"
+
+
+frmMain.Label1.Font.Italic = False
+If FNAME = 0 Then frmMain.Label2.Top = frmMain.Label1.Top + frmMain.Label1.Height - 750
+If FNAME = 1 Then frmMain.Label2.Top = frmMain.Label1.Top + frmMain.Label1.Height - 1100
+If FNAME = 2 Then frmMain.Label2.Top = frmMain.Label1.Top + frmMain.Label1.Height - 850
+If FNAME = 3 Then frmMain.Label2.Top = frmMain.Label1.Top + frmMain.Label1.Height - 800
+If FNAME = 4 Then frmMain.Label2.Top = frmMain.Label1.Top + frmMain.Label1.Height - 550
+
+If FNAME = 0 Then frmMain.Label3.Top = frmMain.Label2.Top - 750
+If FNAME = 1 Then frmMain.Label3.Top = frmMain.Label2.Top - 1100
+If FNAME = 2 Then frmMain.Label3.Top = frmMain.Label2.Top - 850
+If FNAME = 3 Then frmMain.Label3.Top = frmMain.Label2.Top - 800
+If FNAME = 4 Then frmMain.Label3.Top = frmMain.Label2.Top - 550
+
+DBspeichern
+End Sub
+
+Private Sub Frame2_MouseDown(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+
+End Sub
+
+Private Sub Option1_Click()
+Aktualisieren
+End Sub
+
+Private Sub Option2_Click()
+Aktualisieren
+End Sub
+
+Private Sub Option5_Click()
+Aktualisieren
+End Sub
+
+Private Sub Option6_Click()
+Aktualisieren
+End Sub
+
+Private Sub Option7_Click()
+Aktualisieren
+End Sub
+
+Private Sub Option8_Click()
+Aktualisieren
+
+End Sub

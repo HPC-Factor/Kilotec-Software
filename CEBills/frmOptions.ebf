@@ -1,0 +1,254 @@
+VERSION 5.00
+Begin VB.Form frmOptions 
+   Caption         =   "Options"
+   ClientHeight    =   1560
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   3360
+   ScaleHeight     =   1560
+   ScaleWidth      =   3360
+   Begin VBCE.Label Label4 
+      Height          =   255
+      Left            =   120
+      TabIndex        =   5
+      Top             =   600
+      Width           =   855
+      _cx             =   1508
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "W‰hrung:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   1
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.TextBox Symbol1 
+      Height          =   255
+      Left            =   1080
+      TabIndex        =   4
+      Top             =   600
+      Width           =   495
+      _cx             =   873
+      _cy             =   450
+      Appearance      =   1
+      BackColor       =   -2147483643
+      BorderStyle     =   1
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   "Ä"
+      Alignment       =   0
+      HideSelection   =   -1  'True
+      Locked          =   0   'False
+      MaxLength       =   0
+      MultiLine       =   0   'False
+      PasswordChar    =   ""
+      ScrollBars      =   0
+   End
+   Begin VBCE.ComboBox Combo1 
+      Height          =   360
+      Left            =   1080
+      TabIndex        =   3
+      Top             =   120
+      Width           =   2175
+      List            =   "frmOptions.frx":0000
+      ItemData        =   "frmOptions.frx":0028
+      _cx             =   3836
+      _cy             =   635
+      Appearance      =   1
+      BackColor       =   -2147483643
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   ""
+      IntegralHeight  =   -1  'True
+      Locked          =   0   'False
+      Sorted          =   0   'False
+      Style           =   0
+   End
+   Begin VBCE.Label Label3 
+      Height          =   255
+      Left            =   120
+      TabIndex        =   2
+      Top             =   120
+      Width           =   855
+      _cx             =   1508
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Language:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   1
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.CommandButton Command2 
+      Height          =   375
+      Left            =   360
+      TabIndex        =   1
+      Top             =   1080
+      Width           =   1335
+      _cx             =   2355
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "&Close"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command1 
+      Default         =   -1  'True
+      Height          =   375
+      Left            =   1920
+      TabIndex        =   0
+      Top             =   1080
+      Width           =   1335
+      _cx             =   2355
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "&Apply"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+End
+Attribute VB_Name = "frmOptions"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub Combo1_Change()
+
+End Sub
+
+Private Sub Combo1_Click()
+LANGUAGE = Combo1.ListIndex
+If LANGUAGE = 0 Then
+        Me.Caption = "Options"
+        Label3.Caption = "Language:"
+        Command1.Caption = "&Apply"
+        Command2.Caption = "&Close"
+        Label4.Caption = "Currency:"
+        Symbol1.Text = "$"
+Else
+    Me.Caption = "Optionen"
+    Label3.Caption = "Sprache:"
+    Command1.Caption = "&‹bernehmen"
+    Command2.Caption = "&Schlieﬂen"
+    Label4.Caption = "W‰hrung:"
+    Symbol1.Text = "Ä"
+End If
+End Sub
+
+Private Sub Command1_Click()
+LANGUAGE = Combo1.ListIndex
+SYMBOL = Symbol1.Text
+If LANGUAGE = 0 Then MsgBox "New language after restart!", , "Info"
+If LANGUAGE = 1 Then MsgBox "Neue Sprache nach Neustart!", , "Info"
+SaveSetting App.Title, "Settings", "Sprache", LANGUAGE
+SaveSetting App.Title, "Settings", "Symbol", SYMBOL
+Me.Hide
+End Sub
+
+Private Sub Command2_Click()
+Me.Hide
+End Sub
+
+
+
+Private Sub Form_Activate()
+Combo1.Text = Combo1.List(LANGUAGE)
+
+
+End Sub
+
+Private Sub Form_Load()
+Center Me
+Combo1.AddItem "English"
+Combo1.AddItem "Deutsch"
+
+If LANGUAGE = 0 Then
+    Me.Caption = "Options"
+    Label3.Caption = "Language:"
+    Command1.Caption = "&Apply"
+    Command2.Caption = "&Close"
+    Label4.Caption = "Currency:"
+    Symbol1.Text = "$"
+    
+End If
+If LANGUAGE = 1 Then
+    Me.Caption = "Optionen"
+    Label3.Caption = "Sprache:"
+    Command1.Caption = "&‹bernehmen"
+    Command2.Caption = "&Schlieﬂen"
+    Label4.Caption = "W‰hrung:"
+    Symbol1.Text = "Ä"
+End If
+End Sub
+
+Private Sub Label4_Click()
+
+End Sub

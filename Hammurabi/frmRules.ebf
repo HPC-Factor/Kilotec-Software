@@ -1,0 +1,281 @@
+VERSION 5.00
+Begin VB.Form frmRules 
+   BackColor       =   &H00C0FFFF&
+   Caption         =   "Rules..."
+   ClientHeight    =   2715
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   8340
+   ScaleHeight     =   2715
+   ScaleWidth      =   8340
+   Begin VBCE.CommandButton Command1 
+      Default         =   -1  'True
+      Height          =   375
+      Left            =   7320
+      TabIndex        =   8
+      Top             =   2160
+      Width           =   855
+      _cx             =   1508
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "Back"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.Label Label8 
+      Height          =   480
+      Left            =   120
+      TabIndex        =   7
+      Top             =   2280
+      Width           =   6975
+      _cx             =   12303
+      _cy             =   847
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   12648447
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "7. If you make it to the 11th year, your rule will be evaluated and you'll be ranked against great figures in history"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label7 
+      Height          =   480
+      Left            =   120
+      TabIndex        =   6
+      Top             =   1800
+      Width           =   6975
+      _cx             =   12303
+      _cy             =   847
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   12648447
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "6. If the condition in your country ever become bad enough, the people will overthrow you and you won't finish your 10 year term"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label6 
+      Height          =   240
+      Left            =   120
+      TabIndex        =   5
+      Top             =   1560
+      Width           =   6615
+      _cx             =   11668
+      _cy             =   423
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   12648447
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "5. The price of each acre of land fluctuates from 17 bushels per acre to 27 bushels"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label5 
+      Height          =   240
+      Left            =   120
+      TabIndex        =   4
+      Top             =   1320
+      Width           =   4095
+      _cx             =   7223
+      _cy             =   423
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   12648447
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "4. Each acre of land requires one bushel of grain to plant seeds"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label4 
+      Height          =   240
+      Left            =   120
+      TabIndex        =   3
+      Top             =   1080
+      Width           =   6855
+      _cx             =   12091
+      _cy             =   423
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   12648447
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "3. Each person needs 20 bushels of grain each year to live and can till at most 10 acres of land"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label3 
+      Height          =   480
+      Left            =   120
+      TabIndex        =   2
+      Top             =   600
+      Width           =   7095
+      _cx             =   12515
+      _cy             =   847
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   12648447
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   $"frmRules.frx":0000
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label2 
+      Height          =   240
+      Left            =   120
+      TabIndex        =   1
+      Top             =   360
+      Width           =   4095
+      _cx             =   7223
+      _cy             =   423
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   12648447
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "1. The game lasts 10 years, with a year being one turn"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label1 
+      Height          =   240
+      Left            =   120
+      TabIndex        =   0
+      Top             =   120
+      Width           =   615
+      _cx             =   1085
+      _cy             =   423
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   12648447
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "RULES"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+End
+Attribute VB_Name = "frmRules"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub Command1_Click()
+Me.Hide
+End Sub
+
+Private Sub Form_Load()
+Center Me
+End Sub

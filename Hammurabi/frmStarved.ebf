@@ -1,0 +1,127 @@
+VERSION 5.00
+Begin VB.Form frmStarved 
+   BackColor       =   &H000000C0&
+   Caption         =   "GAME OVER"
+   ClientHeight    =   2040
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   5550
+   ScaleHeight     =   2040
+   ScaleWidth      =   5550
+   Begin VBCE.CommandButton Command1 
+      Default         =   -1  'True
+      Height          =   375
+      Left            =   2160
+      TabIndex        =   2
+      Top             =   1560
+      Width           =   1095
+      _cx             =   1931
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "OK"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.Label Label2 
+      Height          =   855
+      Left            =   120
+      TabIndex        =   1
+      Top             =   600
+      Width           =   5295
+      _cx             =   9340
+      _cy             =   1508
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   $"frmStarved.frx":0000
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   16777215
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label1 
+      Height          =   375
+      Left            =   120
+      TabIndex        =   0
+      Top             =   120
+      Width           =   5295
+      _cx             =   9340
+      _cy             =   661
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Label1"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   16777215
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+End
+Attribute VB_Name = "frmStarved"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub Command1_Click()
+ Me.Hide
+  frmSeed.Hide
+  frmFeed.Hide
+  frmMain.Hide
+  frmBuy.Hide
+  frmSell.Hide
+  frmSplash.Show
+End Sub
+
+Private Sub Form_Load()
+Dim X As Integer
+Dim Y As Integer
+
+X = (Screen.Width - Me.Width) / 2
+Y = (Screen.Height - Me.Height) / 2
+
+Me.Left = X
+Me.Top = Y
+
+Label1.Caption = "YOU STARVED " & Int(D) & " PEOPLE IN ONE YEAR"
+
+End Sub
+
+Private Sub Label2_Click()
+
+End Sub

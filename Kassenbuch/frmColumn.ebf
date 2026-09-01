@@ -1,0 +1,852 @@
+VERSION 5.00
+Begin VB.Form frmOverview 
+   BorderStyle     =   1  'Fixed Single
+   Caption         =   "Berichte"
+   ClientHeight    =   3285
+   ClientLeft      =   45
+   ClientTop       =   330
+   ClientWidth     =   9510
+   ScaleHeight     =   3285
+   ScaleWidth      =   9510
+   Begin VBCE.Frame Frame1 
+      Height          =   2295
+      Left            =   120
+      TabIndex        =   9
+      Top             =   120
+      Width           =   3375
+      _cx             =   5953
+      _cy             =   4048
+      Appearance      =   1
+      BackColor       =   -2147483633
+      BorderStyle     =   1
+      Caption         =   "Filter Zeitraum"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      ClipControls    =   -1  'True
+      Begin VBCE.CheckBox Check1 
+         Height          =   255
+         Left            =   2040
+         TabIndex        =   20
+         Top             =   765
+         Width           =   1095
+         _cx             =   1931
+         _cy             =   450
+         Appearance      =   1
+         BackColor       =   -2147483633
+         Caption         =   "+ Jahr"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         Value           =   0
+      End
+      Begin VBCE.OptionButton Option3 
+         Height          =   375
+         Left            =   120
+         TabIndex        =   17
+         Top             =   720
+         Width           =   1575
+         _cx             =   2778
+         _cy             =   661
+         Appearance      =   1
+         BackColor       =   -2147483633
+         Caption         =   "Monatsübersicht"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         Value           =   0   'False
+      End
+      Begin VBCE.OptionButton Option2 
+         Height          =   375
+         Left            =   120
+         TabIndex        =   16
+         Top             =   1080
+         Width           =   1935
+         _cx             =   3413
+         _cy             =   661
+         Appearance      =   1
+         BackColor       =   -2147483633
+         Caption         =   "Gesamter Zeitraum"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         Value           =   -1  'True
+      End
+      Begin VBCE.OptionButton Option1 
+         Height          =   375
+         Left            =   120
+         TabIndex        =   15
+         Top             =   360
+         Width           =   1575
+         _cx             =   2778
+         _cy             =   661
+         Appearance      =   1
+         BackColor       =   -2147483633
+         Caption         =   "Jahresübersicht"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         Value           =   0   'False
+      End
+      Begin VBCE.ComboBox Combo3 
+         Height          =   360
+         Left            =   2040
+         TabIndex        =   13
+         Top             =   1800
+         Width           =   1215
+         List            =   "frmColumn.frx":0000
+         ItemData        =   "frmColumn.frx":0028
+         _cx             =   2143
+         _cy             =   635
+         Appearance      =   1
+         BackColor       =   -2147483643
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   "Januar"
+         IntegralHeight  =   -1  'True
+         Locked          =   0   'False
+         Sorted          =   0   'False
+         Style           =   0
+      End
+      Begin VBCE.Label Label7 
+         Height          =   255
+         Left            =   2040
+         TabIndex        =   12
+         Top             =   1560
+         Width           =   615
+         _cx             =   1085
+         _cy             =   450
+         Appearance      =   1
+         AutoSize        =   0   'False
+         BackColor       =   -2147483633
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Jahr:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.ComboBox Combo2 
+         Height          =   360
+         Left            =   120
+         TabIndex        =   11
+         Top             =   1800
+         Width           =   1815
+         List            =   "frmColumn.frx":0050
+         ItemData        =   "frmColumn.frx":0078
+         _cx             =   3201
+         _cy             =   635
+         Appearance      =   1
+         BackColor       =   -2147483643
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Text            =   "Januar"
+         IntegralHeight  =   -1  'True
+         Locked          =   0   'False
+         Sorted          =   0   'False
+         Style           =   0
+      End
+      Begin VBCE.Label Label5 
+         Height          =   255
+         Left            =   120
+         TabIndex        =   10
+         Top             =   1560
+         Width           =   615
+         _cx             =   1085
+         _cy             =   450
+         Appearance      =   1
+         AutoSize        =   0   'False
+         BackColor       =   -2147483633
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Monat:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+   End
+   Begin VBCE.ComboBox Combo1 
+      Height          =   360
+      Left            =   3720
+      TabIndex        =   18
+      Top             =   360
+      Width           =   3015
+      List            =   "frmColumn.frx":00A0
+      ItemData        =   "frmColumn.frx":00C8
+      _cx             =   5318
+      _cy             =   635
+      Appearance      =   1
+      BackColor       =   -2147483643
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   ""
+      IntegralHeight  =   -1  'True
+      Locked          =   0   'False
+      Sorted          =   0   'False
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command2 
+      Default         =   -1  'True
+      Height          =   375
+      Left            =   8160
+      TabIndex        =   14
+      Top             =   2760
+      Width           =   1215
+      _cx             =   2143
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "&Anzeigen"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.Label lblTransaktionen 
+      Height          =   255
+      Left            =   5400
+      TabIndex        =   8
+      Top             =   2160
+      Width           =   1335
+      _cx             =   2355
+      _cy             =   450
+      Appearance      =   0
+      AutoSize        =   0   'False
+      BackColor       =   16777215
+      BackStyle       =   1
+      BorderStyle     =   1
+      Caption         =   "0"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label4 
+      Height          =   255
+      Left            =   3720
+      TabIndex        =   7
+      Top             =   2160
+      Width           =   1095
+      _cx             =   1931
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Transaktionen:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label lblKontostand 
+      Height          =   255
+      Left            =   5400
+      TabIndex        =   6
+      Top             =   1800
+      Width           =   1335
+      _cx             =   2355
+      _cy             =   450
+      Appearance      =   0
+      AutoSize        =   0   'False
+      BackColor       =   16777215
+      BackStyle       =   1
+      BorderStyle     =   1
+      Caption         =   "0"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label6 
+      Height          =   255
+      Left            =   3720
+      TabIndex        =   5
+      Top             =   1800
+      Width           =   1095
+      _cx             =   1931
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Kontostand:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label lblAuszahlungen 
+      Height          =   255
+      Left            =   5400
+      TabIndex        =   4
+      Top             =   1440
+      Width           =   1335
+      _cx             =   2355
+      _cy             =   450
+      Appearance      =   0
+      AutoSize        =   0   'False
+      BackColor       =   16777215
+      BackStyle       =   1
+      BorderStyle     =   1
+      Caption         =   "0"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label lblEinzahlungen 
+      Height          =   255
+      Left            =   5400
+      TabIndex        =   3
+      Top             =   1080
+      Width           =   1335
+      _cx             =   2355
+      _cy             =   450
+      Appearance      =   0
+      AutoSize        =   0   'False
+      BackColor       =   16777215
+      BackStyle       =   1
+      BorderStyle     =   1
+      Caption         =   "0"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label2 
+      Height          =   255
+      Left            =   3720
+      TabIndex        =   2
+      Top             =   1440
+      Width           =   1095
+      _cx             =   1931
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Auszahlungen:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label1 
+      Height          =   255
+      Left            =   3720
+      TabIndex        =   1
+      Top             =   1080
+      Width           =   1095
+      _cx             =   1931
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Einzahlungen:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.CommandButton Command1 
+      Height          =   375
+      Left            =   6840
+      TabIndex        =   0
+      Top             =   2760
+      Width           =   1215
+      _cx             =   2143
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "&Schließen"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.Label Label3 
+      Height          =   255
+      Left            =   3720
+      TabIndex        =   19
+      Top             =   120
+      Width           =   615
+      _cx             =   1085
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Konto:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+End
+Attribute VB_Name = "frmOverview"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+
+
+Private Sub Check1_Click()
+If Check1.Value = 1 Then
+    Combo3.Enabled = True
+Else
+    Combo3.Enabled = False
+End If
+End Sub
+
+Private Sub Combo3_Change()
+
+End Sub
+
+Private Sub Command1_Click()
+
+Me.Hide
+End Sub
+
+
+
+Private Sub Command2_Click()
+Dim Waehrung As String
+Dim Waehrung2 As String
+Dim Transaktionen As Integer
+
+Kontostand = 0
+Saldo = 0
+Einzahlungen = 0
+Auszahlungen = 0
+
+lblEinzahlungen.Caption = 0
+lblAuszahlungen.Caption = 0
+lblKontostand.Caption = 0
+lblTransaktionen.Caption = 0
+
+For XX = 0 To Zaehler
+    Waehrung = ""
+    Waehrung2 = ""
+    
+    If Option2.Value = True Then
+        If DBdaten(0, XX) = Combo1.List(Combo1.ListIndex) Then
+            If DBdaten(4, XX) <> "" Then Waehrung = " €"
+            If DBdaten(5, XX) <> "" Then Waehrung2 = " €"
+            
+            Saldo = Int(DBdaten(2, XX))
+            If DBdaten(4, XX) <> "" Then
+                    Transaktionen = Transaktionen + 1
+                  Einzahlungen = Einzahlungen + DBdaten(4, XX)
+            Else
+                  Einzahlungen = Einzahlungen + 0
+            End If
+            If DBdaten(5, XX) <> "" Then
+            Transaktionen = Transaktionen + 1
+                 Auszahlungen = Auszahlungen + DBdaten(5, XX)
+            Else
+                 Auszahlungen = Auszahlungen + 0
+            End If
+                
+            Kontostand = Saldo + Einzahlungen - Auszahlungen
+                
+            lblEinzahlungen.Caption = Einzahlungen & Waehrung
+            lblAuszahlungen.Caption = Auszahlungen & Waehrung2
+            lblKontostand.Caption = Kontostand & " €"
+            lblTransaktionen.Caption = Transaktionen
+        End If
+    End If
+    
+    If Option1.Value = True Then
+        If DBdaten(0, XX) = Combo1.Text And CStr(Year(DBdaten(1, XX))) = Combo3.Text Then
+            If DBdaten(4, XX) <> "" Then Waehrung = " €"
+            If DBdaten(5, XX) <> "" Then Waehrung2 = " €"
+            
+            Saldo = Int(DBdaten(2, XX))
+            If DBdaten(4, XX) <> "" Then
+                    Transaktionen = Transaktionen + 1
+                  Einzahlungen = Einzahlungen + DBdaten(4, XX)
+            Else
+                  Einzahlungen = Einzahlungen + 0
+            End If
+            If DBdaten(5, XX) <> "" Then
+            Transaktionen = Transaktionen + 1
+                 Auszahlungen = Auszahlungen + DBdaten(5, XX)
+            Else
+                 Auszahlungen = Auszahlungen + 0
+            End If
+                
+            Kontostand = Saldo + Einzahlungen - Auszahlungen
+                
+            lblEinzahlungen.Caption = Einzahlungen & Waehrung
+            lblAuszahlungen.Caption = Auszahlungen & Waehrung2
+            lblKontostand.Caption = Kontostand & " €"
+            lblTransaktionen.Caption = Transaktionen
+        End If
+    End If
+    
+     If Option3.Value = True And Check1.Value = 0 Then
+        If DBdaten(0, XX) = Combo1.Text And CStr(Month(DBdaten(1, XX))) = CStr(Combo2.ListIndex + 1) Then
+            If DBdaten(4, XX) <> "" Then Waehrung = " €"
+            If DBdaten(5, XX) <> "" Then Waehrung2 = " €"
+            
+            Saldo = Int(DBdaten(2, XX))
+            If DBdaten(4, XX) <> "" Then
+                    Transaktionen = Transaktionen + 1
+                  Einzahlungen = Einzahlungen + DBdaten(4, XX)
+            Else
+                  Einzahlungen = Einzahlungen + 0
+            End If
+            If DBdaten(5, XX) <> "" Then
+            Transaktionen = Transaktionen + 1
+                 Auszahlungen = Auszahlungen + DBdaten(5, XX)
+            Else
+                 Auszahlungen = Auszahlungen + 0
+            End If
+                
+            Kontostand = Saldo + Einzahlungen - Auszahlungen
+                
+            lblEinzahlungen.Caption = Einzahlungen & Waehrung
+            lblAuszahlungen.Caption = Auszahlungen & Waehrung2
+            lblKontostand.Caption = Kontostand & " €"
+            lblTransaktionen.Caption = Transaktionen
+        End If
+    End If
+    If Option3.Value = True And Check1.Value = 1 Then
+        If DBdaten(0, XX) = Combo1.Text And CStr(Month(DBdaten(1, XX))) = CStr(Combo2.ListIndex + 1) And CStr(Year(DBdaten(1, XX))) = Combo3.Text Then
+            If DBdaten(4, XX) <> "" Then Waehrung = " €"
+            If DBdaten(5, XX) <> "" Then Waehrung2 = " €"
+            
+            Saldo = Int(DBdaten(2, XX))
+            If DBdaten(4, XX) <> "" Then
+                    Transaktionen = Transaktionen + 1
+                  Einzahlungen = Einzahlungen + DBdaten(4, XX)
+            Else
+                  Einzahlungen = Einzahlungen + 0
+            End If
+            If DBdaten(5, XX) <> "" Then
+            Transaktionen = Transaktionen + 1
+                 Auszahlungen = Auszahlungen + DBdaten(5, XX)
+            Else
+                 Auszahlungen = Auszahlungen + 0
+            End If
+                
+            Kontostand = Saldo + Einzahlungen - Auszahlungen
+                
+            lblEinzahlungen.Caption = Einzahlungen & Waehrung
+            lblAuszahlungen.Caption = Auszahlungen & Waehrung2
+            lblKontostand.Caption = Kontostand & " €"
+            lblTransaktionen.Caption = Transaktionen
+        End If
+    End If
+    
+    
+    
+    
+Next XX
+End Sub
+
+
+
+
+
+
+
+Private Sub Form_Activate()
+
+lblEinzahlungen.Caption = 0
+lblAuszahlungen.Caption = 0
+lblKontostand.Caption = 0
+lblTransaktionen.Caption = 0
+Combo1.Text = ""
+
+Combo2.Enabled = False
+Combo3.Enabled = False
+
+Option2.Value = True
+End Sub
+
+Private Sub Form_Load()
+Center Me
+AddToCombo Combo1
+
+Combo2.Clear
+Combo2.AddItem "Januar"
+Combo2.AddItem "Februar"
+Combo2.AddItem "März"
+Combo2.AddItem "April"
+Combo2.AddItem "Mai"
+Combo2.AddItem "Juni"
+Combo2.AddItem "Juli"
+Combo2.AddItem "August"
+Combo2.AddItem "September"
+Combo2.AddItem "Oktober"
+Combo2.AddItem "November"
+Combo2.AddItem "Dezember"
+
+Combo3.Clear
+For XX = 0 To Zaehler
+    If DBdaten(1, XX) <> Empty Then
+        Combo3.AddItem DatePart("yyyy", DBdaten(1, XX))
+    End If
+Next XX
+
+DeleteDuplicate Combo3
+
+Combo3.Text = Combo3.List(0)
+End Sub
+
+Private Sub DeleteDuplicate(liste As Control)
+Dim i As Integer
+Dim u As Integer
+
+i = 0
+
+While i < liste.ListCount
+u = i + 1
+    Do Until u > liste.ListCount - 1
+        If liste.List(u) = liste.List(i) Then
+            liste.RemoveItem u
+        Else
+            If liste.Sorted Then Exit Do
+            u = u + 1
+        End If
+    Loop
+    i = i + 1
+Wend
+
+End Sub
+
+Private Sub Frame1_MouseDown(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+
+End Sub
+
+Private Sub Option1_Click()
+If Option1.Value = True Then
+    Combo2.Enabled = False
+    Combo3.Enabled = True
+Else
+    Combo2.Enabled = True
+End If
+End Sub
+
+Private Sub Option2_Click()
+If Option2.Value = True Then
+    Combo2.Enabled = False
+    Combo3.Enabled = False
+End If
+End Sub
+
+Private Sub Option3_Click()
+If Option3.Value = True Then
+    Combo3.Enabled = False
+    Combo2.Enabled = True
+Else
+    Combo3.Enabled = True
+End If
+End Sub

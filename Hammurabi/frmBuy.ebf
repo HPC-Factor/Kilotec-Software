@@ -1,0 +1,141 @@
+VERSION 5.00
+Begin VB.Form frmBuy 
+   BackColor       =   &H00C0C0FF&
+   Caption         =   "Buy"
+   ClientHeight    =   1680
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   3225
+   ScaleHeight     =   1680
+   ScaleWidth      =   3225
+   Begin VBCE.CommandButton Command1 
+      Default         =   -1  'True
+      Height          =   375
+      Left            =   1080
+      TabIndex        =   2
+      Top             =   1200
+      Width           =   975
+      _cx             =   1720
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "Next"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.TextBox Text1 
+      Height          =   375
+      Left            =   1080
+      TabIndex        =   1
+      Top             =   720
+      Width           =   975
+      _cx             =   1720
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   -2147483643
+      BorderStyle     =   1
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   ""
+      Alignment       =   0
+      HideSelection   =   -1  'True
+      Locked          =   0   'False
+      MaxLength       =   0
+      MultiLine       =   0   'False
+      PasswordChar    =   ""
+      ScrollBars      =   0
+   End
+   Begin VBCE.Label Label1 
+      Height          =   495
+      Left            =   120
+      TabIndex        =   0
+      Top             =   120
+      Width           =   3015
+      _cx             =   5318
+      _cy             =   873
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "How many acres to you wish to buy?"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+End
+Attribute VB_Name = "frmBuy"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub Command1_Click()
+On Error Resume Next
+If CDbl(Text1.Text) = Empty Then Text1.Text = "0"
+
+If Y * CDbl(Text1.Text) > S Then
+    MsgBox ("You can only buy " & Int(S / Y) & " acres for now!"), vbOKOnly, "Info"
+Exit Sub
+Else
+    If CDbl(Text1.Text) <> Empty Or CDbl(Text1.Text) <> 0 Then
+        A = A + CDbl(Text1.Text)
+        S = S - Y * CDbl(Text1.Text)
+        C = 0
+        frmBuy.Hide
+        frmFeed.Show
+    Else
+        frmBuy.Hide
+        frmSell.Show
+    End If
+   
+End If
+End Sub
+
+Private Sub Form_Activate()
+Text1.SetFocus
+End Sub
+
+Private Sub Form_Load()
+Dim X As Integer
+Dim Y As Integer
+
+X = (Screen.Width - Me.Width) / 2
+Y = (Screen.Height - Me.Height) / 2
+
+Me.Left = X
+Me.Top = Y
+
+Text1.SetFocus
+
+End Sub

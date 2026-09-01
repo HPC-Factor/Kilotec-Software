@@ -1,0 +1,283 @@
+VERSION 5.00
+Begin VB.Form frmOptionen 
+   BorderStyle     =   1  'Fixed Single
+   Caption         =   "Settings"
+   ClientHeight    =   1770
+   ClientLeft      =   45
+   ClientTop       =   330
+   ClientWidth     =   2820
+   ScaleHeight     =   1770
+   ScaleWidth      =   2820
+   Begin VBCE.OptionButton Option2 
+      Height          =   255
+      Left            =   1440
+      TabIndex        =   7
+      Top             =   840
+      Width           =   1335
+      _cx             =   2355
+      _cy             =   450
+      Appearance      =   1
+      BackColor       =   -2147483633
+      Caption         =   "White Layout"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      Value           =   0   'False
+   End
+   Begin VBCE.OptionButton Option1 
+      Height          =   255
+      Left            =   120
+      TabIndex        =   6
+      Top             =   840
+      Width           =   1215
+      _cx             =   2143
+      _cy             =   450
+      Appearance      =   1
+      BackColor       =   -2147483633
+      Caption         =   "Black Layout"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      Value           =   -1  'True
+   End
+   Begin VBCE.CommandButton Command2 
+      Default         =   -1  'True
+      Height          =   375
+      Left            =   1440
+      TabIndex        =   5
+      Top             =   1320
+      Width           =   1095
+      _cx             =   1931
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "&Apply"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command1 
+      Height          =   375
+      Left            =   240
+      TabIndex        =   4
+      Top             =   1320
+      Width           =   1095
+      _cx             =   1931
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "Close"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.Label Label2 
+      Height          =   255
+      Left            =   1920
+      TabIndex        =   3
+      Top             =   480
+      Width           =   735
+      _cx             =   1296
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "(1-1000)"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.TextBox txtCPU 
+      Height          =   255
+      Left            =   1200
+      TabIndex        =   2
+      Top             =   480
+      Width           =   615
+      _cx             =   1085
+      _cy             =   450
+      Appearance      =   1
+      BackColor       =   -2147483643
+      BorderStyle     =   1
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   "500"
+      Alignment       =   0
+      HideSelection   =   -1  'True
+      Locked          =   0   'False
+      MaxLength       =   0
+      MultiLine       =   0   'False
+      PasswordChar    =   ""
+      ScrollBars      =   0
+   End
+   Begin VBCE.Label Label1 
+      Height          =   255
+      Left            =   120
+      TabIndex        =   1
+      Top             =   480
+      Width           =   975
+      _cx             =   1720
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "CPU Speed:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.CheckBox Check1 
+      Height          =   255
+      Left            =   120
+      TabIndex        =   0
+      Top             =   120
+      Width           =   2415
+      _cx             =   4260
+      _cy             =   450
+      Appearance      =   1
+      BackColor       =   -2147483633
+      Caption         =   "Show hints in program lines"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      Value           =   0
+   End
+End
+Attribute VB_Name = "frmOptionen"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub Check1_Click()
+If Check1.Value = 1 Then
+    Hints = 1
+Else
+    Hints = 0
+End If
+End Sub
+
+Private Sub Command1_Click()
+Me.Hide
+End Sub
+
+Private Sub Command2_Click()
+If txtCPU.Text < 1 Or txtCPU.Text > 1000 Or txtCPU.Text = "" Or IsNumeric(txtCPU.Text) = False Then
+    MsgBox "Please enter a valid number for the CPU speed (1-1000)", vbOKOnly, "Error"
+    Exit Sub
+End If
+
+
+frmMain.Timer1.Interval = CInt(txtCPU.Text)
+
+If Option1.Value = True Then Layout = 0
+If Option2.Value = True Then Layout = 1
+
+If Layout = 0 Then
+    frmMain.List1.BackColor = vbBlack
+    frmMain.List1.ForeColor = vbWhite
+    frmMain.BackColor = vbBlack
+End If
+If Layout = 1 Then
+    frmMain.List1.BackColor = vbWhite
+    frmMain.List1.ForeColor = vbBlack
+    frmMain.BackColor = vbWhite
+End If
+
+SaveSetting App.Title, "Settings", "Help", Hints
+SaveSetting App.Title, "Settings", "TimerSpeed", CInt(txtCPU.Text)
+SaveSetting App.Title, "Settings", "Layout", Layout
+Me.Hide
+End Sub
+
+Private Sub Form_Activate()
+txtCPU.Text = TimerSpeed
+If Hints = 1 Then
+    Check1.Value = 1
+Else
+    Check1.Value = 0
+End If
+End Sub
+
+Private Sub Form_Load()
+Center Me
+
+End Sub

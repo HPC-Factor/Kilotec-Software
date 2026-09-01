@@ -1,0 +1,181 @@
+VERSION 5.00
+Begin VB.Form frmSeed 
+   BackColor       =   &H00FFC0C0&
+   Caption         =   "Seed"
+   ClientHeight    =   1680
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   3225
+   ScaleHeight     =   1680
+   ScaleWidth      =   3225
+   Begin VBCE.Label Label2 
+      Height          =   495
+      Left            =   120
+      TabIndex        =   2
+      Top             =   120
+      Width           =   3015
+      _cx             =   5318
+      _cy             =   873
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "How many acres do you wish to plant with seed?"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.TextBox Text1 
+      Height          =   375
+      Left            =   1080
+      TabIndex        =   1
+      Top             =   720
+      Width           =   975
+      _cx             =   1720
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   -2147483643
+      BorderStyle     =   1
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   ""
+      Alignment       =   0
+      HideSelection   =   -1  'True
+      Locked          =   0   'False
+      MaxLength       =   0
+      MultiLine       =   0   'False
+      PasswordChar    =   ""
+      ScrollBars      =   0
+   End
+   Begin VBCE.CommandButton Command1 
+      Default         =   -1  'True
+      Height          =   375
+      Left            =   1080
+      TabIndex        =   0
+      Top             =   1200
+      Width           =   975
+      _cx             =   1720
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "Next"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+End
+Attribute VB_Name = "frmSeed"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub Command1_Click()
+On Error Resume Next
+If CDbl(Text1.Text) = Empty Then Text1.Text = "0"
+
+If CDbl(Text1.Text) > A Then
+    MsgBox ("You own only " & Int(A) & " acres!"), vbOKOnly, "Info"
+    Exit Sub
+ElseIf CDbl(Text1.Text) / 2 > S Then
+    MsgBox ("You have only " & Int(S) & " bushels!"), vbOKOnly, "Info"
+    Exit Sub
+ElseIf CDbl(Text1.Text) > (P * 10) Then
+    MsgBox ("You only have " & Int(P) & " people to tend the fields!"), vbOKOnly, "Info"
+    Exit Sub
+Else
+    If CDbl(Text1.Text) = Empty Then Text1.Text = "0"
+    
+    
+    If CDbl(Text1.Text) <> 0 Then S = S - (CDbl(Text1.Text / 2))
+    C = (Rnd(5) * 10) + 1
+    Y2 = C
+    H = CDbl(Text1.Text) * Y2
+    E = 0
+    C = Int((Rnd(5) * 10) + 1)
+    If C <> 1 Then
+        E = S / C
+    End If
+    S = S - E + H
+    C = Int((Rnd(5) * 10) + 1)
+    I = (C * (20 * A + S) / P / 100 + 1)
+    C = Q1 / 20
+    'Q1 = (Rnd(10) * 10) + 1
+    If P < C Then
+        D = 0
+        Call NewYear
+        frmSeed.Hide
+        Exit Sub
+    End If
+    D = P - C
+    'If D > P / 2 Then
+    If D > 0.45 * P Then
+        frmStarved.Show
+        Exit Sub
+    End If
+    U = ((Z - 1) * U + D * 100 / P) / Z
+    P = C
+    D1 = D1 + D
+    T = T + D
+    QQ = Int((Rnd(5) * 10) + 1)
+    Call NewYear
+    frmSeed.Hide
+    Exit Sub
+End If
+   
+'End If
+End Sub
+
+Private Sub Form_Activate()
+Text1.SetFocus
+End Sub
+
+Private Sub Form_Load()
+Dim X As Integer
+Dim Y As Integer
+
+X = (Screen.Width - Me.Width) / 2
+Y = (Screen.Height - Me.Height) / 2
+
+Me.Left = X
+Me.Top = Y
+Text1.SetFocus
+End Sub
+
+Private Sub Label1_Click()
+
+End Sub
+
+Private Sub Label2_Click()
+
+End Sub

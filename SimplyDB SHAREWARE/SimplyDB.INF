@@ -1,0 +1,177 @@
+[Version]
+Signature="$Chicago$"
+CESignature="$Windows CE$"
+Provider=%CompanyName%
+
+[SourceDisksNames]
+1=,"Application Files",, App
+
+[DefaultInstall]
+CopyFiles=Files.App, Files.Windows
+CEShortcuts=Shortcuts
+
+[Shortcuts]
+%AppName%,0,"SimplyDB.vb"
+
+[CEStrings]
+InstallDir=%CE1%\%AppName%
+AppName="SimplyDB"
+
+[Strings]
+CompanyName="Kilotec"
+
+[DestinationDirs]
+Shortcuts=,%CE11%
+Files.App=,%InstallDir%
+Files.Windows=,%CE2%
+Files.Mips 4000 (1K) v2.10=,%CE2%
+Files.SH 4 (4K) v2.10=,%CE2%
+Files.Arm 1100 (4K) v2.10=,%CE2%
+Files.SH 3 (1K) v2.10=,%CE2%
+
+[SourceDisksFiles]
+SimplyDB.dat=1
+Kat.dat=1
+README!.txt=1
+SimplyDB.vb=1
+SimplyDB_C.dat=1
+Bar.BMP=1
+Options.dat=1
+
+[DefaultInstall.Mips 4000 (1K) v2.10]
+CopyFiles=Files.Mips 4000 (1K) v2.10
+CESelfRegister=MSCECommandBar.dll,MSCEFile.dll,MSCEImageList.dll,MSCEListView.dll,vbscript.dll,pvbhost2.dll,pvbform2.dll
+
+[CEDevice.Mips 4000 (1K) v2.10]
+ProcessorType=4000
+
+[SourceDisksNames.Mips 4000 (1K) v2.10]
+3= ,"Mips 4000 (1K) v2.10 Files",,Mips 4000 (1K) v2.10
+
+[SourceDisksFiles.Mips 4000 (1K) v2.10]
+vbsen.dll=3
+MSCEListView.dll=3
+MSCEImageList.dll=3
+MSCECommandBar.dll=3
+pvbform2.dll=3
+MSCEFile.dll=3
+vbscript.dll=3
+pvbhost2.dll=3
+pvbload.exe=3
+
+[DefaultInstall.SH 4 (4K) v2.10]
+CopyFiles=Files.SH 4 (4K) v2.10
+CESelfRegister=MSCECommandBar.dll,MSCEFile.dll,MSCEImageList.dll,MSCEListView.dll,vbscript.dll,pvbhost2.dll,pvbform2.dll
+
+[CEDevice.SH 4 (4K) v2.10]
+ProcessorType=10005
+
+[SourceDisksNames.SH 4 (4K) v2.10]
+3= ,"SH 4 (4K) v2.10 Files",,SH 4 (4K) v2.10
+
+[SourceDisksFiles.SH 4 (4K) v2.10]
+vbsen.dll=3
+pvbform2.dll=3
+MSCEListView.dll=3
+MSCECommandBar.dll=3
+MSCEFile.dll=3
+pvbhost2.dll=3
+vbscript.dll=3
+MSCEImageList.dll=3
+pvbload.exe=3
+
+[DefaultInstall.Arm 1100 (4K) v2.10]
+CopyFiles=Files.Arm 1100 (4K) v2.10
+CESelfRegister=MSCECommandBar.dll,MSCEFile.dll,MSCEImageList.dll,MSCEListView.dll,vbscript.dll,pvbhost2.dll,pvbform2.dll
+
+[CEDevice.Arm 1100 (4K) v2.10]
+ProcessorType=2577
+
+[SourceDisksNames.Arm 1100 (4K) v2.10]
+3= ,"Arm 1100 (4K) v2.10 Files",,Arm 1100 (4K) v2.10
+
+[SourceDisksFiles.Arm 1100 (4K) v2.10]
+vbsen.dll=3
+MSCEListView.dll=3
+pvbload.exe=3
+MSCECommandBar.dll=3
+pvbform2.dll=3
+MSCEImageList.dll=3
+MSCEFile.dll=3
+vbscript.dll=3
+pvbhost2.dll=3
+
+[DefaultInstall.SH 3 (1K) v2.10]
+CopyFiles=Files.SH 3 (1K) v2.10
+CESelfRegister=MSCECommandBar.dll,MSCEFile.dll,MSCEImageList.dll,MSCEListView.dll,vbscript.dll,pvbhost2.dll,pvbform2.dll
+
+[CEDevice.SH 3 (1K) v2.10]
+ProcessorType=10003
+
+[SourceDisksNames.SH 3 (1K) v2.10]
+3= ,"SH 3 (1K) v2.10 Files",,SH 3 (1K) v2.10
+
+[SourceDisksFiles.SH 3 (1K) v2.10]
+MSCECommandBar.dll=3
+MSCEListView.dll=3
+MSCEFile.dll=3
+pvbhost2.dll=3
+vbscript.dll=3
+MSCEImageList.dll=3
+vbsen.dll=3
+pvbload.exe=3
+pvbform2.dll=3
+
+[Files.Mips 4000 (1K) v2.10]
+vbsen.dll
+MSCEListView.dll,,0x80000000
+MSCEImageList.dll,,0x80000000
+MSCECommandBar.dll,,0x80000000
+pvbform2.dll,,0x80000000
+MSCEFile.dll,,0x80000000
+vbscript.dll,,0x80000000
+pvbhost2.dll,,0x80000000
+pvbload.exe
+
+[Files.SH 4 (4K) v2.10]
+vbsen.dll
+pvbform2.dll,,0x80000000
+MSCEListView.dll,,0x80000000
+MSCECommandBar.dll,,0x80000000
+MSCEFile.dll,,0x80000000
+pvbhost2.dll,,0x80000000
+vbscript.dll,,0x80000000
+MSCEImageList.dll,,0x80000000
+pvbload.exe
+
+[Files.Arm 1100 (4K) v2.10]
+vbsen.dll
+MSCEListView.dll,,0x80000000
+pvbload.exe
+MSCECommandBar.dll,,0x80000000
+pvbform2.dll,,0x80000000
+MSCEImageList.dll,,0x80000000
+MSCEFile.dll,,0x80000000
+vbscript.dll,,0x80000000
+pvbhost2.dll,,0x80000000
+
+[Files.App]
+SimplyDB.dat
+Kat.dat
+README!.txt
+SimplyDB.vb
+SimplyDB_C.dat
+Bar.BMP
+Options.dat
+
+[Files.SH 3 (1K) v2.10]
+MSCECommandBar.dll,,0x80000000
+MSCEListView.dll,,0x80000000
+MSCEFile.dll,,0x80000000
+pvbhost2.dll,,0x80000000
+vbscript.dll,,0x80000000
+MSCEImageList.dll,,0x80000000
+vbsen.dll
+pvbload.exe
+pvbform2.dll,,0x80000000
+

@@ -1,0 +1,699 @@
+VERSION 5.00
+Begin VB.Form frmMain 
+   Caption         =   "HAMMURABI"
+   ClientHeight    =   2520
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   7290
+   ScaleHeight     =   2520
+   ScaleWidth      =   7290
+   Begin VBCE.Frame Frame2 
+      Height          =   975
+      Left            =   0
+      TabIndex        =   19
+      Top             =   1440
+      Width           =   7215
+      _cx             =   12726
+      _cy             =   1720
+      Appearance      =   1
+      BackColor       =   -2147483633
+      BorderStyle     =   1
+      Caption         =   "Action"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      ClipControls    =   -1  'True
+      Begin VBCE.Label PLAGE 
+         Height          =   720
+         Left            =   1320
+         TabIndex        =   22
+         Top             =   240
+         Visible         =   0   'False
+         Width           =   4695
+         _cx             =   8281
+         _cy             =   1270
+         Appearance      =   1
+         AutoSize        =   0   'False
+         BackColor       =   -2147483633
+         BackStyle       =   0
+         BorderStyle     =   0
+         Caption         =   "A horrible Plague Struck! Half of the people died!"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   12
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   255
+         Alignment       =   2
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.CommandButton Command1 
+         Height          =   615
+         Left            =   120
+         TabIndex        =   21
+         Top             =   240
+         Width           =   855
+         _cx             =   1508
+         _cy             =   1085
+         Appearance      =   1
+         BackColor       =   12632256
+         Caption         =   "EXIT"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   0
+      End
+      Begin VBCE.CommandButton Command3 
+         Height          =   615
+         Left            =   6240
+         TabIndex        =   20
+         Top             =   240
+         Width           =   855
+         _cx             =   1508
+         _cy             =   1085
+         Appearance      =   1
+         BackColor       =   12632256
+         Caption         =   "NEXT ROUND"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Style           =   0
+      End
+   End
+   Begin VBCE.Frame Frame1 
+      Height          =   1335
+      Left            =   0
+      TabIndex        =   0
+      Top             =   0
+      Width           =   7215
+      _cx             =   12726
+      _cy             =   2355
+      Appearance      =   1
+      BackColor       =   -2147483633
+      BorderStyle     =   1
+      Caption         =   "REPORT"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      ClipControls    =   -1  'True
+      Begin VBCE.Label Bushels 
+         Height          =   240
+         Left            =   6360
+         TabIndex        =   18
+         Top             =   240
+         Width           =   735
+         _cx             =   1296
+         _cy             =   423
+         Appearance      =   1
+         AutoSize        =   0   'False
+         BackColor       =   -2147483633
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "1"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Label10 
+         Height          =   240
+         Left            =   4800
+         TabIndex        =   17
+         Top             =   240
+         Width           =   1455
+         _cx             =   2566
+         _cy             =   423
+         Appearance      =   1
+         AutoSize        =   0   'False
+         BackColor       =   -2147483633
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Bushels in store:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Land 
+         Height          =   240
+         Left            =   4080
+         TabIndex        =   16
+         Top             =   960
+         Width           =   495
+         _cx             =   873
+         _cy             =   423
+         Appearance      =   1
+         AutoSize        =   0   'False
+         BackColor       =   -2147483633
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "1"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Label8 
+         Height          =   240
+         Left            =   2400
+         TabIndex        =   15
+         Top             =   960
+         Width           =   1215
+         _cx             =   2143
+         _cy             =   423
+         Appearance      =   1
+         AutoSize        =   0   'False
+         BackColor       =   -2147483633
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Land trading:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Rats 
+         Height          =   240
+         Left            =   4080
+         TabIndex        =   14
+         Top             =   720
+         Width           =   495
+         _cx             =   873
+         _cy             =   423
+         Appearance      =   1
+         AutoSize        =   0   'False
+         BackColor       =   -2147483633
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "1"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Label7 
+         Height          =   240
+         Left            =   2400
+         TabIndex        =   13
+         Top             =   720
+         Width           =   1575
+         _cx             =   2778
+         _cy             =   423
+         Appearance      =   1
+         AutoSize        =   0   'False
+         BackColor       =   -2147483633
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Rats ate bushels:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Harvest 
+         Height          =   240
+         Left            =   4080
+         TabIndex        =   12
+         Top             =   480
+         Width           =   495
+         _cx             =   873
+         _cy             =   423
+         Appearance      =   1
+         AutoSize        =   0   'False
+         BackColor       =   -2147483633
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "1"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Label6 
+         Height          =   240
+         Left            =   2400
+         TabIndex        =   11
+         Top             =   480
+         Width           =   1455
+         _cx             =   2566
+         _cy             =   423
+         Appearance      =   1
+         AutoSize        =   0   'False
+         BackColor       =   -2147483633
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Harvest bushels:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Acres 
+         Height          =   240
+         Left            =   4080
+         TabIndex        =   10
+         Top             =   240
+         Width           =   495
+         _cx             =   873
+         _cy             =   423
+         Appearance      =   1
+         AutoSize        =   0   'False
+         BackColor       =   -2147483633
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "1"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Label5 
+         Height          =   240
+         Left            =   2400
+         TabIndex        =   9
+         Top             =   240
+         Width           =   1095
+         _cx             =   1931
+         _cy             =   423
+         Appearance      =   1
+         AutoSize        =   0   'False
+         BackColor       =   -2147483633
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Own acres:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Pop 
+         Height          =   240
+         Left            =   1680
+         TabIndex        =   8
+         Top             =   960
+         Width           =   495
+         _cx             =   873
+         _cy             =   423
+         Appearance      =   1
+         AutoSize        =   0   'False
+         BackColor       =   -2147483633
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "1"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Immigrants 
+         Height          =   240
+         Left            =   1680
+         TabIndex        =   7
+         Top             =   720
+         Width           =   495
+         _cx             =   873
+         _cy             =   423
+         Appearance      =   1
+         AutoSize        =   0   'False
+         BackColor       =   -2147483633
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "1"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Starved 
+         Height          =   240
+         Left            =   1680
+         TabIndex        =   6
+         Top             =   480
+         Width           =   495
+         _cx             =   873
+         _cy             =   423
+         Appearance      =   1
+         AutoSize        =   0   'False
+         BackColor       =   -2147483633
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "1"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Year 
+         Height          =   240
+         Left            =   1680
+         TabIndex        =   5
+         Top             =   240
+         Width           =   495
+         _cx             =   873
+         _cy             =   423
+         Appearance      =   1
+         AutoSize        =   0   'False
+         BackColor       =   -2147483633
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "1"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Label4 
+         Height          =   240
+         Left            =   120
+         TabIndex        =   4
+         Top             =   960
+         Width           =   1095
+         _cx             =   1931
+         _cy             =   423
+         Appearance      =   1
+         AutoSize        =   0   'False
+         BackColor       =   -2147483633
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Population:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Label3 
+         Height          =   240
+         Left            =   120
+         TabIndex        =   3
+         Top             =   720
+         Width           =   1215
+         _cx             =   2143
+         _cy             =   423
+         Appearance      =   1
+         AutoSize        =   0   'False
+         BackColor       =   -2147483633
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Immigrants:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Label2 
+         Height          =   240
+         Left            =   120
+         TabIndex        =   2
+         Top             =   480
+         Width           =   1455
+         _cx             =   2566
+         _cy             =   423
+         Appearance      =   1
+         AutoSize        =   0   'False
+         BackColor       =   -2147483633
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Starved People:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+      Begin VBCE.Label Label1 
+         Height          =   240
+         Left            =   120
+         TabIndex        =   1
+         Top             =   240
+         Width           =   495
+         _cx             =   873
+         _cy             =   423
+         Appearance      =   1
+         AutoSize        =   0   'False
+         BackColor       =   -2147483633
+         BackStyle       =   1
+         BorderStyle     =   0
+         Caption         =   "Year:"
+         Enabled         =   -1  'True
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Tahoma"
+            Size            =   9.75
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   -2147483640
+         Alignment       =   0
+         UseMnemonic     =   -1  'True
+         WordWrap        =   0   'False
+      End
+   End
+End
+Attribute VB_Name = "frmMain"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub Command1_Click()
+App.End
+
+End Sub
+
+
+
+
+
+Private Sub Command3_Click()
+frmBuy.Show
+
+End Sub
+
+
+
+
+Private Sub Form_Activate()
+Center Me
+
+
+End Sub
+
+Private Sub Form_Load()
+
+
+'NewYear
+End Sub
+
+
+
+Private Sub Immigrants_Click()
+NewYear
+End Sub

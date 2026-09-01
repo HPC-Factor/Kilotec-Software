@@ -1,0 +1,568 @@
+VERSION 5.00
+Object = "{A32A88B3-817C-11D1-A762-00AA0044064C}#1.0#0"; "mscecomdlg.dll"
+Object = "{25C953A7-5464-11D1-A714-00AA0044064C}#1.0#0"; "MSCEFILE.DLL"
+Object = "{BE67ABF5-0137-11D2-9B8A-00C04FAD5AEC}#1.0#0"; "mscecommandbar.dll"
+Object = "{E491F001-98EC-11D1-9B3D-00C04FAD5AEC}#1.0#0"; "msceimagelist.dll"
+Begin VB.Form frmMain 
+   BorderStyle     =   0  'None
+   Caption         =   "AssemblerCode 1.0"
+   ClientHeight    =   3660
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   9600
+   KeyPreview      =   -1  'True
+   ScaleHeight     =   3660
+   ScaleWidth      =   9600
+   ShowInTaskbar   =   0   'False
+   Begin FILECTLCtl.File File 
+      Left            =   5640
+      Top             =   -240
+      _cx             =   1000
+      _cy             =   1000
+   End
+   Begin CEComDlgCtl.CommonDialog CommonDialog1 
+      Left            =   3720
+      Top             =   -120
+      _cx             =   847
+      _cy             =   847
+      CancelError     =   0   'False
+      Color           =   0
+      DefaultExt      =   ""
+      DialogTitle     =   ""
+      FileName        =   ""
+      Filter          =   ""
+      FilterIndex     =   0
+      Flags           =   0
+      HelpCommand     =   0
+      HelpContext     =   ""
+      HelpFile        =   ""
+      InitDir         =   ""
+      MaxFileSize     =   256
+      FontBold        =   0   'False
+      FontItalic      =   0   'False
+      FontName        =   ""
+      FontSize        =   10
+      FontUnderline   =   0   'False
+      Max             =   0
+      Min             =   0
+      FontStrikethru  =   0   'False
+   End
+   Begin CommandbarLib.CommandBar cmdBar 
+      Height          =   345
+      Left            =   0
+      TabIndex        =   2
+      Top             =   0
+      Width           =   3615
+      _cx             =   6376
+      _cy             =   600
+      Enabled         =   -1  'True
+      OKButton        =   0   'False
+      HelpButton      =   0   'False
+      CloseButton     =   0   'False
+   End
+   Begin CEImageListCtl.ImageList ImageList1 
+      Left            =   4920
+      Top             =   -240
+      _cx             =   990
+      _cy             =   990
+      ImageWidth      =   16
+      ImageHeight     =   16
+   End
+   Begin VBCE.TextBox txtEingabe 
+      Height          =   375
+      Left            =   45
+      TabIndex        =   0
+      Top             =   3020
+      Width           =   9495
+      _cx             =   16748
+      _cy             =   661
+      Appearance      =   0
+      BackColor       =   -2147483643
+      BorderStyle     =   1
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Courier"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   ""
+      Alignment       =   0
+      HideSelection   =   -1  'True
+      Locked          =   0   'False
+      MaxLength       =   0
+      MultiLine       =   0   'False
+      PasswordChar    =   ""
+      ScrollBars      =   0
+   End
+   Begin VBCE.Timer Timer1 
+      Left            =   4320
+      Top             =   -120
+      _cx             =   847
+      _cy             =   847
+      Enabled         =   0   'False
+      Interval        =   500
+   End
+   Begin VBCE.ListBox List1 
+      Height          =   2670
+      Left            =   45
+      TabIndex        =   1
+      Top             =   360
+      Width           =   9495
+      List            =   "frmMain.frx":0000
+      ItemData        =   "frmMain.frx":0028
+      _cx             =   16748
+      _cy             =   4710
+      Appearance      =   0
+      BackColor       =   16777215
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Courier"
+         Size            =   12
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   0
+      Columns         =   0
+      IntegralHeight  =   -1  'True
+      MultiSelect     =   0
+      Sorted          =   0   'False
+   End
+End
+Attribute VB_Name = "frmMain"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Dim mnuMain As CommandbarLib.CommandBarMenuBar
+Dim mnuFile As CommandbarLib.Item
+Dim mnuEdit As CommandbarLib.Item
+Dim mnuKategorie As CommandbarLib.Item
+Dim mnuExtras As CommandbarLib.Item
+Dim mnuInfo As CommandbarLib.Item
+
+
+
+
+Private Sub cmdBar_ButtonClick(ByVal Button As CommandbarLib.CommandBarButton)
+ Select Case Button.Key
+    Case "new"
+        Dim A As Integer
+        A = MsgBox("Do you want to start a new project without saving?", vbYesNo, "Info")
+        If A = vbYes Then
+        On Error Resume Next
+            List1.Clear
+            Indexx = 0
+            LINE = 0
+            pc = 0
+            sp = 0
+            zero = False
+            carry = False
+            err = False
+            txtEingabe.Text = ""
+            
+            For r = 0 To 7
+                reg(r) = 0
+            Next r
+            Exit Sub
+        End If
+    
+    
+    Case "save"
+        CommonDialog1.Flags = cdlOFNHideReadOnly + cdlOFNOverwritePrompt + cdlOFNPathMustExist
+        CommonDialog1.DefaultExt = "asc"
+        CommonDialog1.Filename = ""
+        CommonDialog1.Filter = "ASMCode (*.asc)|*.asc"
+        CommonDialog1.DialogTitle = "Saving..."
+        CommonDialog1.ShowSave
+        On Error Resume Next
+        Filename = CommonDialog1.Filename
+        DBSpeichern
+        SaveFlag = False
+    
+    Case "open"
+        CommonDialog1.Flags = cdlOFNHideReadOnly + cdlOFNOverwritePrompt + cdlOFNPathMustExist
+        CommonDialog1.DefaultExt = "asc"
+        CommonDialog1.Filename = ""
+        CommonDialog1.Filter = "ASMCode (*.asc)|*.asc"
+        CommonDialog1.DialogTitle = "Open..."
+        CommonDialog1.ShowOpen
+        On Error Resume Next
+        Filename = CommonDialog1.Filename
+        DBladen
+
+    
+    Case "run"
+        Timer1.Enabled = True
+        frmOutput.Show
+    
+    Case "del"
+        If List1.Selected(List1.ListIndex) = True And Indexx > -1 Then
+            If Indexx < 16 Then
+                VorNull = "0"
+            Else
+                VorNull = ""
+            End If
+                List1.RemoveItem (List1.ListIndex)
+                If Indexx < List1.ListCount Then
+                    List1.AddItem VorNull & Hex(Indexx), Indexx
+                End If
+                'LINE = LINE - 1
+                 Selected = False
+                'Indexx = 0
+        End If
+    
+    Case "paste"
+       ' If List1.Selected(List1.ListIndex) = True Then
+       '     If Indexx < 16 Then VorNull = "0"
+       '         frmMain.List1.AddItem VorNull & Hex(Indexx), Indexx
+       '         Selected = False
+       '         Indexx = 0
+
+        '    LINE = LINE + 1
+        'End If
+    Case "font"
+        CommonDialog1.ShowFont
+        On Error Resume Next
+        List1.Font.Name = CommonDialog1.FontName
+        List1.Font.Size = CommonDialog1.FontSize
+        List1.Font.Bold = CommonDialog1.FontBold
+        List1.Font.Italic = CommonDialog1.FontItalic
+        SaveSetting App.Title, "SettingsAC", "Font", List1.Font.Name
+        SaveSetting App.Title, "SettingsAC", "Font1", List1.Font.Size
+        SaveSetting App.Title, "SettingsAC", "Font2", List1.Font.Bold
+        SaveSetting App.Title, "SettingsAC", "Font3", List1.Font.Italic
+    
+    Case "settings"
+        frmOptionen.Show
+        
+
+        Case "about"
+            frmAbout.Show
+        
+        Case "help"
+            frmHelp.Show
+        
+
+    End Select
+End Sub
+
+Private Sub cmdBar_MenuClick(ByVal Item As CommandbarLib.Item)
+ Select Case Item.Key
+    Case "new"
+        Dim A As Integer
+        A = MsgBox("Do you want to start a new project without saving?", vbYesNo, "Info")
+        If A = vbYes Then
+        On Error Resume Next
+            List1.Clear
+            Indexx = 0
+            LINE = 0
+            pc = 0
+            sp = 0
+            zero = False
+            carry = False
+            err = False
+            txtEingabe.Text = ""
+            For r = 0 To 7
+                reg(r) = 0
+            Next r
+            Exit Sub
+        End If
+    
+    
+    Case "save"
+        CommonDialog1.Flags = cdlOFNHideReadOnly + cdlOFNOverwritePrompt + cdlOFNPathMustExist
+        CommonDialog1.DefaultExt = "asc"
+        CommonDialog1.Filename = ""
+        CommonDialog1.Filter = "ASMCode (*.asc)|*.asc"
+        CommonDialog1.DialogTitle = "Saving..."
+        CommonDialog1.ShowSave
+        On Error Resume Next
+        Filename = CommonDialog1.Filename
+        DBSpeichern
+        SaveFlag = False
+    
+    Case "open"
+        On Error Resume Next
+        CommonDialog1.Flags = cdlOFNHideReadOnly + cdlOFNOverwritePrompt + cdlOFNPathMustExist
+        CommonDialog1.DefaultExt = "asc"
+        CommonDialog1.Filename = ""
+        CommonDialog1.Filter = "ASMCode (*.asc)|*.asc"
+        CommonDialog1.DialogTitle = "Open..."
+        CommonDialog1.ShowOpen
+        On Error Resume Next
+        Filename = CommonDialog1.Filename
+        DBladen
+        'LINE = frmMain.List1.ListCount - 1
+
+    
+    Case "Exit"
+        If SaveFlag = True Then
+            Dim aa As Integer
+            aa = MsgBox("Do you want to exit without saving?", vbYesNo, "Info")
+            If aa = vbYes Then
+            On Error Resume Next
+            App.End
+            End If
+        Else
+            App.End
+        End If
+        
+     Case "run"
+        Timer1.Enabled = True
+        frmOutput.Show
+    
+    Case "settings"
+        frmOptionen.Show
+    
+    Case "samples"
+        frmSamples.Show
+        
+
+        Case "about"
+            frmAbout.Show
+        
+        Case "help"
+            frmHelp.Show
+        
+
+    End Select
+End Sub
+
+
+
+
+
+
+
+
+
+
+
+Private Sub Form_Activate()
+
+
+End Sub
+
+Private Sub Form_Load()
+Indexx = 0
+LINE = 0
+pc = 0
+sp = 0
+zero = False
+carry = False
+err = False
+
+For r = 0 To 7
+    reg(r) = 0
+Next r
+
+SaveFlag = False
+
+
+cmdBar.Left = 0
+cmdBar.Top = 0
+cmdBar.Width = Me.Width
+
+ImageList1.Add App.Path & "\BarMC.bmp"
+cmdBar.ImageList = ImageList1.hImageList
+
+Dim mnuMain As CommandbarLib.CommandBarMenuBar
+Dim mnuFile As CommandbarLib.Item
+Dim mnuKategorie As CommandbarLib.Item
+Dim mnuEdit As CommandbarLib.Item
+Dim mnuRun As CommandbarLib.Item
+   
+    Set mnuMain = cmdBar.Controls.Add(cbrMenuBar, "MainMenu")
+    Set mnuFile = mnuMain.Items.Add(1, , "&File")
+    mnuFile.SubItems.Add , "new", "&New"
+    mnuFile.SubItems.Add , "open", "&Open"
+    mnuFile.SubItems.Add , "save", "&Save"
+    mnuFile.SubItems.Add , , "", cbrMenuSeparator
+    mnuFile.SubItems.Add , "Exit", "E&xit"
+    
+    Set mnuKategorie = mnuMain.Items.Add(2, , "&Extras")
+    mnuKategorie.SubItems.Add , "settings", "&Settings"
+
+    Set mnuRun = mnuMain.Items.Add(3, "run", "&Run")
+    
+    Set mnuEdit = mnuMain.Items.Add(4, , "&?")
+    mnuEdit.SubItems.Add , "about", "&About"
+    mnuEdit.SubItems.Add , "help", "&Help"
+    
+
+If Me.Width >= SIZE_SUPPORTSBUTTONS Then
+    
+        Dim Button As CommandbarLib.CommandBarButton
+        
+        Set Button = cmdBar.Controls.Add(cbrButton, "sep0")
+        Button.Style = cbrSeparator
+        
+        Set Button = cmdBar.Controls.Add(cbrButton, "new")
+        Button.Image = 2
+        Button.Tag = "new"
+        Set Button = cmdBar.Controls.Add(cbrButton, "open")
+        Button.Image = 0
+        Button.Tag = "open"
+        Set Button = cmdBar.Controls.Add(cbrButton, "save")
+        Button.Image = 1
+        Button.Tag = "save"
+        Set Button = cmdBar.Controls.Add(cbrButton, "sep1")
+        Button.Style = cbrSeparator
+        
+        Set Button = cmdBar.Controls.Add(cbrButton, "run")
+        Button.Image = 6
+        Button.Tag = "run"
+        
+        Set Button = cmdBar.Controls.Add(cbrButton, "sep22")
+        Button.Style = cbrSeparator
+        
+        Set Button = cmdBar.Controls.Add(cbrButton, "del")
+        Button.Image = 4
+        Button.Tag = "del"
+        Set Button = cmdBar.Controls.Add(cbrButton, "font")
+        Button.Image = 9
+        Button.Tag = "font"
+        'cmdBar.Controls(10).Enabled = False
+        
+        Set Button = cmdBar.Controls.Add(cbrButton, "sep2")
+        Button.Style = cbrSeparator
+        
+        Set Button = cmdBar.Controls.Add(cbrButton, "settings")
+        Button.Image = 3
+        Button.Tag = "settings"
+        Set Button = cmdBar.Controls.Add(cbrButton, "help")
+        Button.Image = 5
+        Button.Tag = "help"
+
+        
+
+ 
+    End If
+
+
+Hints = GetSetting(App.Title, "SettingsAC", "Help", 1)
+TimerSpeed = GetSetting(App.Title, "SettingsAC", "TimerSpeed", 500)
+Layout = GetSetting(App.Title, "SettingsAC", "Layout", 1)
+Scroll = GetSetting(App.Title, "SettingsAC", "Scroll", 1)
+
+List1.Font.Name = GetSetting(App.Title, "SettingsAC", "Font", "Tahoma")
+List1.Font.Size = GetSetting(App.Title, "SettingsAC", "Font1", "12")
+List1.Font.Bold = GetSetting(App.Title, "SettingsAC", "Font2", False)
+List1.Font.Italic = GetSetting(App.Title, "SettingsAC", "Font3", False)
+
+If Layout = 0 Then
+    List1.BackColor = vbBlack
+    List1.ForeColor = vbWhite
+    frmMain.BackColor = vbBlack
+End If
+If Layout = 1 Then
+    List1.BackColor = vbWhite
+    List1.ForeColor = vbBlack
+    frmMain.BackColor = &H8000000F
+End If
+
+
+
+Timer1.Interval = TimerSpeed
+
+
+SetFocusAPI txtEingabe.hwnd
+
+End Sub
+
+
+
+
+
+
+
+
+
+
+Private Sub List1_Click()
+'If Selected = False Then
+    Selected = True
+'    Indexx = List1.ListIndex
+'    If Indexx > -1 Then txtEingabe.Text = List1.List(List1.ListIndex)
+'Else
+'    Selected = False
+'End If
+
+
+End Sub
+
+
+
+
+
+Private Sub List1_MouseUp(ByVal Button As Integer, ByVal Shift As Integer, ByVal X As Single, ByVal Y As Single)
+Dim i As Integer
+
+For i = 0 To List1.ListCount - 1
+    If List1.Selected(i) = True Then
+        Indexx = i
+        Selected = True
+    'Else
+        'Selected = False
+    End If
+
+Next i
+End Sub
+
+Private Sub Timer1_Timer()
+If List1.ListCount > 0 Then Run
+
+
+If TOGGLE = True Then
+    'frmOutput.LED.Value = 1
+    frmOutput.lblLED.BackColor = &HFF&
+Else
+    'frmOutput.LED.Value = 0
+    frmOutput.lblLED.BackColor = &H80&
+End If
+End Sub
+
+
+
+Private Sub txtEingabe_KeyDown(ByVal KeyCode As Integer, ByVal Shift As Integer)
+If KeyCode = 13 And txtEingabe <> "" Then
+    SaveFlag = True
+    CheckInput
+    
+    If Scroll = 1 Then
+        If List1.ListCount > 0 Then
+            List1.ListIndex = List1.ListCount - 1
+            List1.Selected(List1.ListIndex) = False
+        End If
+    End If
+End If
+
+If Shift = 2 And KeyCode = 82 Then
+    Timer1.Enabled = True
+    frmOutput.Show
+End If
+
+If Shift = 2 And KeyCode = 70 Then
+    If cmdBar.Visible = True Then
+        cmdBar.Visible = False
+        List1.Top = 20
+        List1.Height = 3200
+    Else
+        cmdBar.Visible = True
+        List1.Top = 360
+        List1.Height = 2670
+    End If
+End If
+End Sub
+
+

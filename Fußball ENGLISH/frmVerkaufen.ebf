@@ -1,0 +1,432 @@
+VERSION 5.00
+Begin VB.Form frmVerkaufen 
+   BackColor       =   &H0080FF80&
+   BorderStyle     =   1  'Fixed Single
+   Caption         =   "SPIELER VERKAUFEN"
+   ClientHeight    =   3000
+   ClientLeft      =   45
+   ClientTop       =   330
+   ClientWidth     =   5760
+   ScaleHeight     =   3000
+   ScaleWidth      =   5760
+   Begin VBCE.Label Label3 
+      Height          =   495
+      Left            =   960
+      TabIndex        =   11
+      Top             =   1800
+      Width           =   1095
+      _cx             =   1931
+      _cy             =   873
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   8454016
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "€"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label lblMax 
+      Height          =   255
+      Left            =   1800
+      TabIndex        =   10
+      Top             =   2520
+      Width           =   975
+      _cx             =   1720
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   8454016
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   ""
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.TextBox txtPunkte 
+      Height          =   255
+      Left            =   840
+      TabIndex        =   9
+      Top             =   2520
+      Width           =   855
+      _cx             =   1508
+      _cy             =   450
+      Appearance      =   1
+      BackColor       =   -2147483643
+      BorderStyle     =   1
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   ""
+      Alignment       =   0
+      HideSelection   =   -1  'True
+      Locked          =   0   'False
+      MaxLength       =   0
+      MultiLine       =   0   'False
+      PasswordChar    =   ""
+      ScrollBars      =   0
+   End
+   Begin VBCE.Label Label4 
+      Height          =   255
+      Left            =   120
+      TabIndex        =   8
+      Top             =   2520
+      Width           =   615
+      _cx             =   1085
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   8454016
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Wert:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label lblGeld 
+      Height          =   495
+      Left            =   120
+      TabIndex        =   7
+      Top             =   1800
+      Width           =   735
+      _cx             =   1296
+      _cy             =   873
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   8454016
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "0 €"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label2 
+      Height          =   495
+      Left            =   120
+      TabIndex        =   6
+      Top             =   1200
+      Width           =   4095
+      _cx             =   7223
+      _cy             =   873
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   8454016
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Pro 1 Punkt Spielstärke bekommst du aktuell:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label1 
+      Height          =   975
+      Left            =   120
+      TabIndex        =   5
+      Top             =   120
+      Width           =   4095
+      _cx             =   7223
+      _cy             =   1720
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   8454016
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Du kannst Spieler verkaufen und damit Geld einnehmen, wobei aber zwangsläufig auch die Gesamtspielstärke verringert wird."
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.CommandButton Command1 
+      Height          =   495
+      Left            =   4440
+      TabIndex        =   4
+      Top             =   2400
+      Width           =   1215
+      _cx             =   2143
+      _cy             =   873
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "Abbrechen"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command2 
+      Height          =   495
+      Left            =   4440
+      TabIndex        =   3
+      Top             =   1800
+      Width           =   1215
+      _cx             =   2143
+      _cy             =   873
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "Verkaufen"
+      Enabled         =   0   'False
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.OptionButton optAngriff 
+      Height          =   255
+      Left            =   4440
+      TabIndex        =   2
+      Top             =   1320
+      Width           =   975
+      _cx             =   1720
+      _cy             =   450
+      Appearance      =   1
+      BackColor       =   8454016
+      Caption         =   "Sturm"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      Value           =   0   'False
+   End
+   Begin VBCE.OptionButton optAbwehr 
+      Height          =   255
+      Left            =   4440
+      TabIndex        =   1
+      Top             =   600
+      Width           =   975
+      _cx             =   1720
+      _cy             =   450
+      Appearance      =   1
+      BackColor       =   8454016
+      Caption         =   "Abwehr"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      Value           =   -1  'True
+   End
+   Begin VBCE.OptionButton optMittelfeld 
+      Height          =   255
+      Left            =   4440
+      TabIndex        =   0
+      Top             =   960
+      Width           =   975
+      _cx             =   1720
+      _cy             =   450
+      Appearance      =   1
+      BackColor       =   8454016
+      Caption         =   "Mittelfeld"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      Value           =   0   'False
+   End
+End
+Attribute VB_Name = "frmVerkaufen"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub Command1_Click()
+Me.Hide
+End Sub
+
+Private Sub Command2_Click()
+
+
+If optAbwehr.Value = True Then
+    If txtPunkte.Text = "" Or Int(txtPunkte.Text) > Int(Abwehr(TeamIndex) / 3) Or Int(txtPunkte.Text) < 1 Then
+        MsgBox "Falsche Eingabe!", vbOKOnly, "Hinweis"
+        Exit Sub
+    Else
+        Geld = Geld + lblGeld.Caption
+        Abwehr(TeamIndex) = Abwehr(TeamIndex) - txtPunkte.Text
+        Aktualisieren
+        Me.Hide
+    End If
+End If
+
+If optMittelfeld.Value = True Then
+    If txtPunkte.Text = "" Or Int(txtPunkte.Text) > Int(Mittelfeld(TeamIndex) / 3) Or Int(txtPunkte.Text) < 1 Then
+        MsgBox "Falsche Eingabe!", vbOKOnly, "Hinweis"
+        Exit Sub
+    Else
+        Geld = Geld + lblGeld.Caption
+        Mittelfeld(TeamIndex) = Abwehr(TeamIndex) - txtPunkte.Text
+        Aktualisieren
+        Me.Hide
+    End If
+End If
+
+If optAngriff.Value = True Then
+    If txtPunkte.Text = "" Or Int(txtPunkte.Text) > Int(Angriff(TeamIndex) / 3) Or Int(txtPunkte.Text) < 1 Then
+        MsgBox "Falsche Eingabe!", vbOKOnly, "Hinweis"
+        Exit Sub
+    Else
+        Geld = Geld + lblGeld.Caption
+        Angriff(TeamIndex) = Abwehr(TeamIndex) - txtPunkte.Text
+        Aktualisieren
+        Me.Hide
+    End If
+
+End If
+End Sub
+
+Private Sub Form_Activate()
+Center Me
+Verkaufberechnen
+End Sub
+
+Private Sub Form_Load()
+
+End Sub
+
+Public Sub Verkaufberechnen()
+If optAbwehr.Value = True Then
+    lblMax.Caption = "(Max: " & Int(Abwehr(TeamIndex) / 3) & ")"
+    lblGeld.Caption = GetRandomNumber(50000 / Liga, 200000 / Liga) '& " €"
+End If
+
+If optMittelfeld.Value = True Then
+    lblMax.Caption = "(Max: " & Int(Mittelfeld(TeamIndex) / 3) & ")"
+    lblGeld.Caption = GetRandomNumber(70000 / Liga, 220000 / Liga) '& " €"
+End If
+
+If optAngriff.Value = True Then
+    lblMax.Caption = "(Max: " & Int(Angriff(TeamIndex) / 3) & ")"
+    lblGeld.Caption = GetRandomNumber(40000 / Liga, 150000 / Liga) '& " €"
+End If
+
+End Sub
+
+Private Sub optAbwehr_Click()
+Verkaufberechnen
+End Sub
+
+Private Sub optAngriff_Click()
+Verkaufberechnen
+End Sub
+
+Private Sub optMittelfeld_Click()
+Verkaufberechnen
+End Sub
+
+Private Sub txtPunkte_Change()
+Command2.Enabled = True
+End Sub

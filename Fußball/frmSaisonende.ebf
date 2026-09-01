@@ -1,0 +1,162 @@
+VERSION 5.00
+Begin VB.Form frmSaisonende 
+   BackColor       =   &H0080FFFF&
+   BorderStyle     =   1  'Fixed Single
+   Caption         =   "SAISONENDE"
+   ClientHeight    =   2880
+   ClientLeft      =   45
+   ClientTop       =   390
+   ClientWidth     =   8445
+   ScaleHeight     =   2880
+   ScaleWidth      =   8445
+   Begin VBCE.Label Label3 
+      Height          =   735
+      Left            =   120
+      TabIndex        =   3
+      Top             =   1200
+      Width           =   8175
+      _cx             =   14420
+      _cy             =   1296
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Label1"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label2 
+      Height          =   375
+      Left            =   120
+      TabIndex        =   2
+      Top             =   720
+      Width           =   8175
+      _cx             =   14420
+      _cy             =   661
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Label1"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label1 
+      Height          =   375
+      Left            =   120
+      TabIndex        =   1
+      Top             =   240
+      Width           =   8175
+      _cx             =   14420
+      _cy             =   661
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   1
+      BorderStyle     =   0
+      Caption         =   "Label1"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   2
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.CommandButton Command1 
+      Height          =   495
+      Left            =   3360
+      TabIndex        =   0
+      Top             =   2160
+      Width           =   1695
+      _cx             =   2990
+      _cy             =   873
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "OK"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+End
+Attribute VB_Name = "frmSaisonende"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+
+Private Sub Command1_Click()
+x = 1
+Geld = 0
+Spieltag = 1
+Aktualisieren
+frmHaupt.Command1.Caption = "Nächster Spieltag"
+frmHaupt.lblSpieltag.Caption = "SAISONENDE"
+frmNewGame.Show
+
+
+
+Me.Hide
+frmHaupt.Hide
+
+End Sub
+
+Private Sub Form_Load()
+Label1.Caption = "Die Mannschaft " & TEAM & " ist " & Platz & ". in der " & Liga & ". Bundesliga geworden!"
+
+If Liga = 1 And Platz = 1 Then Label2.Caption = "Du bist DEUTSCHER FUßBALLMEISTER!!!!"
+If Liga = 1 And Platz > 16 Then Label2.Caption = "Du bist leider abgestiegen in die 2. Bundesliga!"
+
+
+If Liga = 2 And Platz > 16 Then Label2.Caption = "Du bist leider abgestiegen in die 3. Bundesliga!"
+If Liga = 2 And Platz < 3 Then Label2.Caption = "Du bist aufgestiegen in die 1. Bundesliga"
+If Liga = 2 And Platz = 1 Then Label2.Caption = "Du bist Meister der 2. Bundesliga geworden und steigst auf in die 1. Bundesliga!"
+
+If Liga = 3 And Platz > 14 Then Label2.Caption = "Du bist leider abgestiegen in die Regionalliga!"
+If Liga = 3 And Platz < 3 Then Label2.Caption = "Du bist aufgestiegen in die 2. Bundesliga"
+If Liga = 3 And Platz = 1 Then Label2.Caption = "Du bist Meister der 3. Bundesliga geworden und steigst auf in die 2. Bundesliga!"
+
+Label3.Caption = "Insgesamt hast du " & Punkte(TeamIndex) & " Punkte geholt und " & Tore(TeamIndex) & " Tore geschossen."
+End Sub

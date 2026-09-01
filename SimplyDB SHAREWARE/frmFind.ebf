@@ -1,0 +1,393 @@
+VERSION 5.00
+Object = "{6556ED95-9838-11D1-80AE-00C04FAD5EFB}#1.0#0"; "mscelistview.dll"
+Begin VB.Form frmFind 
+   Caption         =   "Find..."
+   ClientHeight    =   2535
+   ClientLeft      =   60
+   ClientTop       =   345
+   ClientWidth     =   7650
+   ScaleHeight     =   2535
+   ScaleWidth      =   7650
+   Begin MSCELISTVIEWLibCtl.ListViewCtrl ListView1 
+      Height          =   1215
+      Left            =   0
+      TabIndex        =   6
+      Top             =   1320
+      Width           =   6375
+      _cx             =   11245
+      _cy             =   2143
+      FontBold        =   0   'False
+      FontItalic      =   0   'False
+      FontName        =   "Arial"
+      FontSize        =   8
+      FontStrikethrough=   0   'False
+      FontUnderline   =   0   'False
+      HideColumnHeaders=   0   'False
+      HideSelection   =   -1  'True
+      LabelEdit       =   0
+      LabelWrap       =   0   'False
+      MultiSelect     =   0   'False
+      Sorted          =   0   'False
+      SortKey         =   0
+      SortOrder       =   0
+      View            =   3
+      Enabled         =   -1  'True
+   End
+   Begin VBCE.CommandButton Command3 
+      Height          =   1095
+      Left            =   6480
+      TabIndex        =   9
+      Top             =   1320
+      Width           =   1095
+      _cx             =   1931
+      _cy             =   1931
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "Edit selected item"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.Label Label3 
+      Height          =   255
+      Left            =   4560
+      TabIndex        =   8
+      Top             =   120
+      Width           =   1575
+      _cx             =   2778
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Search for:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.Label Label2 
+      Height          =   240
+      Left            =   120
+      TabIndex        =   7
+      Top             =   1080
+      Width           =   855
+      _cx             =   1508
+      _cy             =   423
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Result:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.CheckBox Check1 
+      Height          =   255
+      Left            =   120
+      TabIndex        =   1
+      Top             =   480
+      Width           =   1335
+      _cx             =   2355
+      _cy             =   450
+      Appearance      =   1
+      BackColor       =   -2147483633
+      Caption         =   "in category:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   0
+      Value           =   0
+   End
+   Begin VBCE.TextBox Text1 
+      Height          =   255
+      Left            =   1080
+      TabIndex        =   0
+      Top             =   120
+      Width           =   3375
+      _cx             =   5953
+      _cy             =   450
+      Appearance      =   1
+      BackColor       =   -2147483643
+      BorderStyle     =   1
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   ""
+      Alignment       =   0
+      HideSelection   =   -1  'True
+      Locked          =   0   'False
+      MaxLength       =   0
+      MultiLine       =   -1  'True
+      PasswordChar    =   ""
+      ScrollBars      =   0
+   End
+   Begin VBCE.Label Label1 
+      Height          =   255
+      Left            =   0
+      TabIndex        =   5
+      Top             =   120
+      Width           =   975
+      _cx             =   1720
+      _cy             =   450
+      Appearance      =   1
+      AutoSize        =   0   'False
+      BackColor       =   -2147483633
+      BackStyle       =   0
+      BorderStyle     =   0
+      Caption         =   "Search for:"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Alignment       =   1
+      UseMnemonic     =   -1  'True
+      WordWrap        =   0   'False
+   End
+   Begin VBCE.CommandButton Command2 
+      Height          =   375
+      Left            =   4560
+      TabIndex        =   4
+      Top             =   480
+      Width           =   855
+      _cx             =   1508
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "&Cancel"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.CommandButton Command1 
+      Default         =   -1  'True
+      Height          =   375
+      Left            =   5520
+      TabIndex        =   3
+      Top             =   480
+      Width           =   855
+      _cx             =   1508
+      _cy             =   661
+      Appearance      =   1
+      BackColor       =   12632256
+      Caption         =   "&Search"
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Style           =   0
+   End
+   Begin VBCE.ComboBox Combo1 
+      Height          =   360
+      Left            =   1560
+      TabIndex        =   2
+      Top             =   480
+      Width           =   2895
+      List            =   "frmFind.frx":0000
+      ItemData        =   "frmFind.frx":0028
+      _cx             =   5106
+      _cy             =   635
+      Appearance      =   1
+      BackColor       =   -2147483643
+      Enabled         =   -1  'True
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   -2147483640
+      Text            =   ""
+      IntegralHeight  =   -1  'True
+      Locked          =   0   'False
+      Sorted          =   0   'False
+      Style           =   0
+   End
+End
+Attribute VB_Name = "frmFind"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Explicit
+Dim XX2 As Integer
+
+
+
+Private Sub Combo1_Change()
+
+End Sub
+
+Private Sub Combo1_Click()
+
+     For XX2 = 0 To Zaehler_Columns
+        If DBColumns(0, XX2) = Mid(Combo1.List(Combo1.ListIndex), 1, 2) Then
+            Label3.Caption = DBColumns(2, XX2)
+            
+        End If
+    Next XX2
+
+End Sub
+
+Public Sub Command1_Click()
+If Text1.Text = Empty Then
+Exit Sub
+Else
+Suchen
+End If
+End Sub
+
+Private Sub Command2_Click()
+Me.Hide
+End Sub
+
+Private Sub Command3_Click()
+On Error Resume Next
+If ListView1.ListItems.Count > 0 Then
+IndexX = ListView1.SelectedItem.SubItems(3)
+frmEdit.Show
+End If
+End Sub
+
+Private Sub Form_Activate()
+If COLOR = 0 Then Me.BackColor = &H8000000F
+If COLOR = 1 Then Me.BackColor = &HC0FFC0
+If COLOR = 2 Then Me.BackColor = &HFFC0C0
+If COLOR = 3 Then Me.BackColor = &HC0FFFF
+
+Combo1.Clear
+AddToCombo Combo1
+
+
+Text1.Text = ""
+Check1.Value = False
+
+Me.Height = 1350
+Me.Width = 6540
+Center Me
+
+'AddToCombo Combo1
+Combo1.Text = frmMain.Combo1.Text
+
+
+     For XX2 = 0 To Zaehler_Columns
+        If DBColumns(0, XX2) = Mid(Combo1.List(Combo1.ListIndex), 1, 2) Then
+            Label3.Caption = "(" & DBColumns(2, XX2) & ")"
+            
+        End If
+    Next XX2
+Label3.Caption = frmMain.ListView1.ColumnHeaders(2).Text
+
+If LANGUAGE = "English" Then
+    Me.Caption = "Find..."
+    Label1.Caption = "Search for:"
+    Check1.Caption = "in category:"
+    Command1.Caption = "&Search"
+    Command2.Caption = "&Cancel"
+    Label2.Caption = "Result:"
+    Command3.Caption = "Edit selected item"
+End If
+If LANGUAGE = "Deutsch" Then
+    Me.Caption = "Suchen..."
+    Label1.Caption = "Suchen nach:"
+    Check1.Caption = "in Kategorie:"
+    Command1.Caption = "&Suchen"
+    Command2.Caption = "&Abbrechen"
+    Label2.Caption = "Ergebnis:"
+    Command3.Caption = "Ausgewählten Eintrag bearbeiten"
+End If
+End Sub
+
+Private Sub Form_Load()
+Me.Height = 1350
+Center Me
+
+AddToCombo Combo1
+Combo1.Text = frmMain.Combo1.Text
+Label3.Caption = frmMain.ListView1.ColumnHeaders(2).Text
+End Sub
+
+
+Private Sub ListView1_AfterLabelEdit(Cancel As Boolean, ByVal NewString As String)
+
+End Sub
+
+Private Sub ListView1_ItemClick(ByVal Index As Long)
+'If ListView1.ListItems.Count > 0 Then
+'IndexX = ListView1.SelectedItem.SubItems(3)
+'frmEdit.Show
+'End If
+
+End Sub
